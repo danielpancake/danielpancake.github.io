@@ -39,6 +39,24 @@
                 }
             );
         });
+
+        function sendemail(name, email, subject, body) {
+            var message = name + " wrote to you: " + body;
+
+            if (email != "") { message += "Write back, " + email;}
+
+            Email.send({
+                SecureToken : "2d60c5e6-b738-4a95-8e38-45075cf81d32",
+                To : "inboxpancake@gmail.com", From : "inboxpancake@gmail.com",
+                Subject : subject,
+                Body : message
+            }).then(response => reload(response, name));
+        };
+
+        function reload(response, name) {
+            alert(response == "OK" ? "Thank you for you letter, " + name + "!" : "Error occurred!");
+            location.reload()
+        }
     </script>
 </head>
 
@@ -114,14 +132,14 @@
                     </li>
 
                     <div class="inner with_border description">
-                        <p>ShunyInu - an android gallery app app that shows random images of Shiba Inu from <a href="https://shibe.online">shibe.online</a> website.</p>
+                        <p>ShunyInu - an android gallery app that shows random images of Shiba Inu from <a href="https://shibe.online">shibe.online</a> website.</p>
                         <br><br>
                         <p>Features:</p>
                         <p>- Open-source android application</p>
-                        <p>- Bookmarked images can be removed to free up space. You will be able to re-download them later</p>
+                        <p>- Bookmarked images can be removed from storage to free up space. You will be able to re-download them later</p>
                         <p>- Built-in image viewer</p>
                         <br><br>
-                        <p>You can find it on the <a href="https://github.com/DanielPancake/shinyinu">>> github <<</a></p>
+                        <p>You can find it on the <a href="https://github.com/DanielPancake/shinyinu">_github_</a></p>
                     </div>
 
                     <li class="toggler with_border"
@@ -135,7 +153,7 @@
                     <div class="inner with_border description">
                         <p>Dungeon template creating library for GameMaker Studio 1.x</p>
                         <br><br>
-                        <p>You can find it on the <a href="https://github.com/DanielPancake/gmdungeon">>> github <<</a></p>
+                        <p>You can find it on the <a href="https://github.com/DanielPancake/gmdungeon">_github_</a></p>
                     </div>
 
                     <li class="toggler with_border"
@@ -146,7 +164,7 @@
                     </li>
 
                     <div class="inner with_border description">
-                        <p>You can find it on the <a href="https://github.com/DanielPancake/danielpancake.github.io">>> github <<</a></p>
+                        <p>You can find it on the <a href="https://github.com/DanielPancake/danielpancake.github.io">_github_</a></p>
                     </div>
                 </ul>
 
@@ -169,25 +187,22 @@
                     <h1 class="section_title">Contact</h1>
                     
                     <div style="display:flex;">
-                        <form onsubmit="alert('Not available yet. Sorry for the inconvenience!'); return false;">
+                        <form onsubmit='$("#sender").prop("value", "Please, wait...").prop("disabled",true); sendemail($("#name").val(), $("#email").val(), $("#subject").val(), $("#body").val()); return false;''>
                             <div id="envelope">
-                                <blink><label style="color:red;">Not available yet. Sorry for the inconvenience!</label></blink>
-                                <br><br>
-
                                 <label>What's your name?</label>
-                                <input placeholder="* For example, David" class="with_border" required="required" pattern="[A-Za-z0-9]{1,20}" type="text">
+                                <input id="name" placeholder="* For example, David" class="with_border" required="required" type="text">
 
                                 <label>What's your letter about?</label>
-                                <input placeholder="* Informative title" class="with_border" required="required" pattern="[A-Za-z0-9]{1,20}" type="text">
+                                <input id="subject" placeholder="* Informative title" class="with_border" required="required" type="text">
 
                                 <label>What's your email?</label>
-                                <input placeholder="* Email to be answered (not necessary)" class="with_border" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                                <input id="email" placeholder="* Email to be answered (not necessary)" class="with_border" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
 
                                 <label>Your message to me:</label>
-                                <textarea placeholder="* Write it here..." class="with_border" required="required" pattern="[A-Za-z0-9]{1,20}" rows="5"></textarea>
+                                <textarea id="body" placeholder="* Write it here..." class="with_border" required="required" rows="5"></textarea>
                             </div>
 
-                            <input class="with_border" type="submit" value="Send">
+                            <input id="sender" class="with_border" type="submit" value="Send">
                         </form>
                     </div>
                 </div>
