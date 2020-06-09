@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>danielpancake</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="author" content="danielpancake" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <link rel="stylesheet" href="css/main.css" />
+
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/about.css" />
+    <link rel="stylesheet" href="css/portfolio.css" />
+    <link rel="stylesheet" href="css/support.css" />
+    <link rel="stylesheet" href="css/contact.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+
+    <link rel="shortcut icon" href="images/favicon.png" type="image/png" />
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/background.js"></script>
+    <script type="text/javascript" src="js/highlight.js"></script>
+    <script type="text/javascript" src="https://smtpjs.com/v3/smtp.js"></script>
+
+    <script>
+        $(function () {
+            // Copy menu options to mobile menu
+            $('#menu').children().clone().appendTo('#menu-mobile .inner');
+            // Hide mobile menu
+            $('.inner').hide();
+            // Set onclick listener
+            $('.toggler').click(
+                function () {
+                    $(this).toggleClass('active');
+                    $(this).next('.inner').stop().slideToggle(120);
+                }
+            );
+        });
+    </script>
+</head>
+
+<body>
+    <div id="content-box">
+        <section id="header">
+            <ul id="menu-mobile">
+                <li id="menu-toggle" class="toggler">
+                    <a href="#"><img src="images/ic_menu.png"></a>
+                </li>
+
+                <div class="inner"></div>
+            </ul>
+
+            <ul id="menu">
+                <li><a href="#about">About me</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </section>
+
+        <section id="home">
+            <div class="wrapper">
+                <img id="me" src="images/author.png">
+
+                <div id="creative">
+                    <img id="pointer" src="images/ic_pointer.png">
+                    <p><span>The idea is</span><br><span>to be</span><br><span class="highlight">creative!</span></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="parallax" id="bg">
+                <div class="parallax" id="fbg">
+
+                    <h1 class="section_title">About me</h1>
+                    <div class="wrapper">
+                        <div class="box">
+                            <p class="title">👋<u>Hi! I'm danielpancake</u><br>and these are my <u>skills</u></p>
+
+                            <ul class="list_of_skills">
+                                <li><span class="highlight">Game Maker Studio</span> game development</li>
+                                <li>Android app programming with <span class="highlight">Java</span></li>
+                                <li>Web development and designing with <span class="highlight">HTML,CSS and a bit of javascript and PHP</span></li>
+                                <li>Minecraft plugin programming with <span class="highlight">Java</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="box">
+                            <p class="title">..and this is what I'm <u>learning to do</u></p>
+                            <ul class="list_of_skills">
+                                <li>Webpages with creative design</li>
+                                <li>Using javascript for web applications</li>
+                                <li>Using github and writing documentation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="background" data-size="256">
+            <h1 class="section_title">Portfolio</h1>
+
+            <div class="wrapper">
+                <ul>
+                    <li class="toggler with_border"
+                        style="background: url(images/projects/shiny.png) no-repeat; background-position: center; background-size: cover;">
+                        <div class="shape">
+                            <p><span class="title">ShinyInu</span><br>An android gallery app</p>
+                        </div>
+                    </li>
+
+                    <div class="inner with_border description">
+                        <p>ShunyInu - an android gallery app app that shows random images of Shiba Inu from <a href="https://shibe.online">shibe.online</a> website.</p>
+                        <br><br>
+                        <p>Features:</p>
+                        <p>- Open-source android application</p>
+                        <p>- Bookmarked images can be removed to free up space. You will be able to re-download them later</p>
+                        <p>- Built-in image viewer</p>
+                        <br><br>
+                        <p>You can find it on the <a href="https://github.com/DanielPancake/shinyinu">>> github <<</a></p>
+                    </div>
+
+                    <li class="toggler with_border"
+                        style="background: url(images/projects/dungeon.png) no-repeat; background-position: center; background-size: cover;">
+                        <div class="shape">
+                            <p><span class="title">gmdungeon</span><br>Dungeon template generator for Game Maker Studio
+                            </p>
+                        </div>
+                    </li>
+
+                    <div class="inner with_border description">
+                        <p>Dungeon template creating library for GameMaker Studio 1.x</p>
+                        <br><br>
+                        <p>You can find it on the <a href="https://github.com/DanielPancake/gmdungeon">>> github <<</a></p>
+                    </div>
+
+                    <li class="toggler with_border"
+                        style="background: url(images/projects/little_website.png) no-repeat; background-position: right; background-size: cover;">
+                        <div class="shape">
+                            <p><span class="title">Even this website</span><br>yeah, it's open-source too</p>
+                        </div>
+                    </li>
+
+                    <div class="inner with_border description">
+                        <p>You can find it on the <a href="https://github.com/DanielPancake/danielpancake.github.io">>> github <<</a></p>
+                    </div>
+                </ul>
+
+                <div id="additional_blocks">
+                    <div id="donate">
+                        <a target="_blank" href="https://ko-fi.com/danielpancake">
+                            <div class="block with_border">
+                                <h1>Donate</h1>
+                                <p>☕Buy me a coffee</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div id="web">
+                <div class="wrapper">
+                    <h1 class="section_title">Contact</h1>
+                    
+                    <div style="display:flex;">
+                        <form onsubmit="alert('Not available yet. Sorry for the inconvenience!'); return false;">
+                            <div id="envelope">
+                                <blink><label style="color:red;">Not available yet. Sorry for the inconvenience!</label></blink>
+                                <br><br>
+
+                                <label>What's your name?</label>
+                                <input placeholder="* For example, David" class="with_border" required="required" pattern="[A-Za-z0-9]{1,20}" type="text">
+
+                                <label>What's your letter about?</label>
+                                <input placeholder="* Informative title" class="with_border" required="required" pattern="[A-Za-z0-9]{1,20}" type="text">
+
+                                <label>What's your email?</label>
+                                <input placeholder="* Email to be answered (not necessary)" class="with_border" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+
+                                <label>Your message to me:</label>
+                                <textarea placeholder="* Write it here..." class="with_border" required="required" pattern="[A-Za-z0-9]{1,20}" rows="5"></textarea>
+                            </div>
+
+                            <input class="with_border" type="submit" value="Send">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>Copyright 2020 danielpancake<p>
+        </footer>
+    </div>
+</body>
+
+</html>

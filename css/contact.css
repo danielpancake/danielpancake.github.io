@@ -1,0 +1,66 @@
+#contact {
+    background-color: darkcyan;
+}
+
+#web {
+    background-image: url(../images/web-bottom.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+
+    padding: 0 16px 64px 16px;
+    margin: 0 auto;
+    max-width: 960px;
+}
+
+#contact .wrapper {
+    background-image: url(../images/web-top.png);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: contain;
+}
+
+#envelope {
+    padding-right: 18px;
+}
+
+#somthing {
+    background-color: bisque;
+    flex: 1;
+    margin: 8px;
+}
+
+#contact form {
+    flex: 3;
+}
+
+#contact label {
+    color: whitesmoke;
+    font-family: Mozart;
+    font-size: 22pt;
+    text-shadow: black 1px 1px 5px;
+}
+
+#contact .section_title {
+    padding-bottom: 24px;
+    text-shadow: aqua -3px -3px 25px, #1a4050 -2px -2px, #037080 2px 2px;
+}
+
+#contact input, #contact textarea {
+    font-family: Mozart;
+    font-size: var(--links);
+    margin: 0 auto;
+    margin-bottom: 8px;
+    max-height: 320px;
+    min-height: 20px;
+    outline: none;
+    overflow-wrap: break-word;
+    padding-left: 8px;
+    resize: vertical;
+    width: 100%;
+    white-space: s;
+}
+
+@media screen and (max-width: 600px) {
+    #somthing { display: none; }
+}

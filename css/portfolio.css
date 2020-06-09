@@ -1,0 +1,162 @@
+#portfolio {
+    background-image: url(../images/bg_stars.png);
+    background-repeat: repeat;
+}
+
+#portfolio .wrapper {
+    margin: 0 auto;
+    max-width: 960px;
+    padding: 0 16px 64px 16px;
+}
+
+#portfolio .section_title {
+    padding-bottom: 24px;
+    text-shadow: blue -3px -3px 25px, #aa0080 -2px -2px, #5000cc 2px 2px;
+}
+
+#portfolio ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#portfolio li {
+    font-family: "Mozart";
+    height: 68px;
+}
+
+#portfolio ul .active {
+    border-bottom: none;
+    border-radius: 5px 5px 0 0;
+}
+
+#portfolio li:not(:first-child) {
+    margin-top: 4px;
+}
+
+.shape {
+    background-color: rgba(0, 0, 0, 0.5);
+    clip-path: polygon(0 0, 100% 0, 95% 90%, 0 100%);
+    color: whitesmoke;
+    display: inline-block;
+    height: 100%;
+    max-width: 100%;
+    text-decoration: none;
+    text-shadow: black 0 0 5px;
+    transition: 0.1s;
+}
+
+li:hover > .shape {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+li:hover > .shape p {
+    padding-right: 45px;
+}
+
+.active .shape {
+    color: white;
+    text-shadow: #aa0080 -2px -2px, #5000cc 2px 2px;
+}
+
+.active .shape .title::before {
+    content: "> ";
+}
+
+.active .shape p {
+    padding-right: 45px;
+}
+
+.shape .title {
+    font-size: 32pt;
+    transition: 0.25s;
+    white-space: nowrap;
+}
+
+.shape p {
+    font-size: 18pt;
+    line-height: 16px;
+    margin: 0;
+    padding: 10px 25px 10px 10px;
+    transition: 0.25s;
+}
+
+#portfolio .description {
+    background-color: whitesmoke;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    font-family: "Mozart", "Webdings";
+
+    padding: 5px 20px 10px 20px;
+}
+
+#portfolio .description p {
+    font-size: 18pt;
+    margin: 0;
+}
+
+#additional_blocks {
+    display: flex;
+    flex-direction: column;
+}
+
+#additional_blocks .block {
+    color: whitesmoke;
+    font-family: "OksFree";
+    text-align: center;
+    text-shadow: 0 2px 0 black;
+    transition: ease 0.2s;
+}
+
+#additional_blocks .block:not(:first-child) {
+    margin-top: 4px;
+}
+
+#donate a {
+    background: url(../images/bg_vhs.gif);
+    background-position: bottom;
+    background-size: cover;
+    border-radius: 5px;
+    display: block;
+    text-decoration: none;
+}
+
+#donate h1 {
+    font-size: 32pt;
+    margin: 10px;
+}
+
+#donate p {
+    font-size: 18pt;
+    margin: 14px;
+    text-decoration: underline whitesmoke;
+}
+
+#donate a:hover > .block {
+    background-color: whitesmoke;
+    color: black;
+    text-shadow: none;
+}
+
+#donate a:hover > .block p {
+    text-decoration: underline black;
+}
+
+#epic {
+    height: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    #additional_blocks { margin-top: 4px; }
+    #epic { display: none; }
+}
+
+@media screen and (min-width: 601px) {
+    #portfolio .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    #portfolio ul { flex: 3; }
+    #additional_blocks { margin-left: 4px; }
+}

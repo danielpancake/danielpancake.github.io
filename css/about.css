@@ -1,0 +1,75 @@
+#about {
+    background-color: #101010;
+    min-height: 650px;
+}
+
+#about .parallax {
+    background-position: bottom;
+    background-size: contain;
+    margin: 0 auto;
+    max-width: 960px;
+    min-height: inherit;
+}
+
+#bg {
+    animation: parallax_bg 60s infinite ease-in-out;
+    background: url(../images/bg_piano_lamps_and_laptop.png) no-repeat;
+}
+
+#fbg {
+    animation: parallax_fbg 60s infinite ease-in-out;
+    background: url(../images/fbg_piano_lamps_and_laptop.png) no-repeat;
+}
+
+#about .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 64px;
+}
+
+#about .section_title {
+    text-shadow: red -3px -3px 25px, #aa5000 -2px -2px, #ff8000 2px 2px;
+}
+
+.box {
+    color: whitesmoke;
+    margin: 0 16px;
+    max-width: 420px;
+    text-shadow: black 1px 1px 5px;
+}
+
+.box .title {
+    font-size: var(--sub_title);
+    font-family: OksFree;
+    text-align: center;
+    margin: 0;
+}
+
+.list_of_skills {
+    font-family: Mozart;
+    font-size: var(--text);
+    list-style-type: none;
+    padding: 0;
+    text-align:left;
+}
+
+.list_of_skills li {
+    padding: 2px 0;
+}
+
+.list_of_skills li::before {
+    content: "* ";
+}
+
+@keyframes parallax_bg {
+    0% { background-position: -50px bottom; }
+    50% { background-position: 50px bottom; }
+    100% { background-position: -50px bottom; }
+}
+
+@keyframes parallax_fbg {
+    0% { background-position: -100px bottom; }
+    50% { background-position: 100px bottom; }
+    100% { background-position: -100px bottom; }
+}
