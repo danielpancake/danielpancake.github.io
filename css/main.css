@@ -22,7 +22,7 @@
     --links: 18pt;
     --text: 20pt;
 
-    --copyright: 14pt;
+    --copyright: 16pt;
 }
 
 @media screen and (max-width: 600px) {
@@ -32,7 +32,7 @@
         --title_creative: 10vw;
         --text: 6vw;
 
-        --copyright: 4vw;
+        --copyright: 6vw;
     }
 }
 

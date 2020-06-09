@@ -24,10 +24,16 @@
     padding-right: 18px;
 }
 
-#somthing {
-    background-color: bisque;
+#banner {
     flex: 1;
     margin: 8px;
+    position: relative;
+}
+
+#banner img {
+    bottom:0;
+    position:absolute;
+    width:100%;
 }
 
 #contact form {
