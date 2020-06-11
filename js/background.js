@@ -6,15 +6,12 @@ class Background {
         this.size = size;
 
         this.show();
-        setInterval(() => this.show(), 20);
+        setInterval(() => this.show(), 30);
     }
 
     show () {
-        this.shift = (this.shift - 0.5) % this.size;
-        
-        $(this.element).css({
-            "background-position": + this.shift + "px " + this.shift + "px"
-        });
+        this.shift = --this.shift % this.size;
+        this.element.style.backgroundPosition = this.shift + "px " + this.shift + "px";
     };
 }
 

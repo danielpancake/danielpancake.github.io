@@ -8,26 +8,28 @@ class Highlight {
         setInterval(() => this.show(), 5000);
     }
 
-    setup () {
-        var letters = $(this.element).text().split("");
+    setup() {
+        var letters = this.element.textContent.split("");
+        this.element.textContent = "";
+
         var length = letters.length;
 
-        $(this.element).text("")
-
         for (var i = 0; i < length; i++) {
-            var span = $("<span/>").text(letters[i]);
-            span.appendTo(this.element);
+            var span = document.createElement("span");
+            span.innerHTML = letters[i];
+            
+            this.element.appendChild(span);
         }
     }
 
-    show () {
-        var spans = $(this.element).children();
+    show() {
+        var spans = this.element.children;
         var length = spans.length;
 
         for (var i = 0; i < length; i++) {
-            const span = $(spans[i]);
+            const span = spans[i];
 
-            setTimeout(function () { $(span).toggleClass('highlighted'); }, i * 100);
+            setTimeout(function () { span.classList.toggle("highlighted"); }, i * 100);
         }
     }
 }
@@ -38,7 +40,7 @@ function init() {
     if (elements != null) {
         var length = elements.length;
 
-        for (i = 0; i < length; i++) {
+        for (var i = 0; i < length; i++) {
             new Highlight(elements[i]);
         }
     }

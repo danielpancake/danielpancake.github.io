@@ -32,7 +32,7 @@
         --title_creative: 10vw;
         --text: 6vw;
 
-        --copyright: 6vw;
+        --copyright: 4vw;
     }
 }
 
@@ -79,11 +79,6 @@ section {
 section, footer {
     overflow: hidden;
     transition: box-shadow 0.25s;
-}
-
-#to_infinity_and_beyond {
-    position: fixed;
-    bottom:0;
 }
 
 #content-box {
@@ -139,4 +134,18 @@ section, footer {
 .highlighted {
     background-color: blue !important;
     color: whitesmoke;
+}
+
+.inner {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.25s;
+}
+
+.inner.hidden {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    border-top-width: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
 }

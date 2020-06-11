@@ -20,44 +20,9 @@
 
     <link rel="shortcut icon" href="images/favicon.png" type="image/png" />
 
-    <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/background.js"></script>
     <script type="text/javascript" src="js/highlight.js"></script>
     <script type="text/javascript" src="https://smtpjs.com/v3/smtp.js"></script>
-
-    <script>
-        $(function () {
-            // Copy menu options to mobile menu
-            $('#menu').children().clone().appendTo('#menu-mobile .inner');
-            // Hide mobile menu
-            $('.inner').hide();
-            // Set onclick listener
-            $('.toggler').click(
-                function () {
-                    $(this).toggleClass('active');
-                    $(this).next('.inner').stop().slideToggle(120);
-                }
-            );
-        });
-
-        function sendemail(name, email, subject, body) {
-            var message = name + " wrote to you: " + body;
-
-            if (email != "") { message += "Write back, " + email;}
-
-            Email.send({
-                SecureToken : "2d60c5e6-b738-4a95-8e38-45075cf81d32",
-                To : "inboxpancake@gmail.com", From : "inboxpancake@gmail.com",
-                Subject : subject,
-                Body : message
-            }).then(response => reload(response, name));
-        };
-
-        function reload(response, name) {
-            alert(response == "OK" ? "Thank you for you letter, " + name + "!" : "Error occurred!");
-            location.reload()
-        }
-    </script>
 </head>
 
 <body>
@@ -151,7 +116,7 @@
                     </li>
 
                     <div class="inner with_border description">
-                        <p>Dungeon template creating asset for GameMaker Studio 1.x</p>
+                        <p>Dungeon template creating asset for Game Maker Studio 1.x</p>
                         <br><br>
                         <p>You can find it on the <a href="https://github.com/DanielPancake/gmdungeon">_github_</a></p>
                     </div>
@@ -219,7 +184,17 @@
                     <h1 class="section_title">Contact</h1>
                     
                     <div style="display:flex;">
-                        <form onsubmit='$("#sender").prop("value", "Please, wait...").prop("disabled",true); sendemail($("#name").val(), $("#email").val(), $("#subject").val(), $("#body").val()); return false;''>
+                        <form onsubmit='
+                            document.getElementById("sender").disabled = true;
+                            document.getElementById("sender").value = "Please, wait..."
+
+                            sendemail(document.getElementById("name").value,
+                                      document.getElementById("email").value,
+                                      document.getElementById("subject").value,
+                                      document.getElementById("body").value);
+
+                            return false;'>
+
                             <div id="envelope">
                                 <label>What's your name?</label>
                                 <input id="name" placeholder="* For example, George" class="with_border" required="required" type="text">
@@ -246,5 +221,80 @@
         </footer>
     </div>
 </body>
+
+<script>
+    // Copy menu options to mobile menu
+    var menu = document.getElementById("menu").children;
+    var menu_mobile = document.getElementById("menu-mobile").getElementsByClassName("inner")[0];
+
+    for (var element of menu) {
+        menu_mobile.appendChild(element.cloneNode(true));
+    }
+
+    // Set up togglers and inners
+    var inners = document.getElementsByClassName("inner");
+    for (var element of inners) {
+        element.classList.add("hidden");
+    }
+
+    var togglers = document.getElementsByClassName("toggler");
+    for (const element of togglers) {
+        element.addEventListener("click",
+            function() {
+                var inner = findNextElementByClassName(element, "inner");
+
+                if (element.classList.contains("active")) {
+                    element.classList.remove("active");
+
+                    inner.style.height = "auto";
+
+                    var height = window.getComputedStyle(inner, null).getPropertyValue("height");
+                    inner.style.height = height;
+
+                    setTimeout(function() { inner.style.height = 0; }, 10);
+                    setTimeout(function() { inner.classList.add("hidden"); }, 200);
+                } else {
+                    element.classList.add("active");
+
+                    inner.style.height = "auto";
+                    var height = window.getComputedStyle(inner, null).getPropertyValue("height");
+
+                    inner.style.height = 0;
+                    setTimeout(function() {
+                        inner.classList.remove("hidden");
+                        inner.style.height = height;
+                    }, 10);
+                }
+            }
+        );
+    }
+
+    function findNextElementByClassName(element, className) {
+        var next = element.nextElementSibling;
+
+        if (next.classList.contains(className)) {
+            return next;
+        } else {
+            findNextElementByClassName(next, className);
+        }
+    }
+
+    function sendemail(name, email, subject, body) {
+        var message = name + " wrote to you: " + body;
+
+        if (email != "") { message += "Write back, " + email;}
+
+        Email.send({
+            SecureToken : "2d60c5e6-b738-4a95-8e38-45075cf81d32",
+            To : "inboxpancake@gmail.com", From : "inboxpancake@gmail.com",
+            Subject : subject, Body : message
+        }).then(response => reload(response, name));
+    }
+
+    function reload(response, name) {
+        alert(response == "OK" ? "Thank you for you letter, " + name + "!" : "Error occurred!");
+        location.reload()
+    }
+</script>
 
 </html>
