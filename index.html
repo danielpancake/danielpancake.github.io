@@ -104,7 +104,7 @@
                     </li>
 
                     <div class="inner with_border description">
-                        <p>ShunyInu - an android gallery app that shows random images of Shiba Inu from <a target="_blank" href="https://shibe.online">shibe.online</a> website.</p>
+                        <p>ShinyInu - an android gallery app that shows random images of Shiba Inu from <a target="_blank" href="https://shibe.online">shibe.online</a> website.</p>
                         <br><br>
                         <p>Features:</p>
                         <p>- Open-source android application</p>
@@ -241,8 +241,13 @@
 
     // Set up togglers and inners
     var inners = document.getElementsByClassName("inner");
-    for (var element of inners) {
+    for (const element of inners) {
         element.classList.add("hidden");
+        element.addEventListener("transitionend", e => autoheight(e, element), false);
+    }
+
+    function autoheight(e, element) {
+        if (e.propertyName == "height") { element.style.height = "auto"; }
     }
 
     var togglers = document.getElementsByClassName("toggler");
@@ -251,27 +256,23 @@
             function() {
                 var inner = findNextElementByClassName(element, "inner");
 
-                if (element.classList.contains("active")) {
-                    element.classList.remove("active");
-
-                    inner.style.height = "auto";
-
-                    var height = window.getComputedStyle(inner, null).getPropertyValue("height");
-                    inner.style.height = height;
-
-                    setTimeout(function() { inner.style.height = 0; }, 10);
-                    setTimeout(function() { inner.classList.add("hidden"); }, 200);
-                } else {
+                if (!element.classList.contains("active")) {
                     element.classList.add("active");
 
-                    inner.style.height = "auto";
-                    var height = window.getComputedStyle(inner, null).getPropertyValue("height");
+                    var current_height = window.getComputedStyle(inner, null).getPropertyValue("height");
 
-                    inner.style.height = 0;
-                    setTimeout(function() {
-                        inner.classList.remove("hidden");
-                        inner.style.height = height;
-                    }, 10);
+                    inner.classList.remove("hidden");
+
+                    inner.style.height = "auto";
+                    var initial_height = window.getComputedStyle(inner, null).getPropertyValue("height");
+                    inner.style.height = current_height;
+
+                    setTimeout(function() { inner.style.height = initial_height; }, 50);
+                } else {
+                    inner.style.height = window.getComputedStyle(inner, null).getPropertyValue("height");
+
+                    element.classList.remove("active");
+                    setTimeout(function() { inner.classList.add("hidden"); }, 50);
                 }
             }
         );
