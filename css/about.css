@@ -47,7 +47,7 @@
 }
 
 .list_of_skills {
-    font-family: Mozart;
+    font-family: "Mozart", "PixelUnicode";
     font-size: var(--text);
     list-style-type: none;
     padding: 0;

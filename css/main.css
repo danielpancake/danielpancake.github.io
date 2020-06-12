@@ -12,6 +12,13 @@
     font-style: normal;
 }
 
+@font-face { /* Author: ivancr72 */
+    font-family: "PixelUnicode";
+    src: url("../webfonts/PixelUnicode.woff") format("woff"), url("../webfonts/PixelUnicode.woff2") format("woff2"), url("../webfonts/PixelUnicode.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
 :root {
     --theme-color: 240;
 
@@ -139,10 +146,13 @@ section, footer {
 .inner {
     height: 0;
     overflow: hidden;
-    transition: height 0.25s;
+
+    transition: all;
+    transition-duration: 0.25s;
 }
 
 .inner.hidden {
+    height: 0 !important;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
     border-top-width: 0 !important;

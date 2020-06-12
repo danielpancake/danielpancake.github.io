@@ -23,7 +23,7 @@
 #portfolio li {
     border-bottom: none;
     border-radius: 5px 5px 0 0;
-    font-family: "Mozart";
+    font-family: "Mozart", "PixelUnicode";
     height: 68px;
 }
 
@@ -82,7 +82,7 @@ li:hover > .shape p {
     background-color: whitesmoke;
     border-top: none;
     border-radius: 0 0 5px 5px;
-    font-family: "Mozart", "Webdings";
+    font-family: "Mozart", "PixelUnicode";
 
     padding: 5px 20px 10px 20px;
 }

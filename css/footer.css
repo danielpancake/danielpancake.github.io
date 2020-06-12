@@ -9,7 +9,7 @@ footer {
 footer p {
     color: white;
     display: table-cell;
-    font-family: "Mozart";
+    font-family: "Mozart", "PixelUnicode";
     font-size: var(--copyright);
     margin: 0;
     padding: 0;

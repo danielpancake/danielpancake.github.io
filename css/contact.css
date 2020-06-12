@@ -42,7 +42,7 @@
 
 #contact label {
     color: whitesmoke;
-    font-family: Mozart;
+    font-family: "Mozart", "PixelUnicode";
     font-size: 22pt;
     text-shadow: black 1px 1px 5px;
 }
@@ -53,7 +53,7 @@
 }
 
 #contact input, #contact textarea {
-    font-family: Mozart;
+    font-family: "Mozart", "PixelUnicode";
     font-size: var(--links);
     margin: 0 auto;
     margin-bottom: 8px;

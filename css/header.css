@@ -13,7 +13,7 @@
 #header a {
     color: whitesmoke;
     display: block;
-    font-family: Mozart;
+    font-family: "Mozart", "PixelUnicode";
     font-size: var(--links);
     padding: 10px;
     text-align: center;
