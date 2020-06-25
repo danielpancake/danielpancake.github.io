@@ -92,11 +92,6 @@ li:hover > .shape p {
     margin: 0;
 }
 
-#additional_blocks {
-    display: flex;
-    flex-direction: column;
-}
-
 #additional_blocks .block {
     color: whitesmoke;
     font-family: "OksFree";
@@ -139,13 +134,8 @@ li:hover > .shape p {
     text-decoration: underline black;
 }
 
-#epic {
-    height: 100%;
-}
-
 @media screen and (max-width: 600px) {
     #additional_blocks { margin-top: 4px; }
-    #epic { display: none; }
 }
 
 @media screen and (min-width: 601px) {

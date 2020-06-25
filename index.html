@@ -7,10 +7,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
     <meta name="author" content="danielpancake" />
-    <meta name="description" content="danielpancake is.. me! I'm junior developer and web designer - and this is my website." />
+    <meta name="description" content="danielpancake is.. me! I'm junior developer and web designer, and this is my website." />
     <meta name="google" content="notranslate" />
     <meta name="google-site-verification" content="JHRMulxU0O2n3QKi7Wkgrxsv-c8xfYE8l_dpI12soAs" />
     <meta name="googlebot" content="index, follow" />
+    <meta name="keywords" content="danielpancake, daniel pancake, cubicus, shinyinu, games, devlog, gamejolt" />
     <meta name="robots" content="all" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     <meta name="yandex" content="index, follow" />
@@ -21,8 +22,8 @@
     <link rel="stylesheet" href="css/home.css" />
     <link rel="stylesheet" href="css/about.css" />
     <link rel="stylesheet" href="css/portfolio.css" />
-    <link rel="stylesheet" href="css/support.css" />
     <link rel="stylesheet" href="css/contact.css" />
+    <link rel="stylesheet" href="css/social.css" />
     <link rel="stylesheet" href="css/footer.css" />
 
     <link rel="shortcut icon" href="images/favicon.png" type="image/png" />
@@ -47,11 +48,16 @@
                 <li><a href="#about">About me</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="https://www.tumblr.com/blog/danielpancake" target="_blank">Blog</a></li>
             </ul>
         </section>
 
         <section id="home">
             <div class="wrapper">
+                <div id="lang">
+                    <a href="index-ru.html"><img src="images/ic_language_switcher.png"> Не понимаете, что написано?</a>
+                </div>
+
                 <img id="me" src="images/author.png">
 
                 <div id="creative">
@@ -94,6 +100,7 @@
         <section id="portfolio" class="background" data-size="256">
             <h1 class="section_title">Portfolio</h1>
 
+            <!--I'm dying in need of CMS for all this-->
             <div class="wrapper">
                 <ul>
                     <li class="toggler with_border"
@@ -143,7 +150,7 @@
                         <br><br>
                         <p>This is the description of the game I made for Ludum Dare 42 contest back in 2018</p>
                         <br><br>
-                        <p>You can find it on the <a target="_blank" href="https://gamejolt.com/games/drhelper/361111">_gamejolt_</a> but frankly it's akward.</p>
+                        <p>You can find it on the <a target="_blank" href="https://gamejolt.com/games/drhelper/361111">_gamejolt_</a> but frankly it's awkward.</p>
                     </div>
 
                     <li class="toggler with_border"
@@ -154,11 +161,24 @@
                     </li>
 
                     <div class="inner with_border description">
-                        <p>"Someone who looks like the devil himself appers on the screen of your computer. He says that something is broken. Should you listen to him? What can this lead us to? You have to find out."</p>
+                        <p>"Someone who looks like the devil himself appears on the screen of your computer. He says that something is broken. Should you listen to him? What can this lead us to? You have to find out."</p>
                         <br>
-                        <p>This is the description of my first game project ever made way back in 2017. It's weird, akward and poorly designed.. but still I <b>love</b> that game very much. It was very intersting experience for me.</p>
+                        <p>This is the description of my first game project ever made way back in 2017. It's weird, awkward and poorly designed.. but still I <b>love</b> that game very much. It was very intersting experience for me.</p>
                         <br><br>
                         <p>You can check it out on <a target="_blank" href="https://gamejolt.com/games/nocubicus/260121">_gamejolt_</a></p>
+                    </div>
+
+                    <li class="toggler with_border"
+                        style="background: url(images/projects/edg.png) no-repeat; background-position: center; background-size: cover;">
+                        <div class="shape">
+                            <p><span class="title">Epic Dungeon Game</span><br>Turn-based grid dungeon rpg</p>
+                        </div>
+                    </li>
+
+                    <div class="inner with_border description">
+                        <p>There is only devlog for now.</p>
+                        <br>
+                        <p>You can find it on the <a target="_blank" href="https://gamejolt.com/games/edg/507835">_gamejolt_</a></p>
                     </div>
 
                     <li class="toggler with_border"
@@ -191,10 +211,11 @@
                 <div class="wrapper">
                     <h1 class="section_title">Contact</h1>
                     
-                    <div style="display:flex;">
+                    <div id="flex-container">
+                        <div id="banner"><span class="highlight">..or check my social media =></span></div>
                         <form onsubmit='
-                            document.getElementById("sender").disabled = true;
-                            document.getElementById("sender").value = "Please, wait..."
+                            var sender = document.getElementById("sender");
+                            sender.disabled = true; sender.value = "Please, wait..."
 
                             sendemail(document.getElementById("name").value,
                                       document.getElementById("email").value,
@@ -224,86 +245,22 @@
             </div>
         </section>
 
+        <div id="social" class="background" data-size="256">
+            <div class="wrapper">
+                <a href="https://ko-fi.com/danielpancake" target="_blank"><img src="images/ic_kofi.png"></a>
+                <a href="https://gamejolt.com/@danielpancake" target="_blank"><img src="images/ic_gamejolt.png"></a>
+                <a href="https://github.com/danielpancake" target="_blank"><img src="images/ic_github.png"></a>
+                <a href="https://twitter.com/dpancakestuff" target="_blank"><img src="images/ic_twitter.png"></a>
+                <a href="https://vk.com/dpancakestuff" target="_blank"><img src="images/ic_vk.png"></a>
+                <a href="https://instagram.com/dpancakestuff" target="_blank"><img src="images/ic_inst.png"></a>
+                <a href="https://tumblr.com/danielpancake" target="_blank"><img src="images/ic_tumblr.png"></a>
+            </div>
+        </div>
+
         <footer>
-            <p>Copyright 2020 danielpancake<p>
+            <p>Copyright danielpancake 2020</p>
         </footer>
     </div>
 </body>
-
-<script>
-    // Copy menu options to mobile menu
-    var menu = document.getElementById("menu").children;
-    var menu_mobile = document.getElementById("menu-mobile").getElementsByClassName("inner")[0];
-
-    for (var element of menu) {
-        menu_mobile.appendChild(element.cloneNode(true));
-    }
-
-    // Set up togglers and inners
-    var inners = document.getElementsByClassName("inner");
-    for (const element of inners) {
-        element.classList.add("hidden");
-        element.addEventListener("transitionend", e => autoheight(e, element), false);
-    }
-
-    function autoheight(e, element) {
-        if (e.propertyName == "height") { element.style.height = "auto"; }
-    }
-
-    var togglers = document.getElementsByClassName("toggler");
-    for (const element of togglers) {
-        element.addEventListener("click",
-            function() {
-                var inner = findNextElementByClassName(element, "inner");
-
-                if (!element.classList.contains("active")) {
-                    element.classList.add("active");
-
-                    var current_height = window.getComputedStyle(inner, null).getPropertyValue("height");
-
-                    inner.classList.remove("hidden");
-
-                    inner.style.height = "auto";
-                    var initial_height = window.getComputedStyle(inner, null).getPropertyValue("height");
-                    inner.style.height = current_height;
-
-                    setTimeout(function() { inner.style.height = initial_height; }, 50);
-                } else {
-                    inner.style.height = window.getComputedStyle(inner, null).getPropertyValue("height");
-
-                    element.classList.remove("active");
-                    setTimeout(function() { inner.classList.add("hidden"); }, 50);
-                }
-            }
-        );
-    }
-
-    function findNextElementByClassName(element, className) {
-        var next = element.nextElementSibling;
-
-        if (next.classList.contains(className)) {
-            return next;
-        } else {
-            findNextElementByClassName(next, className);
-        }
-    }
-
-    function sendemail(name, email, subject, body) {
-        var message = name + " wrote to you: " + body;
-
-        if (email != "") { message += "Write back, " + email;}
-
-        Email.send({
-            SecureToken : "2d60c5e6-b738-4a95-8e38-45075cf81d32",
-            To : "inboxpancake@gmail.com", From : "inboxpancake@gmail.com",
-            Subject : subject, Body : message
-        }).then(response => reload(response, name));
-    }
-
-    function reload(response, name) {
-        alert(response == "OK" ? "Thank you for you letter, " + name + "!" : "Error occurred!");
-        location.reload()
-    }
-</script>
-
+<script type="text/javascript" src="js/script.js"></script>
 </html>

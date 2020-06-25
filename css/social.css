@@ -1,0 +1,26 @@
+#social {
+    background-color: #242424;
+}
+
+#social .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 16px 8px 0 8px;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+#social img {
+    image-rendering: pixelated;
+    transition: 0.1s;
+    /* This line fixes laggy transitions */
+    transform: translateZ(1);
+    width: 48px;
+}
+
+#social img:hover {
+    transform: scale(1.28);
+    filter: drop-shadow(0 0 5px #424242);
+}

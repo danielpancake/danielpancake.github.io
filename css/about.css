@@ -7,18 +7,20 @@
     background-position: bottom;
     background-size: contain;
     margin: 0 auto;
-    max-width: 960px;
+    max-width: 1000px;
     min-height: inherit;
 }
 
 #bg {
     animation: parallax_bg 60s infinite ease-in-out;
     background: url(../images/bg_piano_lamps_and_laptop.png) no-repeat;
+    image-rendering: pixelated;
 }
 
 #fbg {
     animation: parallax_fbg 60s infinite ease-in-out;
     background: url(../images/fbg_piano_lamps_and_laptop.png) no-repeat;
+    image-rendering: pixelated;
 }
 
 #about .wrapper {
@@ -26,6 +28,7 @@
     flex-wrap: wrap;
     justify-content: center;
     padding-bottom: 64px;
+    margin: 0 16px;
 }
 
 #about .section_title {
@@ -35,7 +38,7 @@
 .box {
     color: whitesmoke;
     margin: 0 16px;
-    max-width: 420px;
+    max-width: 450px;
     text-shadow: black 1px 1px 5px;
 }
 

@@ -20,24 +20,37 @@
     background-size: contain;
 }
 
+#flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 #envelope {
     padding-right: 18px;
 }
 
 #banner {
-    flex: 1;
-    margin: 8px;
-    position: relative;
+    animation: banner 30s infinite;
+    color: whitesmoke;
+    font-family: "Mozart", "PixelUnicode";
+    font-size: 22pt;
+    padding: 0;
+    margin-right: 16px;
+    text-align: end;
+    text-shadow: black 1px 1px 5px;
+    writing-mode: vertical-rl;
 }
 
-#banner img {
-    bottom:0;
-    position:absolute;
-    width:100%;
+@keyframes banner {
+    0% { transform: translateY(-150%); }
+    40% { transform: translateY(0); }
+    60% { transform: translateY(0); }
+    100% { transform: translateY(150%); }
 }
 
-#contact form {
-    flex: 3;
+form {
+    max-width: 600px;
 }
 
 #contact label {
@@ -64,7 +77,6 @@
     padding-left: 8px;
     resize: vertical;
     width: 100%;
-    white-space: s;
 }
 
 @media screen and (max-width: 600px) {

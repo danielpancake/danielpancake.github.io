@@ -2,6 +2,43 @@
     background: url(../images/bg_vhs.gif);
     background-position: bottom;
     background-size: cover;
+    position: relative;
+}
+
+#lang {
+    animation: hint 2s ease-in-out;
+    animation-delay: 5s;
+    animation-fill-mode: forwards;
+    background-color: #242424;
+    border: ridge 4px whitesmoke;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    position: absolute;
+    transform: translateY(-100%);
+}
+
+#lang a {
+    color: white;
+    font-family: "Mozart", "PixelUnicode";
+    font-size: var(--hint);
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+
+#lang a:hover {
+    text-decoration: underline;
+}
+
+#lang a img {
+    image-rendering: pixelated;
+    height: var(--hint);
+    transform: translateY(25%);
+}
+
+@keyframes hint {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
 }
 
 #home .wrapper {
@@ -14,12 +51,16 @@
     justify-content: center;
     margin: 0 auto;
     max-width: 960px;
-    position: relative;
     overflow: hidden;
+    padding-top: 16px;
+    position: relative;
+}
+
+.pointer_animation {
+    animation: floating 10s infinite;
 }
 
 #pointer {
-    animation: floating 10s infinite;
     position: absolute;
     width: 64px;
 }
@@ -40,6 +81,12 @@
 }
 
 @media screen and (min-width: 601px) {
+    #lang {
+        padding: 8px;
+        right: 16px;
+        top: -8px;
+    }
+
     #me {
         max-width: 360px;
         padding: 10px 32px 0 10px;
@@ -56,6 +103,12 @@
 }
 
 @media screen and (max-width: 600px) {
+    #lang {
+        padding: 1.5vw;
+        right: 1vw;
+        top: -1vw;
+    }
+
     #me { 
         padding: 1vw 5vw 0 1vw;
         width: 35vw;

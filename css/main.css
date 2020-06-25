@@ -28,6 +28,7 @@
     --title_creative: 52pt;
     --links: 18pt;
     --text: 20pt;
+    --hint: 20pt;
 
     --copyright: 16pt;
 }
@@ -38,8 +39,9 @@
         --sub_title: 8vw;
         --title_creative: 10vw;
         --text: 6vw;
+        --hint: 5vw;
 
-        --copyright: 5vw;
+        --copyright: 4.5vw;
     }
 }
 
@@ -58,6 +60,7 @@ blink {
 
 html {
     scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
 }
 
 body {
@@ -80,7 +83,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 section {
-    border-bottom: 2px solid whitesmoke;
+    border-bottom: ridge 4px whitesmoke;
 }
 
 section, footer {
