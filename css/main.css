@@ -59,12 +59,12 @@ blink {
 }
 
 html {
+    background-image: url(../images/bg_transparent.png);
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
 }
 
 body {
-    background: url(../images/bg_transparent.png);
     margin: 0 auto;
     max-width: 2160px;
     padding: 1vw;
