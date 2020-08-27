@@ -14,9 +14,7 @@
 
 #social img {
     image-rendering: pixelated;
-    transition: 0.1s;
-    /* This line fixes laggy transitions */
-    transform: translateZ(1);
+    transition: 0.2s;
     width: 48px;
 }
 

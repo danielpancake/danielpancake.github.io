@@ -162,3 +162,8 @@ section, footer {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
 }
+
+.project-banner {
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}

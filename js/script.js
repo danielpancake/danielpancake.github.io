@@ -110,3 +110,7 @@ setInterval(function() {
 // Sync pointer animation with highlighting
 var pointer = document.getElementById("pointer");
 pointer.classList.add("pointer_animation");
+
+function sendfeedback() {
+    sendemail(document.getElementById("name").value, document.getElementById("email").value, document.getElementById("subject").value, document.getElementById("body").value);
+}
