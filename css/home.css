@@ -97,11 +97,11 @@
     }
 
     @keyframes floating {
-        0% { transform: translate(-30px, 240px); }
-        7% { transform: translate(270px, 240px); }
-        50% { transform: translate(230px, 100px); }
-        70% { transform: translate(150px, 150px); }
-        100% { transform: translate(-30px, 240px); }
+        0% { transform: translate(-30px, 180px); }
+        7% { transform: translate(270px, 180px); }
+        50% { transform: translate(230px, 40px); }
+        70% { transform: translate(150px, 90px); }
+        100% { transform: translate(-30px, 180px); }
     }
 }
 
@@ -116,13 +116,14 @@
         padding: 1vw 5vw 0 1vw;
         width: 35vw;
     }
+    
     #pointer { width: 10vw; }
 
     @keyframes floating {
-        0% { transform: translate(-3vw, 35vw); }
-        7% { transform: translate(40vw, 35vw); }
-        50% { transform: translate(36vw, 18vw); }
-        70% { transform: translate(20vw, 20vw); }
-        100% { transform: translate(-3vw, 35vw);  }
+        0% { transform: translate(-5vw, 25vw); }
+        7% { transform: translate(37vw, 25vw); }
+        50% { transform: translate(35vw, 8vw); }
+        70% { transform: translate(25vw, 10vw); }
+        100% { transform: translate(-5vw, 25vw);  }
     }
 }
