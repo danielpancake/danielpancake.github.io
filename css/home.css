@@ -31,9 +31,12 @@
 }
 
 #lang a img {
-    image-rendering: pixelated;
     height: var(--hint);
     transform: translateY(25%);
+}
+
+#me {
+    image-rendering: auto;
 }
 
 @keyframes hint {

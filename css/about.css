@@ -14,13 +14,11 @@
 #bg {
     animation: parallax_bg 60s infinite ease-in-out;
     background: url(../images/bg_piano_lamps_and_laptop.png) no-repeat;
-    image-rendering: pixelated;
 }
 
 #fbg {
     animation: parallax_fbg 60s infinite ease-in-out;
     background: url(../images/fbg_piano_lamps_and_laptop.png) no-repeat;
-    image-rendering: pixelated;
 }
 
 #about .wrapper {

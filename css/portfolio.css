@@ -141,7 +141,7 @@ li:hover > .shape p {
 @media screen and (min-width: 601px) {
     #portfolio .wrapper {
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         justify-content: center;
     }
     #portfolio ul { flex: 3; }

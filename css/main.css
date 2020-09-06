@@ -58,6 +58,11 @@ blink {
     color: whitesmoke;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
 html {
     background-image: url(../images/bg_transparent.png);
     scroll-behavior: smooth;
@@ -65,6 +70,8 @@ html {
 }
 
 body {
+    cursor: url(../images/cursor.png), auto;
+    image-rendering: pixelated;
     margin: 0 auto;
     max-width: 2160px;
     padding: 1vw;
@@ -91,6 +98,22 @@ section, footer {
     transition: box-shadow 0.25s;
 }
 
+ul {
+    margin: 32px 0;
+}
+
+label {
+    cursor: url(../images/cursor.png), auto;
+}
+
+input, textarea {
+    cursor: url(../images/cursor_selection.png), auto;
+}
+
+input[type=submit], a {
+    cursor: url(../images/cursor_pointer.png), auto;
+}
+
 #content-box {
     -webkit-box-shadow: 0 0 10px black;
     box-shadow: 0 0 10px black;
@@ -113,7 +136,7 @@ section, footer {
 }
 
 .toggler {
-    cursor: pointer;
+    cursor: url(../images/cursor_pointer.png), auto;
 
     -webkit-touch-callout: none;
     -webkit-user-select:   none;

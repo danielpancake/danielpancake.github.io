@@ -13,7 +13,6 @@
 }
 
 #social img {
-    image-rendering: pixelated;
     transition: 0.2s;
     width: 48px;
 }
