@@ -1,31 +1,38 @@
 class Background {
-    constructor(element, size) {
-        this.shift = 0;
-
+    constructor(element, size, duration) {
         this.element = element;
         this.size = size;
-
-        this.show();
-        setInterval(() => this.show(), 30);
+        this.duration = (duration == null ? 10 : duration);
     }
 
-    show () {
-        this.shift = --this.shift % this.size;
-        this.element.style.backgroundPosition = this.shift + "px " + this.shift + "px";
+    reset() {
+        this.element.style.transition = "none";
+        this.element.style.backgroundPosition = "0px 0px";
+    };
+
+    show() {
+        this.element.style.transition = this.duration + "s linear";
+        this.element.style.backgroundPosition = this.size + "px " + this.size + "px";
     };
 }
 
 function init() {
     var elements = document.querySelectorAll(".background");
 
-    if (elements != null) {
-        var length = elements.length;
+    elements.forEach((element) => {
+        var size = JSON.parse(element.getAttribute("data-size"));
+        var duration = JSON.parse(element.getAttribute("data-duration"));
+        var backgound = new Background(element, size, duration);
 
-        for (var i = 0; i < length; i++) {
-            var size = JSON.parse(elements[i].getAttribute("data-size"));
-            new Background(elements[i], size);
-        }
-    }
+        backgound.show();
+
+        element.addEventListener("transitionend", function(event) {
+            if (event.propertyName == "background-position-x") {
+                backgound.reset();
+                setTimeout(() => backgound.show(), 2);
+            }
+        });
+    });
 }
 
 document.addEventListener("DOMContentLoaded", init);
