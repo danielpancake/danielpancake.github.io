@@ -5,7 +5,7 @@
     <title>danielpancake</title>
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+
     <meta name="author" content="danielpancake" />
     <meta name="description" property="og:description" content="danielpancake is.. me! I'm junior developer and web designer. This is my website." />
     <meta name="google" content="notranslate" />
@@ -27,16 +27,18 @@
     <link rel="stylesheet" href="css/social.css" />
     <link rel="stylesheet" href="css/footer.css" />
 
-    <link rel="shortcut icon" href="images/favicon.png" type="image/png" />
+    <meta name="theme-color" content="#242424" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#242424" />
 
-    <script type="text/javascript" src="js/background.js"></script>
-    <script type="text/javascript" src="js/highlight.js"></script>
+    <link rel="shortcut icon" href="images/favicon.png" type="image/png" />
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
     <script type="text/javascript" src="https://smtpjs.com/v3/smtp.js"></script>
 </head>
 
 <body>
     <div id="content-box">
-        <section id="header">
+        <section id="header" class="color-changer" data-color="#242424">
             <ul id="menu-mobile">
                 <li id="menu-toggle" class="toggler">
                     <a href="#"><img src="images/ic_menu.png"></a>
@@ -56,7 +58,7 @@
         <section id="home">
             <div class="wrapper">
                 <div id="lang">
-                    <a href="index-ru.html"><img src="images/ic_language_switcher.png"> Не понимаете, что написано?</a>
+                    <a href="index-ru.html"><img src="images/ic_language_switcher.png">_Сменить язык_</a>
                 </div>
 
                 <img id="me" src="images/author.png">
@@ -68,7 +70,7 @@
             </div>
         </section>
 
-        <section id="about">
+        <section id="about" class="color-changer" data-color="#100000">
             <div class="parallax" id="bg">
                 <div class="parallax" id="fbg">
 
@@ -78,7 +80,7 @@
                             <p class="title">👋<u>Hi! I'm danielpancake</u><br>and these are my <u>skills</u></p>
 
                             <ul class="list_of_skills">
-                                <li>Game development on <span class="highlight">GameMaker Studio</span></li>
+                                <li>Game development with <span class="highlight">GameMaker Studio</span></li>
                                 <li>Coming up with funny and weird designs and concepts</li>
                                 <li>Android app programming with <span class="highlight">Java</span></li>
                                 <li>Web development and designing with <span class="highlight">HTML,CSS and javascript</span></li>
@@ -101,33 +103,31 @@
             </div>
         </section>
 
-        <section id="portfolio" class="background" data-size="256">
+        <section id="portfolio" class="background color-changer" data-color="#171515" data-size="256" data-duration="10">
             <h1 class="section_title">Portfolio</h1>
 
             <!--I'm dying in need of CMS for all this-->
             <div class="wrapper">
                 <ul>
-                    <li class="toggler with_border project-banner"
-                        style="background: url(images/projects/shiny.png); background-position: center;">
+                    <li class="toggler with_border project-banner" style="background: url(images/projects/shiny.png); background-position: center;">
                         <div class="shape">
                             <p><span class="title">ShinyInu</span><br>An android gallery app</p>
                         </div>
                     </li>
-
+                    
                     <div class="inner with_border description">
                         <p>ShinyInu - an android gallery app that shows random images of Shiba Inu from <a target="_blank" href="https://shibe.online">shibe.online</a> website.</p>
-                        <br><br>
+                        <br>
                         <p>Features:</p>
                         <p>- Open-source android application</p>
                         <p>- Ability to delete bookmarked images from internal storage and re-download them later</p>
                         <p>- Built-in image viewer</p>
-                        <br><br>
-                        <p>Download release .apk file from <a target="_blank" href="danielpancakeshinyinu/releases">_github_</a></p>
-                        <p>ShinyInu's repository on the <a target="_blank" href="danielpancakeshinyinu">_github_</a></p>
+                        <br>
+                        <p>Download release .apk file from <a target="_blank" href="https://github.com/DanielPancake/shinyinu/releases">_github_</a></p>
+                        <p>ShinyInu's repository on the <a target="_blank" href="https://github.com/DanielPancake/shinyinu">_github_</a></p>
                     </div>
 
-                    <li class="toggler with_border project-banner"
-                        style="background: url(images/projects/dungeon.png); background-position: center;">
+                    <li class="toggler with_border project-banner" style="background: url(images/projects/dungeon.png); background-position: center;">
                         <div class="shape">
                             <p><span class="title">gmdungeon</span><br>Dungeon template generator for GameMaker Studio</p>
                         </div>
@@ -137,34 +137,35 @@
                         <p>Dungeon template creating asset for GameMaker: Studio 1.4 and GameMaker Studio 2</p>
                         <br>
                         <p>You can use this asset in any project requiring dungeon generation. It is easy to use!</p>
-                        <br><br>
+                        <br>
                         <p>Features:</p>
                         <p>- Creating random procedual generated dungeon</p>
                         <p>- Adding custom room types and icons for minimap</p>
                         <p>- Using masks to define dungeon's shape</p>
-                        <br><br>
+                        <br>
                         <p>You can find it on the <a target="_blank" href="danielpancakegmdungeon">_github_</a></p>
                     </div>
 
-                    <li class="toggler with_border project-banner"
-                        style="background: url(images/projects/drhelper.png); background-position: center;">
+                    <li class="toggler with_border project-banner" style="background: url(images/projects/drhelper.png); background-position: center;">
                         <div class="shape">
                             <p><span class="title">Dr.Helper</span><br>Game for Ludum Dare 42 contest</p>
                         </div>
                     </li>
 
                     <div class="inner with_border description">
-                        <p>"Do you want to delete a dangerous virus from your computer, but have no money for expensive software? Let us introduce our latest invention - the best free antivirus program, made just in two days - Dr. Helper. He knows more than 1000000 types of malwares!!! 350000 types of spying programs and tons of jokes.</p>
+                        <p>"Do you want to remove a dangerous virus from your computer, but don't have any money for an expensive software? Let us introduce our latest invention - the best free antivirus program, made just in two days - Dr. Helper. He knows more than
+                        1.000.000 types of malwares! 350.000 types of spying programs and tons of jokes.</p>
                         <br>
-                        <p>So, if there's any problem - Dr. Helper can help you. And not just you but your friends and even your grandma to defeat every type of viruses on the computer, microwave and java-based mobile phone."</p>
+                        <p>So, if there is a problem - Dr. Helper can help you! He will help you, your friends and even your grandma defeat every type of computer, microwave and java-based mobile phone viruses.</p>
+                        <br>
+                        <p>Keep viruses away, get Dr.Helper today!"</p>
                         <br><br>
                         <p>This is the description of the game I made for the Ludum Dare 42 contest back in 2018. First experience in game speed-development.</p>
-                        <br><br>
+                        <br>
                         <p>You can find it on the <a target="_blank" href="https://gamejolt.com/games/drhelper/361111">_gamejolt_</a></p>
                     </div>
 
-                    <li class="toggler with_border project-banner"
-                        style="background: url(images/projects/old.png); background-position: center;">
+                    <li class="toggler with_border project-banner" style="background: url(images/projects/old.png); background-position: center;">
                         <div class="shape">
                             <p><span class="title">Cubicus DEMO</span><br>Strange looking indie demo</p>
                         </div>
@@ -172,38 +173,37 @@
 
                     <div class="inner with_border description">
                         <p>"Someone who looks like the devil himself appears on the screen of your computer. He says that something is broken. Should you listen to him? What can this lead us to? You have to find out."</p>
-                        <br>
-                        <p>This is the description of my first game project ever made. It's weird but still I like it. It was very intersting experience for me.</p>
                         <br><br>
-                        <p>You can check it out on <a target="_blank" href="https://gamejolt.com/games/nocubicus/260121">_gamejolt_</a></p>
+                        <p>This is the description of my first game project ever made. It's weird but still I like it. It was very intersting experience for me.</p>
+                        <br>
+                        <p>You can check it out on the <a target="_blank" href="https://gamejolt.com/games/nocubicus/260121">_gamejolt_</a></p>
                     </div>
 
-                    <li class="toggler with_border project-banner"
-                        style="background: url(images/projects/edg.png); background-position: center;">
+                    <li class="toggler with_border project-banner" style="background: url(images/projects/edg.png); background-position: center;">
                         <div class="shape">
                             <p><span class="title">Epic Dungeon Game</span><br>Turn-based grid dungeon rpg</p>
                         </div>
                     </li>
 
                     <div class="inner with_border description">
-                        <p>There is only devlog for now.</p>
+                        <p>Monsters and explostions ahead! This is turn-based game which takes place in the underground world. There is only devlog for now.</p>
+                        <br>
                         <p>You can find it on the <a target="_blank" href="https://gamejolt.com/games/edg/507835">_gamejolt_</a></p>
                     </div>
 
-                    <li class="toggler with_border project-banner"
-                        style="background: url(images/projects/tedxyouth_website.png); background-position: right;">
+                    <li class="toggler with_border project-banner" style="background: url(images/projects/tedxyouth_website.png); background-position: right;">
                         <div class="shape">
                             <p><span class="title">TEDxYouth at Limassol</span><br>Coding worth spreading!</p>
                         </div>
                     </li>
 
                     <div class="inner with_border description">
-                        <p>I made a website for TEDxYouth event in Limassol.</p>
+                        <p>I made the website for TEDxYouth event @ Agiou Andreou.</p>
+                        <br>
                         <p>Check it out <a target="_blank" href="https://danielpancake.github.io/tedxyouth-agiouandreou">here</a> or on the <a target="_blank" href="https://github.com/danielpancake/tedxyouth-agiouandreou">_github_</a></p>
                     </div>
 
-                    <li class="toggler with_border project-banner"
-                        style="background: url(images/projects/little_website.png); background-position: right;">
+                    <li class="toggler with_border project-banner" style="background: url(images/projects/little_website.png); background-position: right;">
                         <div class="shape">
                             <p><span class="title">Even this website</span><br>yeah, it's open-source too</p>
                         </div>
@@ -227,11 +227,11 @@
             </div>
         </section>
 
-        <section id="contact">
+        <section id="contact" class="color-changer" data-color="darkcyan">
             <div id="web">
                 <div class="wrapper">
                     <h1 class="section_title">Contact</h1>
-                    
+
                     <div id="flex-container">
                         <div id="banner"><span class="highlight">..or check my social media =></span></div>
                         <form onsubmit='var sender = document.getElementById("sender");
@@ -275,5 +275,10 @@
         </footer>
     </div>
 </body>
+<script type="text/javascript" src="js/background.js"></script>
+<script type="text/javascript" src="js/classes.js"></script>
+<script type="text/javascript" src="js/color-changer.js"></script>
+<script type="text/javascript" src="js/highlight.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/toggling.js"></script>
 </html>

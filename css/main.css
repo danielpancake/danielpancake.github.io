@@ -67,10 +67,10 @@ html {
     background-image: url(../images/bg_transparent.png);
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
+    cursor: url(../images/cursor.png), auto;
 }
 
 body {
-    cursor: url(../images/cursor.png), auto;
     image-rendering: pixelated;
     margin: 0 auto;
     max-width: 2160px;

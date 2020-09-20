@@ -2,7 +2,7 @@ class Background {
     constructor(element, size, duration) {
         this.element = element;
         this.size = size;
-        this.duration = (duration == null ? 10 : duration);
+        this.duration = duration;
     }
 
     reset() {
@@ -20,16 +20,16 @@ function init() {
     var elements = document.querySelectorAll(".background");
 
     elements.forEach((element) => {
-        var size = JSON.parse(element.getAttribute("data-size"));
-        var duration = JSON.parse(element.getAttribute("data-duration"));
-        var backgound = new Background(element, size, duration);
+        var size = element.dataset.size;
+        var duration = (element.dataset.duration == null ? 10 : element.dataset.duration);
+        var background = new Background(element, size, duration);
 
-        backgound.show();
+        background.show();
 
         element.addEventListener("transitionend", function(event) {
             if (event.propertyName == "background-position-x") {
-                backgound.reset();
-                setTimeout(() => backgound.show(), 2);
+                background.reset();
+                setTimeout(() => background.show(), 2);
             }
         });
     });

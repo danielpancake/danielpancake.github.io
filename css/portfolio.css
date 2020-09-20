@@ -92,6 +92,12 @@ li:hover > .shape p {
     margin: 0;
 }
 
+#additional_blocks {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 #additional_blocks .block {
     color: whitesmoke;
     font-family: "OksFree";

@@ -12,24 +12,20 @@ class Highlight {
         var letters = this.element.textContent.split("");
         this.element.textContent = "";
 
-        var length = letters.length;
-
-        for (var i = 0; i < length; i++) {
+        letters.forEach((letter) => {
             var span = document.createElement("span");
-            span.innerHTML = letters[i];
-            
-            this.element.appendChild(span);
-        }
+            span.innerHTML = letter;
+
+            this.element.append(span);
+        });
     }
 
     show() {
         var spans = this.element.children;
-        var length = spans.length;
 
-        for (var i = 0; i < length; i++) {
+        for (var i = 0; i < spans.length; i++) {
             const span = spans[i];
-
-            setTimeout(function () { span.classList.toggle("highlighted"); }, i * 100);
+            setTimeout(function() { toggleClass(span, "highlighted"); }, i * 100);
         }
     }
 }
@@ -37,13 +33,9 @@ class Highlight {
 function init() {
     var elements = document.querySelectorAll(".highlight");
 
-    if (elements != null) {
-        var length = elements.length;
-
-        for (var i = 0; i < length; i++) {
-            new Highlight(elements[i]);
-        }
-    }
+    elements.forEach(function(element) {
+        new Highlight(element);
+    });
 }
 
 document.addEventListener("DOMContentLoaded", init);
