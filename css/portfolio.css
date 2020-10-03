@@ -1,12 +1,13 @@
 #portfolio {
-    background-image: url(../images/bg_stars.png);
-    background-repeat: repeat;
+    animation: background-space 10s linear infinite;
+    background-image: url(../images/bg_stars2.png), url(../images/bg_stars.png);
+    background-repeat: repeat, repeat;
 }
 
 #portfolio .wrapper {
     margin: 0 auto;
     max-width: 960px;
-    padding: 0 16px 64px 16px;
+    padding: 0 16px 32px 16px;
 }
 
 #portfolio .section_title {
@@ -152,4 +153,20 @@ li:hover > .shape p {
     }
     #portfolio ul { flex: 3; }
     #additional_blocks { margin-left: 4px; }
+}
+
+@keyframes background-space {
+    0% {
+        background-position: 0px 0px, 0px 0px;
+    }
+
+    100% {
+        background-position: 128px 128px, 256px 256px;
+    }
+}
+
+#cosmonaut {
+    background: url(../images/cup.png) no-repeat center;
+    min-height: 128px;
+    height: 100%;
 }
