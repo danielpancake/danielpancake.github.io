@@ -1,0 +1,65 @@
+<style>
+    body {
+        background-color: #e53935;
+        overflow: hidden;
+    }
+
+    stack {
+        bottom: 25%;
+        display: block;
+        filter: drop-shadow(#00000020 2px 10px 2px);
+        left: 50%;
+        margin-left: -50px;
+        margin-top: -50px;
+        position: absolute;
+        transition: ease-out 1s;
+    }
+
+    pancake {
+        animation: pop-up ease-in-out 0.25s;
+        background: #ffa446;
+        border-radius: 50%;
+        box-shadow: #eed6af 0 0.2em 0 0.2em;
+        height: 8em;
+        position: absolute;
+        transition: opacity ease-in-out 0.25s, transform ease-in-out 0.25s, margin linear 0.5s;
+        width: 8em;
+    }
+
+    @keyframes pop-up {
+        0%   { transform: scale(0); }
+        100% { transform: scale(1); }
+    }
+</style>
+
+<stack id="pancakes"></stack>
+
+<script>
+    var stack = document.getElementById("pancakes");
+    var h = 40, v = 35, n = 0;
+
+    setInterval(() => {
+        var pancake = document.createElement("pancake");
+        pancake.setAttribute("style", `margin-top:${-n*v}px; margin-left:${h*(2*Math.random()-1)}px`);
+        
+        if (n >= 15) {
+            stack.firstChild.setAttribute("style", "opacity:0; transform:scale(0.5)");
+            setTimeout(() => stack.removeChild(stack.firstChild), 250);
+
+            var c = stack.children;
+            setTimeout(() => { 
+                for (var i = 1; i <= 15; i++) {
+                    c[i].style.marginTop = `${parseInt(c[i].style.marginTop)+v}px`;
+                }
+            }, 50);
+        } else {
+            n++;
+
+            if (n == 15) {
+               stack.style.bottom = "0px";
+            }
+        }
+
+        stack.appendChild(pancake);
+    }, 500);
+</script>
