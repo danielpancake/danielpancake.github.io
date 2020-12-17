@@ -66,6 +66,7 @@
 #pointer {
     position: absolute;
     width: 64px;
+    z-index: 1;
 }
 
 #creative p {
@@ -76,6 +77,18 @@
 
 #creative span {
     background-color: #ADFF2F;
+}
+
+#creative p>span {
+    border: ridge #ADFF2F 10px;
+    border-radius: 10px;
+}
+
+#creative p :nth-child(3) {
+    border-bottom: none;
+    border-radius: 0;
+    border-top: none;
+    opacity: 0.999;
 }
 
 @keyframes scroll {
