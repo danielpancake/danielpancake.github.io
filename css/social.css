@@ -19,7 +19,7 @@
 
 #social img:hover {
     image-rendering: optimizeSpeed;
-    filter: drop-shadow(0 0 5px #424242);
+    filter: drop-shadow(0 0 10px black);
     transform: scale(1.28);
     will-change: transform;
 }

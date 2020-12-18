@@ -37,7 +37,7 @@
     color: whitesmoke;
     margin: 0 16px;
     max-width: 450px;
-    text-shadow: black 1px 1px 5px;
+    text-shadow: black 2px 2px 0;
 }
 
 .box .title {
@@ -56,7 +56,9 @@
 }
 
 .list_of_skills li {
-    padding: 2px 0;
+    background-color: #101010a0;
+    border-radius: 10px;
+    margin: 2px 0;
 }
 
 .list_of_skills li::before {
