@@ -41,12 +41,13 @@
                     to { background-position: 600px 200px; }
                 }
                 .inner { height: auto !important; }
+                .highlight { background-color: var(--bold-blue); }
                 #home {
                     animation: __slide 20s linear infinite;
                     background: var(--bold-blue) url(./images/noscript.png);
                 }
-                #about .box:nth-of-type(2) .highlight { background-color: var(--bold-blue); }
                 #about .box:nth-of-type(3) .highlight { background-color: #3d8c15; }
+                #contact form { display: none; }
             </style>
         </noscript>
     </head>
@@ -63,7 +64,7 @@
                         <li><a href="#about">About me</a></li>
                         <li><a href="#portfolio">Portfolio</a></li>
                         <li><a href="#contact">Contact</a></li>
-                        <li><a href="">Blog</a></li>
+                        <li><a href="https://danielpancake.tumblr.com">Blog</a></li>
                     </div>
                 </ul>
 
@@ -71,7 +72,7 @@
                     <li><a href="#about">About me</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="">Blog</a></li>
+                    <li><a href="https://danielpancake.tumblr.com">Blog</a></li>
                 </ul>
             </section>
 
@@ -135,7 +136,20 @@
             <section id="portfolio" class="colourChanger" data-colour="black">
                 <h1 class="sectionTitle">Portfolio</h1>
                 <div class="wrapper">
-                    <ul id="projects"></ul>
+                    <ul id="projects">
+                        <noscript>
+                            <li class="withBorder projectBanner" style="background: url(images/projects/.png); background-position: center;">
+                                <div class="shape">
+                                    <div></div>
+                                    <p><span class="title">{{title}}</span><br>{{brief}}</p>
+                                </div>
+                            </li>
+
+                            <div class="withBorder description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. No javascript.
+                            </div>
+                        </noscript>>
+                    </ul>
 
                     <div id="additionalBlocks">
                         <div id="donation">
@@ -175,6 +189,10 @@
                                 
                                 <input id="sender" class="withBorder" type="submit" value=">> Send <<">
                             </form>
+
+                            <noscript>
+                                <p>TODO: email button</p>
+                            </noscript>
                         </div>
                     </div>
                 </div>

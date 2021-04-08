@@ -91,6 +91,13 @@
     word-wrap: break-word;
 }
 
+#projects .description img {
+    border-radius: 5px;
+    box-shadow: 2.5px 2.5px 10px #000000aa;
+    margin: 8px 0;
+    max-width: 100%;
+}
+
 #additionalBlocks {
     display: flex;
     flex-direction: column;

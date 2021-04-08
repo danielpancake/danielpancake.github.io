@@ -93,14 +93,14 @@ function Project(title="", brief="", description="", banner="", bannerPosition="
 var projectData = [
     new Project(
         "ShinyInu",
-        "Dungeon generator for GameMaker Studio",
-        `<p>ShinyInu is an android gallery app that shows random pictures of Shiba Inu from <a target="_blank" href="https://shibe.online">shibe.online</a> website.</p>
-        <br>
+        "An android gallery app full of shibas",
+        `<p><span class="highlight">ShinyInu</span> is an android gallery app that shows random pictures of Shiba Inu from <a target="_blank" href="https://shibe.online">shibe.online</a> website.</p>
+        <img src="https://raw.githubusercontent.com/DanielPancake/shinyinu/master/assets/preview2.png" loading="lazy">
         <p>Features:</p>
-        <p>- Open-source android application</p>
-        <p>- Images can be saved to favourite collection</p>
-        <p>- A good mood after each cute and fluffy Shiba is guaranteed :)</p>
-        <p>- Built-in image viewer</p>
+        <p align="left">- Open-source android application</p>
+        <p align="left">- Built-in image viewer</p>
+        <p align="left">- Ability to favourite and save images</p>
+        <p align="left">- A good mood after each cute and fluffy Shiba (100% guarantee) :)</p>
         <br>
         <p>Download release .apk file from <a target="_blank" href="https://github.com/danielpancake/shinyinu/releases">_github_</a></p>
         <p>ShinyInu's repository is available on <a target="_blank" href="https://github.com/danielpancake/shinyinu">_github_</a></p>`,
@@ -109,29 +109,31 @@ var projectData = [
 
     new Project(
         "gmdungeon",
-        "Procedural dungeon generator for GameMaker Studio 2",
-        `<p><span>gmdungeon</span> is a dungeon template generating asset for GameMaker: Studio 1.4 and GameMaker Studio 2</p>
+        "A procedural dungeon generator for GameMaker Studio 2",
+        `<p><span class="highlight">gmdungeon</span> is a dungeon template generating asset for GameMaker: Studio 1.4 and GameMaker Studio 2</p>
         <br>
         <p>This asset can be used in projects that require the procedual generation of dungeons. It's pretty easy to use!</p>
-        <br>
+        <img src="https://raw.githubusercontent.com/danielpancake/gmdungeon/master/assets/example3.gif" loading="lazy">
         <p>Features:</p>
-        <p>- Procedual generated dungeon</p>
-        <p>- Ability to add icons to be displayed on the minimap and custom types of the rooms</p>
-        <p>- Masks can be used to define shape of the dungeon</p>
+        <p align="left">- Scripts to procedurally generate a dungeon</p>
+        <p>- Ability to add icons to display on the minimap and custom room types</p>
+        <p>- Using masks to define the shape of the dungeon</p>
         <br>
-        <p>Project is available on <a target="_blank" href="https://github.com/danielpancake/gmdungeon">_github_</a></p>`,
+        <p>Project along with a setup guide and examples is available on <a target="_blank" href="https://github.com/danielpancake/gmdungeon">_github_</a></p>`,
         "dungeon"
     ),
 
     new Project(
         "Dr.Helper",
         "A game for Ludum Dare 42 competition",
-        `<p>"Do you want to remove a dangerous virus from your computer, but can't afford expensive software licences? Let us introduce our latest invention - the best free antivirus software, made in the span of just two days - Dr. Helper. He knows more than 1.000.000 types of malwares, 350.000 types of spywares and tons of jokes!</p>
+        `<p><span class="highlight">Dr.Helper</span> is a silly puzzle game on the theme of running out of space.</p>
+        <br>
+        <p>"Do you want to remove a dangerous virus from your computer, but can't afford expensive software licences? Let us introduce our latest invention - the best free antivirus software, made in the span of just two days - Dr. Helper. He knows more than 1.000.000 types of malwares, 350.000 types of spywares and tons of jokes!</p>
         <br>
         <p>If there is a problem, Dr. Helper can help you! He will help not only you, but your friends and even your grandma defeat any type of computer, microwave and java-based mobile phone viruses.</p>
         <br>
         <p>Keep viruses away, get Dr.Helper today!"</p>
-        <br>
+        <img src="https://m.gjcdn.net/content/700/2043310-p7zsbhjs-v4.webp" loading="lazy">
         <p>In 2018, I entered Ludum Dare 42 competition. It was my first experience in game speed-development.</p>
         <br>
         <p>Dr.Helper is available on <a target="_blank" href="https://gamejolt.com/games/drhelper/361111">_gamejolt_</a></p>`,
@@ -139,13 +141,13 @@ var projectData = [
     ),
 
     new Project(
-        "Cubicus",
+        "Cubicus DEMO",
         "Weird indie demo",
-        `<p>"Someone who looks like the devil himself appears on the screen of your computer. He says that something is broken. Should you listen to him? What can this lead us to? You have to find out."</p>
+        `<p>"Something which looks like the devil himself appears on the screen of your computer. It says that something in the system is broken. But he could help. Would you accept his offer?.."</p>
         <br>
-        <p>This is the description of my first game ever made. It's weird but still I like it. It was very intersting experience.</p>
+        <p><span class="highlight">Cubicus DEMO</span> is the first game ever made by me. It's absurd and poorly made but I like it regardless. Eventually I will finish the full game and present it to the world!..</p>
         <br>
-        <p>Cubicus is available on <a target="_blank" href="https://gamejolt.com/games/nocubicus/260121">_gamejolt_</a></p>`,
+        <p>Cubicus DEMO is available on <a target="_blank" href="https://gamejolt.com/games/nocubicus/260121">_gamejolt_</a></p>`,
         "old"
     ),
 
@@ -171,7 +173,7 @@ var projectData = [
     new Project(
         "spongebob-search",
         '"In which episode did they say that?.."',
-        `<p>spongebob-search is CLI with which you can search through transcripts from SpongeBob wiki page.</p>
+        `<p><span class="highlight">spongebob-search</span> is CLI with which you can search through transcripts from SpongeBob wiki page.</p>
         <br>
         <p>You can find it on the <a target="_blank" href="https://github.com/danielpancake/spongebobsearch">_github_</a></p>`,
         "sponge"
