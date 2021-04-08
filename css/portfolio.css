@@ -32,7 +32,7 @@
     position: relative;
 }
 
-#portfolio li:not(:first-child) {
+#portfolio li.toggle:not(:first-of-type) {
     margin-top: 4px;
 }
 
