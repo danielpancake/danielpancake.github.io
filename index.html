@@ -1,297 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <title>danielpancake</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+        
+        <meta name="author" content="danielpancake" />
+        <meta name="description" property="og:description" content="danielpancake - the greatest pancake alive! Happy web designer and juniour developer." />
+        <meta name="google" content="notranslate" />
+        <meta name="google-site-verification" content="JHRMulxU0O2n3QKi7Wkgrxsv-c8xfYE8l_dpI12soAs" />
+        <meta name="googlebot" content="index, follow" />
+        <meta name="image" property="og:image" content="./images/socialpreview.jpg" />
+        <meta name="keywords" content="danielpancake, daniel pancake, cubicus, gmdungeon, game maker studio, shinyinu, devlog, gamejolt" />
+        <meta name="robots" content="all" />
+        <meta name="yandex" content="index, follow" />
+        
+        <meta name="apple-mobile-web-app-status-bar-style" content="#202020" />
+        <meta name="theme-color" content="#202020" />
+        
+        <!-- Should redesign icon -->
+        <link rel="icon" href="./images/favicon.png" type="image/x-icon">
+        <link rel="preload" as="image" href="./images/pointer2.png">
 
-<head>
-    <title>danielpancake</title>
+        <link rel="stylesheet" href="./css/main.css">
+        <link rel="stylesheet" href="./css/header.css">
+        <link rel="stylesheet" href="./css/home.css">
+        <link rel="stylesheet" href="./css/about.css">
+        <link rel="stylesheet" href="./css/portfolio.css">
+        <link rel="stylesheet" href="./css/contact.css">
+        <link rel="stylesheet" href="./css/social.css">
 
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/87/three.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
 
-    <meta name="author" content="danielpancake" />
-    <meta name="description" property="og:description" content="danielpancake is.. me! I'm junior developer and web designer. This is my website." />
-    <meta name="google" content="notranslate" />
-    <meta name="google-site-verification" content="JHRMulxU0O2n3QKi7Wkgrxsv-c8xfYE8l_dpI12soAs" />
-    <meta name="googlebot" content="index, follow" />
-    <meta name="image" property="og:image" content="images/social_preview.png" />
-    <meta name="keywords" content="danielpancake, daniel pancake, cubicus, shinyinu, games, devlog, gamejolt" />
-    <meta name="robots" content="all" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <meta name="yandex" content="index, follow" />
+        <noscript>
+            <style> /* Yeah, I even care about those chaps and ladies */
+                @keyframes __slide {
+                    from { background-position: 0 0; }
+                    to { background-position: 600px 200px; }
+                }
+                .inner { height: auto !important; }
+                #home {
+                    animation: __slide 20s linear infinite;
+                    background: var(--bold-blue) url(./images/noscript.png);
+                }
+                #about .box:nth-of-type(2) .highlight { background-color: var(--bold-blue); }
+                #about .box:nth-of-type(3) .highlight { background-color: #3d8c15; }
+            </style>
+        </noscript>
+    </head>
 
-    <link rel="stylesheet" href="css/main.css" />
-
-    <link rel="stylesheet" href="css/header.css" />
-    <link rel="stylesheet" href="css/home.css" />
-    <link rel="stylesheet" href="css/about.css" />
-    <link rel="stylesheet" href="css/portfolio.css" />
-    <link rel="stylesheet" href="css/contact.css" />
-    <link rel="stylesheet" href="css/social.css" />
-    <link rel="stylesheet" href="css/footer.css" />
-
-    <meta name="theme-color" content="#242424" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="#242424" />
-
-    <link rel="shortcut icon" href="images/favicon.png" type="image/png" />
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-
-    <script type="text/javascript" src="https://smtpjs.com/v3/smtp.js"></script>
-</head>
-
-<body>
-    <div id="content-box">
-        <section id="header" class="color-changer" data-color="#242424">
-            <ul id="menu-mobile">
-                <li id="menu-toggle" class="toggler">
-                    <a href="#"><img src="images/ic_menu.png"></a>
-                </li>
-
-                <div class="inner"></div>
-            </ul>
-
-            <ul id="menu">
-                <li><a href="#about">About me</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="https://danielpancake.tumblr.com/" target="_blank">Blog</a></li>
-            </ul>
-        </section>
-
-        <section id="home">
-            <div class="wrapper">
-                <div id="lang">
-                    <a href="index-ru.html"><img src="images/ic_language_switcher.png">_Сменить язык_</a>
-                </div>
-
-                <img id="me" src="images/author.png">
-
-                <div id="creative">
-                    <img id="pointer" src="images/ic_pointer.png">
-                    <p><span>The idea is</span><br><span>to be</span><br><span class="highlight">creative!</span></p>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="color-changer" data-color="#100000">
-            <div class="parallax" id="bg">
-                <div class="parallax" id="fbg">
-
-                    <h1 class="section_title">About me</h1>
-                    <div class="wrapper">
-                        <div class="box">
-                            <p class="title">👋<u>Hi! I'm danielpancake</u><br>and these are my <u>skills</u></p>
-                            
-                            <ul class="list_of_skills">
-                                <li>Game development with <span class="highlight">GameMaker Studio</span></li>
-                                <li>Coming up with extraordinary and absurd ideas</li>
-                                <li>Developing mobile apps in <span class="highlight">Java</span></li>
-                                <li>Web development and designing with <span class="highlight">HTML,CSS and JS</span></li>
-                                <li>Web server applications in <span class="highlight">Go</span></li>
-                                <li>Writing documentation using <span class="highlight">LaTeX</span></li>
-                                <li>Building web scrapers</li>
-                            </ul>
-                        </div>
-
-                        <div class="box">
-                            <p class="title">..and this is what I'm <u>learning or trying to do</u></p>
-                            <ul class="list_of_skills">
-                                <li>Webpages with creative design</li>
-                                <li>Deal with deadlines</li>
-                                <li>Learn C++ and Go</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="portfolio" class="background color-changer" data-color="#171515">
-            <h1 class="section_title">Portfolio</h1>
-
-            <!--I'm dying in need of CMS for all this-->
-            <div class="wrapper">
-                <ul>
-                    <li class="toggler with_border project-banner" style="background: url(images/projects/shiny.png); background-position: center;">
-                        <div class="shape">
-                            <p><span class="title">ShinyInu</span><br>Android gallery app</p>
-                        </div>
-                    </li>
-                    
-                    <div class="inner with_border description">
-                        <p>ShinyInu - an android gallery app that shows random pictures of Shiba Inu <a target="_blank" href="https://shibe.online">shibe.online</a> website.</p>
-                        <br>
-                        <p>Features:</p>
-                        <p>- Open-source android application</p>
-                        <p>- Random images can be saved to favorites to not to lose them</p>
-                        <p>- A good mood after every cute and fluffy Shiba is guaranteed :)</p>
-                        <p>- Built-in image viewer</p>
-                        <br>
-                        <p>Download release .apk file from <a target="_blank" href="https://github.com/danielpancake/shinyinu/releases">_github_</a></p>
-                        <p>ShinyInu's repository on the <a target="_blank" href="https://github.com/danielpancake/shinyinu">_github_</a></p>
-                    </div>
-
-                    <li class="toggler with_border project-banner" style="background: url(images/projects/dungeon.png); background-position: center;">
-                        <div class="shape">
-                            <p><span class="title">gmdungeon</span><br>Dungeon generator for GameMaker Studio</p>
-                        </div>
+    <body>
+        <div id="content-box">
+            <section id="header" class="colourChanger" data-colour="#202020">
+                <ul id="menu-mobile">
+                    <li id="menu-switch" class="toggle">
+                        <a class="disableDragging" href="#"><img src="./images/ic_menu.png" alt="Menu toggle"></a>
                     </li>
 
-                    <div class="inner with_border description">
-                        <p>gmdungeon is dungeon template generating asset for GameMaker: Studio 1.4 and GameMaker Studio 2 (not 2.3 yet)</p>
-                        <br>
-                        <p>This asset can be used in projects that require the procedual generation of dungeons. It's pretty easy to use!</p>
-                        <br>
-                        <p>Features:</p>
-                        <p>- Procedual generated dungeon</p>
-                        <p>- Adding icons to be displayed on the minimap and custom types of rooms</p>
-                        <p>- Using masks to define dungeon's shape</p>
-                        <br>
-                        <p>You can find it on the <a target="_blank" href="https://github.com/danielpancake/gmdungeon">_github_</a></p>
-                    </div>
-
-                    <li class="toggler with_border project-banner" style="background: url(images/projects/drhelper.png); background-position: center;">
-                        <div class="shape">
-                            <p><span class="title">Dr.Helper</span><br>Game for Ludum Dare 42 contest</p>
-                        </div>
-                    </li>
-
-                    <div class="inner with_border description">
-                        <p>"Do you want to remove a dangerous virus from your computer, but you don't have any money for an expensive software? Let us introduce our latest development - the best free antivirus program, made just in two days - Dr. Helper. He knows more than 1.000.000 types of malwares! 350.000 types of spying programs and tons of jokes.</p>
-                        <br>
-                        <p>If there is a problem - Dr. Helper can help you! He will help you, your friends and even your grandma defeat every type of computer, microwave and java-based mobile phone viruses.</p>
-                        <br>
-                        <p>Keep viruses away, get Dr.Helper today!"</p>
-                        <br><br>
-                        <p>This is the description of the game I made for the Ludum Dare 42 contest back in 2018. First experience in game speed-development.</p>
-                        <br>
-                        <p>You can find it on the <a target="_blank" href="https://gamejolt.com/games/drhelper/361111">_gamejolt_</a></p>
-                    </div>
-
-                    <li class="toggler with_border project-banner" style="background: url(images/projects/old.png); background-position: center;">
-                        <div class="shape">
-                            <p><span class="title">Cubicus DEMO</span><br>Strange looking indie demo</p>
-                        </div>
-                    </li>
-
-                    <div class="inner with_border description">
-                        <p>"Someone who looks like the devil himself appears on the screen of your computer. He says that something is broken. Should you listen to him? What can this lead us to? You have to find out."</p>
-                        <br><br>
-                        <p>This is the description of my first game project ever made. It's weird but still I like it. It was very intersting experience for me.</p>
-                        <br>
-                        <p>You can check it out on the <a target="_blank" href="https://gamejolt.com/games/nocubicus/260121">_gamejolt_</a></p>
-                    </div>
-
-                    <li class="toggler with_border project-banner" style="background: url(images/projects/edg.png); background-position: center;">
-                        <div class="shape">
-                            <p><span class="title">Epic Dungeon Game</span><br>Grid-based dungeon rpg</p>
-                        </div>
-                    </li>
-
-                    <div class="inner with_border description">
-                        <p>Monsters and explostions ahead! This is a game which takes place in the underground world. There is only devlog for now.</p>
-                        <br>
-                        <p>You can find it on the <a target="_blank" href="https://gamejolt.com/games/edg/507835">_gamejolt_</a></p>
-                    </div>
-
-                    <li class="toggler with_border project-banner" style="background: url(images/projects/tedxyouth_website.png); background-position: right;">
-                        <div class="shape">
-                            <p><span class="title">TEDxYouth at Limassol</span><br>Coding worth spreading!</p>
-                        </div>
-                    </li>
-
-                    <div class="inner with_border description">
-                        <p>I made the website for TEDxYouth event @ Agiou Andreou.</p>
-                        <br>
-                        <p>Check it out <a target="_blank" href="https://danielpancake.github.io/tedxyouth-agiouandreou">here</a> or on the <a target="_blank" href="https://github.com/danielpancake/tedxyouth-agiouandreou">_github_</a></p>
-                    </div>
-
-                    <li class="toggler with_border project-banner" style="background: url(images/projects/sponge.png); background-position: right;">
-                        <div class="shape">
-                            <p><span class="title">spongebob-search</span><br>Ever wondered in what episode a particular word was said?</p>
-                        </div>
-                    </li>
-
-                    <div class="inner with_border description">
-                        <p>spongebob-search is CLI which able you to search through transcripts from SpongeBob wiki page.</p>
-                        <br>
-                        <p>You can find it on the <a target="_blank" href="https://github.com/danielpancake/spongebobsearch">_github_</a></p>
-                    </div>
-
-                    <li class="toggler with_border project-banner" style="background: url(images/projects/little_website.png); background-position: right;">
-                        <div class="shape">
-                            <p><span class="title">Even this website</span><br>yeah, it's open-source too</p>
-                        </div>
-                    </li>
-
-                    <div class="inner with_border description">
-                        <p>You can find it on the <a target="_blank" href="https://github.com/danielpancake/danielpancake.github.io">_github_</a></p>
+                    <div class="inner">
+                        <li><a href="#about">About me</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="">Blog</a></li>
                     </div>
                 </ul>
 
-                <div id="additional_blocks">
-                    <div id="donate">
-                        <a target="_blank" href="https://ko-fi.com/danielpancake">
-                            <div class="block with_border">
-                                <h1>Donate</h1>
-                                <p>☕Buy me a coffee</p>
-                            </div>
-                        </a>
-                    </div>
+                <ul id="menu">
+                    <li><a href="#about">About me</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="">Blog</a></li>
+                </ul>
+            </section>
 
-                    <div class="block" id="cosmonaut"></div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="color-changer" data-color="darkcyan">
-            <div id="web">
+            <section id="home" class="colourChanger" data-colour="#2020e0">
                 <div class="wrapper">
-                    <h1 class="section_title">Contact</h1>
+                    <img id="me" class="dropShadow disableDragging" src="./images/author.gif" alt="danielpancake's photo"/>
+                    <img id="wordart" class="disableDragging" src="./images/wordart.png" alt="danielpancake">
+                    <img id="pointer" class="dropShadow disableDragging" src="./images/pointer1.png" alt="x">
+                    <img id="heart" class="dropShadow disableDragging" src="./images/pancakes.png" alt="Always fluttering">
+                </div>
+            </section>
 
-                    <div id="flex-container">
-                        <div id="banner"><span class="highlight">..or check my social media =></span></div>
-                        <form onsubmit='var sender = document.getElementById("sender");
-                            sender.disabled = true; sender.value = "Please, wait..."; sendfeedback(); return false;'>
+            <section id="about" class="colourChanger" data-colour="#101010">
+                <div class="parallax" id="bg">
+                    <div class="parallax" id="fbg">
+                        <h1 class="sectionTitle">About me</h1>
 
-                            <div id="envelope">
-                                <label>What's your name?</label>
-                                <input id="name" placeholder="* For example, George" class="with_border" required="required" type="text">
-
-                                <label>What's your letter about?</label>
-                                <input id="subject" placeholder="* Informative title" class="with_border" required="required" type="text">
-
-                                <label>What's your email?</label>
-                                <input id="email" placeholder="* Email to be answered (not necessary)" class="with_border" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
-
-                                <label>Your message to me:</label>
-                                <textarea id="body" placeholder="* Write it here..." class="with_border" required="required" rows="5"></textarea>
+                        <div class="wrapper">
+                            <div class="box">
+                                <p class="title">🙋<u>Hey! I'm danielpancake</u><br><sup>My skills are listed below</sup></p>
                             </div>
 
-                            <input id="sender" class="with_border" type="submit" value="Send">
-                        </form>
+                            <breakflex></breakflex>
+                            
+                            <div class="box"> <!-- Workaround OG ligature -->
+                                <p class="title"><u>PrOgramming skills</u></p>
+                                <ul class="listOfSkills">
+                                    <ul class="listOfSkills">
+                                        <li>Desktop game development with <span class="highlight">GameMaker Studio</span>.</li>
+                                        <li>Building web applications and scrapers with <span class="highlight">Go</span>.</li>
+                                        <li>Have experience working with <span class="highlight">git</span>.</li>
+                                        <li>Developing mobile apps with <span class="highlight">Java and Android Studio</span>.</li>
+                                        <li>Web development and design with <span class="highlight">HTML, CSS and JavaScript</span>.</li>
+                                        <li>Writing scientific documents using <span class="highlight">LaTeX</span>.</li>
+                                        <li>Comfortable working on both <span class="highlight">Windows and Linux</span>.</li>
+                                        <li>Using <span class="highlight">Heroku</span> for web applications deployment.</li>
+                                        <li>Have basic knowledge of <span class="highlight">C++, haxe and MySQL</span>.</li>
+                                </ul>
+                            </div>
+
+                            <div class="box">
+                                <p class="title"><u>Personal skills</u></p>
+                                <ul class="listOfSkills">
+                                    <li><span class="highlight" data-colour="#3d8c15">Responsible</span> high school graduate with an <span class="highlight" data-colour="#3d8c15">ability to easily adapt</span> to a new study & work environment.</li>
+                                    <li><span class="highlight" data-colour="#3d8c15">Respectful of authorities</span> and supportive in arranging various activities.</li>
+                                    <li>Easy to get along with and respected by other members of the team.</li>
+                                    <li><span class="highlight" data-colour="#3d8c15">Focused and driven</span>. Open to new discoveries and innovations. Capable of learning new packages, expressing non-standard ideas.</li>
+                                    <li>Possess strong <span class="highlight" data-colour="#3d8c15">IT, problem-solving and math</span> skills.</li>
+                                    <li>Have a great command of <span class="highlight" data-colour="#3d8c15">Russian</span> (Native speaker) and <span class="highlight" data-colour="#3d8c15">English</span> (B2 Level).</li>
+                                </ul>
+                            </div>
+
+                            <breakflex></breakflex>
+
+                            <div id="resume"></div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <div id="social">
-            <div class="wrapper">
-                <a href="https://ko-fi.com/danielpancake" target="_blank"><img src="images/ic_kofi.png"></a>
-                <a href="https://gamejolt.com/@danielpancake" target="_blank"><img src="images/ic_gamejolt.png"></a>
-                <a href="https://github.com/danielpancake" target="_blank"><img src="images/ic_github.png"></a>
-                <a href="https://twitter.com/dpancakestuff" target="_blank"><img src="images/ic_twitter.png"></a>
-                <a href="https://vk.com/dpancakestuff" target="_blank"><img src="images/ic_vk.png"></a>
-                <a href="https://instagram.com/dpancakestuff" target="_blank"><img src="images/ic_inst.png"></a>
-                <a href="https://danielpancake.tumblr.com/" target="_blank"><img src="images/ic_tumblr.png"></a>
+            <section id="portfolio" class="colourChanger" data-colour="black">
+                <h1 class="sectionTitle">Portfolio</h1>
+                <div class="wrapper">
+                    <ul id="projects"></ul>
+
+                    <div id="additionalBlocks">
+                        <div id="donation">
+                            <a target="_blank" href="https://ko-fi.com/danielpancake">
+                                <div class="block withBorder">
+                                    <h1>Donate</h1>
+                                    <p>☕Buy me a coffee</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="colourChanger" data-colour="darkcyan">
+                <div id="web">
+                    <div class="wrapper">
+                        <h1 class="sectionTitle">Contact</h1>
+                        
+                        <div class="flex">
+                            <div id="banner"><span class="highlight">..or check my social media =></span></div>
+                            
+                            <form onsubmit='const sender = document.getElementById("sender"); sender.disabled = true; sender.value = "Please, wait..."; sendfeedback(); return false;'>
+                                <div id="envelope">
+                                    <label>What's your name?</label>
+                                    <input id="name" placeholder="* For example, George" class="withBorder" required="required" type="text">
+                                    
+                                    <label>What's your letter about?</label>
+                                    <input id="subject" placeholder="* Informative title" class="withBorder" required="required" type="text">
+                                    
+                                    <label>What's your email?</label>
+                                    <input id="email" placeholder="* -- not necessary --" class="withBorder" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                                    
+                                    <label>Your message:</label>
+                                    <textarea id="body" placeholder="* I was wondering if..." class="withBorder" required="required" rows="5"></textarea>
+                                </div>
+                                
+                                <input id="sender" class="withBorder" type="submit" value=">> Send <<">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div id="social">
+                <div class="wrapper">
+                    <a href="https://ko-fi.com/danielpancake" target="_blank"><img src="images/ic_kofi.png"></a>
+                    <a href="https://gamejolt.com/@danielpancake" target="_blank"><img src="images/ic_gamejolt.png"></a>
+                    <a href="https://github.com/danielpancake" target="_blank"><img src="images/ic_github.png"></a>
+                    <a href="https://twitter.com/dpancakestuff" target="_blank"><img src="images/ic_twitter.png"></a>
+                    <a href="https://vk.com/dpancakestuff" target="_blank"><img src="images/ic_vk.png"></a>
+                    <a href="https://instagram.com/dpancakestuff" target="_blank"><img src="images/ic_inst.png"></a>
+                    <a href="https://danielpancake.tumblr.com/" target="_blank"><img src="images/ic_tumblr.png"></a>
+                </div>
             </div>
+            
+            <footer>
+                <p>Copyright danielpancake 2020 - 2021</p>
+            </footer>
         </div>
+    </body>
 
-        <footer>
-            <p>Copyright danielpancake 2020</p>
-        </footer>
-    </div>
-</body>
-<script type="text/javascript" src="js/classes.js"></script>
-<script type="text/javascript" src="js/color-changer.js"></script>
-<script type="text/javascript" src="js/highlight.js"></script>
-<script type="text/javascript" src="js/script.js"></script>
-<script type="text/javascript" src="js/toggling.js"></script>
+    <script type="text/javascript" src="./js/app.js"></script>
+    <script type="text/javascript" src="./js/classes.js"></script>
+    <script type="text/javascript" src="./js/colourChanger.js"></script>
+    <script type="text/javascript" src="./js/highlight.js"></script>
+    <script type="text/javascript" src="./js/toggles.js"></script>
 </html>

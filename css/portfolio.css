@@ -1,148 +1,142 @@
 #portfolio {
-    animation: background-space 10s linear infinite;
+    animation: backgroundSpace 10s linear infinite;
     background-image: url(../images/bg_stars2.png), url(../images/bg_stars.png);
     background-repeat: repeat, repeat;
+}
+
+#portfolio:hover {
+    box-shadow: -15px 0 30px -15px #101010, 15px 0 30px -15px #101010;
+}
+
+#portfolio .sectionTitle {
+    text-shadow: 0 0 16px blue, -3px -4px 0 #aa0080, 0 2px 6px #1214a1, 3px 4px 0 #5000cc;
 }
 
 #portfolio .wrapper {
     margin: 0 auto;
     max-width: 960px;
-    padding: 0 16px 32px 16px;
-}
-
-#portfolio .section_title {
-    padding-bottom: 24px;
-    text-shadow: blue -3px -3px 25px, #aa0080 -2px -2px, #5000cc 2px 2px;
+    padding: 16px 12px 46px 12px;
 }
 
 #portfolio ul {
+    font-family: "Mozart", "PixelUnicode";
     list-style: none;
-    margin: 0;
-    padding: 0;
 }
 
-#portfolio li {
+#projects li {
     border-bottom: none;
     border-radius: 5px 5px 0 0;
-    font-family: "Mozart", "PixelUnicode";
-    height: 68px;
-}
-
-#portfolio li.active .shape {
-    color: white;
-    text-shadow: #aa0080 -2px -2px, #5000cc 2px 2px;
-}
-
-#portfolio li.active .shape .title::before {
-    content: "> ";
-}
-
-#portfolio li.active .shape p {
-    padding-right: 45px;
+    box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.5);
+    height: 64px;
+    overflow: hidden;
+    position: relative;
 }
 
 #portfolio li:not(:first-child) {
     margin-top: 4px;
 }
 
-li:hover > .shape {
-    background-color: rgba(0, 0, 0, 0.6);
+#projects li.active > .shape div , #projects li:hover > .shape div {
+    background-color: #0a0a47a0;
+    padding-right: var(--text);
 }
 
-li:hover > .shape p {
-    padding-right: 45px;
-}
-
-.shape {
-    background-color: rgba(0, 0, 0, 0.5);
-    clip-path: polygon(0 0, 100% 0, 95% 90%, 0 100%);
-    color: whitesmoke;
+#projects .shape {
     display: inline-block;
     height: 100%;
-    max-width: 100%;
-    text-decoration: none;
-    text-shadow: black 0 0 5px;
+    position: relative;
+}
+
+#projects .shape div {
+    background-color: rgba(0, 0, 0, 0.5);
+    clip-path: polygon(0 0, 100% 0, 95% 90%, 0 100%);
+    height: 100%;
+    position: absolute;
+    transition: 0.2s;
+    width: 100%;
+}
+
+#projects li p {
+    --padding: calc(var(--text) * 0.35);
+
+    color: whitesmoke;
+    font-size: var(--text);
+    line-height: calc(var(--text) * 0.55);
+    padding: calc(var(--text) * 0.25) calc(var(--text) * 0.85) var(--padding) var(--padding);
+    position: relative;
     transition: 0.1s;
 }
 
-.shape .title {
-    font-size: 32pt;
-    transition: 0.25s;
-    white-space: nowrap;
+#portfolio li .title {
+    font-size: calc(var(--text) * 1.6);
+    line-height: calc(var(--text) * 0.85);
+    transition: 0.2s;
 }
 
-.shape p {
-    font-size: 18pt;
-    line-height: 16px;
-    margin: 0;
-    padding: 10px 25px 10px 10px;
-    transition: 0.25s;
+#portfolio li.active .title::before {
+    content: "> ";
 }
 
-#portfolio .description {
+#portfolio li.active > .shape p {
+    text-shadow: -1px -2px 0 #aa0080, 1px 2px 0 #5000cc
+}
+
+#projects .description {
     background-color: whitesmoke;
-    border-top: none;
     border-radius: 0 0 5px 5px;
-    font-family: "Mozart", "PixelUnicode";
-
+    border-top: none;
+    font-size: var(--text);
     padding: 5px 20px 10px 20px;
+    text-align: justify;
+    word-wrap: break-word;
 }
 
-#portfolio .description p {
-    font-size: 18pt;
-    margin: 0;
-}
-
-#additional_blocks {
+#additionalBlocks {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-#additional_blocks .block {
-    color: whitesmoke;
-    font-family: "OksFree";
-    text-align: center;
-    text-shadow: 0 2px 0 black;
-    transition: ease 0.2s;
+#donation .block {
+    transition: color 0.75s, box-shadow 0.5s;
 }
 
-#additional_blocks .block:not(:first-child) {
-    margin-top: 4px;
-}
-
-#donate a {
+#donation a {
     background: url(../images/bg_vhs.gif);
     background-position: bottom;
     background-size: cover;
     border-radius: 5px;
+    color: whitesmoke;
     display: block;
+    font-family: "OksFree";
+    text-align: center;
     text-decoration: none;
 }
 
-#donate h1 {
-    font-size: 32pt;
-    margin: 10px;
+#donation h1 {
+    font-size: calc(var(--subtitle) * 1.5);
+    margin: 0 16px;
 }
 
-#donate p {
-    font-size: 18pt;
-    margin: 14px;
+#donation p {
+    font-size: var(--text);
+    margin: 2px 16px 8px 16px;
     text-decoration: underline whitesmoke;
 }
 
-#donate a:hover > .block {
-    background-color: whitesmoke;
+#donation a:hover > .block {
+    background-color: white;
+    box-shadow: inset 0 0 2px black;
     color: black;
     text-shadow: none;
 }
 
-#donate a:hover > .block p {
+#donation a:hover > .block p {
     text-decoration: underline black;
 }
 
 @media screen and (max-width: 600px) {
-    #additional_blocks { margin-top: 4px; }
+    #additionalBlocks { margin-top: 8px; }
 }
 
 @media screen and (min-width: 601px) {
@@ -152,21 +146,10 @@ li:hover > .shape p {
         justify-content: center;
     }
     #portfolio ul { flex: 3; }
-    #additional_blocks { margin-left: 4px; }
+    #additionalBlocks { margin-left: 4px; }
 }
 
-@keyframes background-space {
-    0% {
-        background-position: 0px 0px, 0px 0px;
-    }
-
-    100% {
-        background-position: 128px 128px, 256px 256px;
-    }
-}
-
-#cosmonaut {
-    background: url(../images/cup.png) no-repeat center;
-    min-height: 128px;
-    height: 100%;
+@keyframes backgroundSpace {
+    0% { background-position: 0px 0px, 0px 0px; }
+    100% { background-position: 128px 128px, 256px 256px; }
 }

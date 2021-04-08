@@ -1,67 +1,73 @@
 #about {
     background-color: #101010;
-    min-height: 650px;
+}
+
+#about:hover {
+    box-shadow: -15px 0 30px -15px #101010, 15px 0 30px -15px #101010;
 }
 
 #about .parallax {
     background-position: bottom;
     background-size: contain;
+    image-rendering: pixelated;
     margin: 0 auto;
-    max-width: 1000px;
-    min-height: inherit;
+    max-width: 1280px;
 }
 
 #bg {
     animation: parallax_bg 60s infinite ease-in-out;
     background: url(../images/bg_piano_lamps_and_laptop.png) no-repeat;
+    will-change: background-position;
 }
 
 #fbg {
     animation: parallax_fbg 60s infinite ease-in-out;
     background: url(../images/fbg_piano_lamps_and_laptop.png) no-repeat;
+    will-change: background-position;
+}
+
+#about .sectionTitle {
+    text-shadow: 0 0 16px #ee3030, -3px -4px 0 #cf4817, 0 2px 6px #a13812, 3px 4px 0 #ec9213;
 }
 
 #about .wrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding-bottom: 64px;
-    margin: 0 16px;
-}
-
-#about .section_title {
-    text-shadow: red -3px -3px 25px, #aa5000 -2px -2px, #ff8000 2px 2px;
+    margin: 0 12px;
+    padding-bottom: 192px;
 }
 
 .box {
     color: whitesmoke;
     margin: 0 16px;
-    max-width: 450px;
-    text-shadow: black 2px 2px 0;
+    max-width: 520px;
+    text-shadow: 0 0 15px black, 1px 1px 0 black;
 }
 
 .box .title {
-    font-size: var(--sub_title);
-    font-family: OksFree;
+    font-family: "OksFree";
+    font-size: var(--subtitle);
     text-align: center;
-    margin: 0;
+    margin: 8px 0 12px 0;
 }
 
-.list_of_skills {
+.listOfSkills {
     font-family: "Mozart", "PixelUnicode";
     font-size: var(--text);
     list-style-type: none;
     padding: 0;
-    text-align:left;
+    text-align: justify;
 }
 
-.list_of_skills li {
+.listOfSkills li {
     background-color: #101010a0;
-    border-radius: 10px;
+    border-radius: 4px;
+    padding: 2px 8px;
     margin: 2px 0;
 }
 
-.list_of_skills li::before {
+.listOfSkills li::before {
     content: "* ";
 }
 

@@ -7,19 +7,35 @@
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
-    padding: 16px 8px 0 8px;
-    max-width: 640px;
     margin: 0 auto;
+    max-width: 640px;
+    padding: 16px 8px 0 8px;
 }
 
 #social img {
     transition: 0.2s;
     width: 48px;
+    will-change: filter transform;
 }
 
 #social img:hover {
-    image-rendering: optimizeSpeed;
-    filter: drop-shadow(0 0 10px black);
-    transform: scale(1.28);
-    will-change: transform;
+    filter: drop-shadow(0 0 15px black);
+    transform: scale3d(1.28, 1.28, 1);
+}
+
+footer {
+    background-color: #242424;
+    border-bottom: none;
+    display: table;
+    height: 42px;
+    width: 100%;
+}
+
+footer p {
+    color: white;
+    display: table-cell;
+    font-family: "Mozart", "PixelUnicode";
+    font-size: calc(var(--text) * 0.85);
+    text-align: center;
+    vertical-align: middle;
 }

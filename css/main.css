@@ -1,84 +1,61 @@
 @font-face {
     font-family: "Mozart";
-    src: url("../webfonts/mozartnbp.woff") format("woff"), url("../webfonts/mozartnbp.woff2") format("woff2"), url("../webfonts/mozartnbp.ttf") format("truetype");
+    src:
+        url("../webfonts/mozartnbp.woff") format("woff"),
+        url("../webfonts/mozartnbp.woff2") format("woff2");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "OksFree";
-    src: url("../webfonts/OksFree.woff") format("woff"), url("../webfonts/OksFree.woff2") format("woff2"), url("../webfonts/OksFree.ttf") format("truetype");
+    src:
+        url("../webfonts/OksFree.woff") format("woff"),
+        url("../webfonts/OksFree.woff2") format("woff2");
     font-weight: normal;
     font-style: normal;
 }
 
-@font-face { /* Author: ivancr72 */
+@font-face { /* Made by ivancr72 */
     font-family: "PixelUnicode";
-    src: url("../webfonts/PixelUnicode.woff") format("woff"), url("../webfonts/PixelUnicode.woff2") format("woff2"), url("../webfonts/PixelUnicode.ttf") format("truetype");
+    src:
+        url("../webfonts/PixelUnicode.woff") format("woff"),
+        url("../webfonts/PixelUnicode.woff2") format("woff2");
     font-weight: normal;
     font-style: normal;
 }
 
 :root {
-    --theme-color: 240;
-
-    /* Font sizes */
-    --title: 56pt;
-    --sub_title: 32pt;
-    --title_creative: 52pt;
-    --links: 18pt;
-    --text: 20pt;
-    --hint: 20pt;
-
-    --copyright: 16pt;
+    --bold-blue: #2020e0;
+    --bolder-blue: #1717a0;
+    
+    --subtitle: min(8vw, 32pt);
+    --text: min(6.25vw, 20pt);
 }
 
-@media screen and (max-width: 600px) {
-    :root {
-        --title: 16vw;
-        --sub_title: 8vw;
-        --title_creative: 10vw;
-        --text: 6vw;
-        --hint: 5vw;
-
-        --copyright: 4.5vw;
-    }
-}
-
-blink {
-    animation: blink-animation 1s steps(2, start) infinite;
-}
-
-@keyframes blink-animation {
-    to { visibility: hidden; }
-}
+h1 { font-size: min(16vw, 64pt); }
 
 ::selection {
-    background-color: blue;
+    background-color: var(--bold-blue);
     color: whitesmoke;
 }
 
-* {
+* { /* Yeah, I'm one of those bad guys */
     margin: 0;
     padding: 0;
 }
 
 html {
-    background-image: url(../images/bg_transparent.png);
+    background-image: url(../images/transparent.png);
+    cursor: url(../images/cursor.png), auto;
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
-    cursor: url(../images/cursor.png), auto;
 }
 
 body {
-    image-rendering: pixelated;
     margin: 0 auto;
     max-width: 2160px;
     padding: 1vw;
-}
-
-body::-webkit-scrollbar {
-    width: 1vw;
 }
 
 body::-webkit-scrollbar-track {
@@ -89,17 +66,20 @@ body::-webkit-scrollbar-thumb {
     background: whitesmoke;
 }
 
-section {
-    border-bottom: ridge 4px whitesmoke;
+#content-box {
+    box-shadow: 0 0 0.5vw black;
 }
 
-section, footer {
+canvas { /* 3D background inside section */
+    background-color: var(--bold-blue);
+    position: absolute;
+    z-index: -1;
+}
+
+section {
+    border-bottom: ridge 8px whitesmoke;
     overflow: hidden;
     transition: box-shadow 0.25s;
-}
-
-ul {
-    margin: 20px 0;
 }
 
 label {
@@ -114,30 +94,31 @@ input[type=submit], a {
     cursor: url(../images/cursor_pointer.png), auto;
 }
 
-#content-box {
-    -webkit-box-shadow: 0 0 10px black;
-    box-shadow: 0 0 10px black;
+@media screen and (min-width: 961px) {
+    body::-webkit-scrollbar { width: 16px; }
+    .dropShadow { filter: drop-shadow(15px 5px 20px #000000cc); }
+    #content-box { border-radius: 24px; }
+    footer { border-radius: 0 0 24px 24px; }
+    #header { border-radius: 24px 24px 0 0; }
 }
 
-#home:hover {
-    box-shadow: -15px 0 20px -15px blue, 15px 0 20px -15px blue;
+@media screen and (max-width: 960px) {
+    body::-webkit-scrollbar { width: 2vw; }
+    .dropShadow { filter: drop-shadow(1.25vw 1vw 1.75vw #000000cc); }
+    #content-box { border-radius: 2vw; }
+    footer { border-radius: 0 0 2vw 2vw; }
+    #header { border-radius: 2vw 2vw 0 0; }
 }
 
-#about:hover {
-    box-shadow: -15px 0 20px -15px #100000, 15px 0 20px -15px #100000;
+.disableDragging {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
 }
 
-#portfolio:hover {
-    box-shadow: -15px 0 20px -15px #171515, 15px 0 20px -15px #171515;
-}
-
-#contact:hover {
-    box-shadow: -15px 0 20px -15px darkcyan, 15px 0 20px -15px darkcyan;
-}
-
-.toggler {
+.toggle {
     cursor: url(../images/cursor_pointer.png), auto;
-
     -webkit-touch-callout: none;
     -webkit-user-select:   none;
      -khtml-user-select:   none;
@@ -146,35 +127,15 @@ input[type=submit], a {
             user-select:   none;
 }
 
-.with_border {
-    border: ridge 4px whitesmoke;
+.withBorder {
+    border: ridge 5px whitesmoke;
     border-radius: 5px;
-}
-
-.section_title {
-    color: whitesmoke;
-    font-family: OksFree;
-    font-size: var(--title);
-    margin: 0 auto;
-    padding: 32px 0 2vw 0;
-    text-align: center;
-}
-
-.highlight span {
-    transition: background-color 0.25s, color 0.25s;
-}
-
-.highlighted {
-    background-color: blue !important;
-    color: whitesmoke;
 }
 
 .inner {
     height: 0;
     overflow: hidden;
-
-    transition: all;
-    transition-duration: 0.25s;
+    transition: all 0.25s;
 }
 
 .inner.hidden {
@@ -186,7 +147,20 @@ input[type=submit], a {
     margin-bottom: 0 !important;
 }
 
-.project-banner {
+.projectBanner {
     background-repeat: no-repeat !important;
     background-size: cover !important;
+    image-rendering: pixelated;
+}
+
+.sectionTitle {
+    color: whitesmoke;
+    font-family: "OksFree";
+    padding: 32px 0 16px 0;
+    text-align: center;
+}
+
+breakflex {
+    flex-basis: 100%;
+    height: 0;
 }

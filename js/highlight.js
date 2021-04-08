@@ -1,41 +1,31 @@
-class Highlight {
-    constructor(element) {
-        this.element = element;
+window.onload = () => {
+    let colours = new Set();
 
-        this.setup();
-        this.show();
+    document.querySelectorAll(".highlight").forEach((e) => {
+        let letters = e.textContent.split("");
+        let length = letters.length;
 
-        setInterval(() => this.show(), 5000);
-    }
+        e.classList.add("__hglght" + (e.dataset.colour || "#2020e0").substring(1));
+        e.textContent = "";
 
-    setup() {
-        var letters = this.element.textContent.split("");
-        this.element.textContent = "";
-
-        letters.forEach((letter) => {
+        for (let i = 0; i < length; i++) {
             var span = document.createElement("span");
-            span.innerHTML = letter;
 
-            this.element.append(span);
-        });
-    }
+            span.innerHTML = letters[i];
+            span.style.animationDelay = `${i * 100}ms`;
 
-    show() {
-        var spans = this.element.children;
-
-        for (var i = 0; i < spans.length; i++) {
-            const span = spans[i];
-            setTimeout(function() { toggleClass(span, "highlighted"); }, i * 100);
+            e.append(span);
         }
-    }
-}
 
-function init() {
-    var elements = document.querySelectorAll(".highlight");
-
-    elements.forEach(function(element) {
-        new Highlight(element);
+        colours.add(e.dataset.colour || "#2020e0");
     });
-}
+    
+    let styles = document.createElement("style");
+    styles.innerHTML += ".highlight span{animation:highlighting 20s steps(7) infinite;}@keyframes highlighting{0%,15%,85%,100%{background-color:transparent;}20%,80%{background-color:var(--highlight-colour);color:white;}}";
 
-document.addEventListener("DOMContentLoaded", init);
+    colours.forEach((colour) => {
+        styles.innerHTML += `.__hglght${colour.substring(1)} { --highlight-colour: ${colour}; }`;
+    });
+    
+    document.getElementsByTagName("head")[0].appendChild(styles);
+};

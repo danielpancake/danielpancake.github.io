@@ -1,6 +1,5 @@
 #header {
-    background-color: #242424;
-    width: 100%;
+    background-color: #202020;
 }
 
 #header ul {
@@ -14,19 +13,23 @@
     color: whitesmoke;
     display: block;
     font-family: "Mozart", "PixelUnicode";
-    font-size: var(--links);
+    font-size: var(--text);
     padding: 10px;
     text-align: center;
     text-decoration: none;
     transition: .25s ease;
 }
 
-#menu-toggle a {
-    text-align: left;
+#header .inner a:hover::before {
+    color: whitesmoke;
+    content: ">> ";
+    font-weight: bold;
 }
 
-#menu-toggle a img {
-    width: 18px;
+#header .inner a:hover::after {
+    color: whitesmoke;
+    content: " <<";
+    font-weight: bold;
 }
 
 #menu li {
@@ -35,12 +38,16 @@
     width: 0.1%;
 }
 
+#menu-switch a {
+    text-align: left;
+}
+
 @media screen and (min-width: 601px) {
     #menu { display: block; }
     #menu-mobile { display: none; }
 
     #header a:hover {
-        background: hsla(var(--theme-color), 100%, 50%, 0.5);
+        background-color: var(--bolder-blue);
         text-decoration: underline;
         text-shadow: 0 0 15px whitesmoke;
     }
@@ -49,16 +56,4 @@
 @media screen and (max-width: 600px) {
     #menu { display: none; }
     #menu-mobile { display: block; }
-
-    #header .inner a:hover::before {
-        color: whitesmoke;
-        content: ">> ";
-        font-weight: bold;
-    }
-
-    #header .inner a:hover::after {
-        color: whitesmoke;
-        content: " <<";
-        font-weight: bold;
-    }
 }

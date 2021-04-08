@@ -1,142 +1,114 @@
 #home {
-    background: url(../images/bg_vhs.gif);
-    background-position: bottom;
-    background-size: cover;
-    position: relative;
-}
-
-#lang {
-    animation: hint 2s ease-in-out;
-    animation-delay: 5s;
-    animation-fill-mode: forwards;
-    background-color: #242424;
-    border: ridge 4px whitesmoke;
-    border-top: none;
-    border-radius: 0 0 5px 5px;
-    position: absolute;
-    transform: translateY(-100%);
-}
-
-#lang a {
-    color: white;
-    font-family: "Mozart", "PixelUnicode";
-    font-size: var(--hint);
-    padding: 0;
-    margin: 0;
-    text-decoration: none;
-}
-
-#lang a:hover {
-    text-decoration: underline;
-}
-
-#lang a img {
-    height: var(--hint);
-    transform: translateY(25%);
-}
-
-#me {
-    image-rendering: auto;
-}
-
-@keyframes hint {
-    from { transform: translateY(-100%); }
-    to { transform: translateY(0); }
+    box-shadow: inset -35px 0 35px -25px var(--bold-blue);
 }
 
 #home .wrapper {
-    align-items: center;
-    background-image: url(../images/bg_strips.png);
-    background-position: center;
-    background-repeat: repeat-y;
+    background: url(../images/strips.png) center repeat-y;
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
     margin: 0 auto;
     max-width: 960px;
-    overflow: hidden;
     padding-top: 16px;
-    position: relative;
 }
 
-.pointer_animation {
-    animation: floating 10s infinite;
+#home:hover {
+    box-shadow: inset -35px 0 35px -25px var(--bold-blue), -15px 0 30px -15px gold, 15px 0 30px -15px var(--bold-blue);
 }
 
 #pointer {
+    animation: cursor 20s infinite;
     position: absolute;
-    width: 64px;
+    will-change: transform;
     z-index: 1;
 }
 
-#creative p {
-    display: inline-block;
-    font-family: OksFree;
-    font-size: var(--title_creative);
+/* Photo by https://unsplash.com/@nikldn on https://unsplash.com
+ * https://unsplash.com/photos/HzVHlwvQlyw
+ */
+#heart {
+    animation: windows 20s infinite;
+    position: absolute;
+    will-change: transform;
 }
 
-#creative span {
-    background-color: #ADFF2F;
-}
-
-#creative p>span {
-    border: ridge #ADFF2F 8px;
-    border-radius: 10px;
-}
-
-#creative p :nth-child(3) {
-    border-bottom: none;
-    border-radius: 0;
-    border-top: none;
-    opacity: 0.999;
-}
-
-@keyframes scroll {
-    0% { transform: translate(0, 0); }
-    100% { transform: translate(-100%, 0); }
-}
-
-@media screen and (min-width: 601px) {
-    #lang {
-        padding: 8px;
-        right: 16px;
-        top: -8px;
+@media screen and (min-width: 961px) {
+    #home .wrapper {
+        box-shadow: inset 192px 0 gold, -650px 0 gold;
     }
 
     #me {
-        max-width: 360px;
-        padding: 10px 32px 0 10px;
-        width: 40%;
+        height: 512px;
+    }
+    
+    #pointer {
+        height: 42px;
+        transform: translate3d(335px, 375px, 0);
     }
 
-    @keyframes floating {
-        0% { transform: translate(-30px, 180px); }
-        7% { transform: translate(270px, 180px); }
-        50% { transform: translate(230px, 40px); }
-        70% { transform: translate(150px, 90px); }
-        100% { transform: translate(-30px, 180px); }
+    @keyframes cursor {
+        0%, 100% { transform: translate3d(335px, 375px, 0); }
+        25%, 29% {
+            transform: translate3d(828px, 233px, 0);
+            content: url(../images/pointer1.png);
+        }
+        28% { content: url(../images/pointer2.png); }
+        50% { transform: translate3d(832px, 130px, 0); }
+        65% { transform: translate3d(290px, 270px, 0); }
+    }
+
+    #wordart {
+        filter: drop-shadow(8px 10px 15px pink);
+        height: 256px;
+        transform: translate3d(-85px, 15px, 0);
+    }
+
+    #heart {
+        height: 256px;
+        transform: translate3d(630px, 220px, 0) scale3d(1, 0, 1);
+    }
+
+    @keyframes windows {
+        0%, 29% { transform: translate3d(630px, 220px, 0) scale3d(1, 0, 1); }
+        1%, 28% { transform: translate3d(630px, 220px, 0) scale3d(1, 1, 1); }
     }
 }
 
-@media screen and (max-width: 600px) {
-    #lang {
-        padding: 1.5vw;
-        right: 1vw;
-        top: -1vw;
+@media screen and (max-width: 960px) {
+    #home .wrapper {
+        box-shadow: inset 20vw 0 gold;
     }
 
-    #me { 
-        padding: 1vw 5vw 0 1vw;
-        width: 35vw;
+    #me {
+        height: 54vw;
     }
-    
-    #pointer { width: 10vw; }
 
-    @keyframes floating {
-        0% { transform: translate(-5vw, 25vw); }
-        7% { transform: translate(37vw, 25vw); }
-        50% { transform: translate(35vw, 8vw); }
-        70% { transform: translate(25vw, 10vw); }
-        100% { transform: translate(-5vw, 25vw);  }
+    #pointer {
+        height: 4vw;
+    }
+
+    @keyframes cursor {
+        0%, 100% { transform: translate(35.5vw, 39vw); }
+        25%, 29% {
+            transform: translate(84vw, 25.5vw);
+            content: url(../images/pointer1.png);
+        }
+        28% { content: url(../images/pointer2.png); }
+        50% { transform: translate(85vw, 15vw); }
+        65% { transform: translate(30vw, 30vw); }
+    }
+
+    #wordart {
+        filter: drop-shadow(1vw 0.75vw 1.75vw pink);
+        height: 26.5vw;
+        transform: translate(-9vw, 2vw);
+    }
+
+    #heart {
+        height: 26vw;
+        transform: translate(64vw, 24vw) scale3d(1, 0, 1);
+    }
+
+    @keyframes windows {
+        0%, 29% { transform: translate(64vw, 24vw) scale3d(1, 0, 1); }
+        1%, 28% { transform: translate(64vw, 24vw) scale3d(1, 1, 1); }
     }
 }
