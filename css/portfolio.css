@@ -1,7 +1,6 @@
 #portfolio {
     animation: backgroundSpace 10s linear infinite;
     background-image: url(../images/bg_stars2.png), url(../images/bg_stars.png);
-    background-repeat: repeat, repeat;
 }
 
 #portfolio:hover {
@@ -104,20 +103,71 @@
     justify-content: space-between;
 }
 
+#donation {
+    position: sticky;
+    top: 4px;
+}
+
+.donationback {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.donationback:nth-of-type(1) {
+    background: rgba(0, 0, 0, 0.01);
+}
+
+.donationback:nth-of-type(2) {
+    background: rgba(0, 0, 0, 0.1);
+    clip-path: polygon(15% 0, 85% 0, 85% 65%, 15% 75%);
+}
+
+.donationback:nth-of-type(3) {
+    background: rgba(0, 0, 0, 0.05);
+    clip-path: polygon(15% 75%, 85% 65%, 100% 100%, 0 100%);
+}
+
+#flanders {
+    height: 0;
+    opacity: 0.25;
+    position: relative;
+    transition: height 0.65s, opacity 1s;
+    transition-delay: 15s;
+}
+
+#flanders:hover {
+    height: 256px;
+    opacity: 1;
+    transition-delay: 0.1s;
+}
+
+#flanders img {
+    filter: drop-shadow(0 0 15px var(--bold-blue));
+    height: 256px;
+    position: relative;
+    transition: filter 1s;
+}
+
+#flanders:hover > img {
+    filter: drop-shadow(0 0 15px whitesmoke);
+}
+
 #donation .block {
-    transition: color 0.75s, box-shadow 0.5s;
+    background-color: var(--bold-blue);
+    box-shadow: inset 0 0 5px black;
+    transition: color 0.75s;
 }
 
 #donation a {
-    background: url(../images/bg_vhs.gif);
-    background-position: bottom;
-    background-size: cover;
     border-radius: 5px;
     color: whitesmoke;
     display: block;
     font-family: "OksFree";
+    overflow: hidden;
     text-align: center;
     text-decoration: none;
+    text-shadow: 0 0 5px #101010;
 }
 
 #donation h1 {
@@ -127,13 +177,14 @@
 
 #donation p {
     font-size: var(--text);
-    margin: 2px 16px 8px 16px;
+    margin: 2px auto 8px auto;
+    padding: 0 18px;
     text-decoration: underline whitesmoke;
+    width: 18ch;
 }
 
 #donation a:hover > .block {
-    background-color: white;
-    box-shadow: inset 0 0 2px black;
+    background-color: whitesmoke;
     color: black;
     text-shadow: none;
 }
@@ -142,8 +193,13 @@
     text-decoration: underline black;
 }
 
+#donation .block p::after {
+    content: "☕Buy me a coffee";
+}
+
 @media screen and (max-width: 600px) {
     #additionalBlocks { margin-top: 8px; }
+    .donationback, #flanders { display: none; }
 }
 
 @media screen and (min-width: 601px) {
@@ -154,9 +210,12 @@
     }
     #portfolio ul { flex: 3; }
     #additionalBlocks { margin-left: 4px; }
+    #donation a:hover > .block p::after {
+        content: "😳oh dear!";
+    }
 }
 
 @keyframes backgroundSpace {
     0% { background-position: 0px 0px, 0px 0px; }
-    100% { background-position: 128px 128px, 256px 256px; }
+    100% { background-position: 256px 256px, 512px 512px; }
 }

@@ -95,7 +95,7 @@ var projectData = [
         "ShinyInu",
         "An android gallery app full of shibas",
         `<p><span class="highlight">ShinyInu</span> is an android gallery app that shows random pictures of Shiba Inu from <a target="_blank" href="https://shibe.online">shibe.online</a> website.</p>
-        <img src="https://raw.githubusercontent.com/DanielPancake/shinyinu/master/assets/preview2.png" loading="lazy">
+        <img src="https://raw.githubusercontent.com/DanielPancake/shinyinu/master/assets/preview2.webp" loading="lazy">
         <p>Features:</p>
         <p align="left">- Open-source android application</p>
         <p align="left">- Built-in image viewer</p>
@@ -192,7 +192,7 @@ var projectData = [
 var projects = document.getElementById("projects");
 for (let project of projectData) {
     projects.innerHTML += Mustache.render(
-        '<li class="toggle withBorder projectBanner" style="background: url(images/projects/{{banner}}.png); background-position: {{bannerPosition}};"><div class="shape"><div></div><p><span class="title">{{title}}</span><br>{{brief}}</p></div></li><div class="inner withBorder description">{{{description}}}</div>',
+        '<li class="toggle withBorder projectBanner" style="background: url(images/projects/{{banner}}.webp); background-position: {{bannerPosition}};"><div class="shape"><div></div><p><span class="title">{{title}}</span><br>{{brief}}</p></div></li><div class="inner withBorder description">{{{description}}}</div>',
         project
     );
 }

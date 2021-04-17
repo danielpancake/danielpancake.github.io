@@ -78,7 +78,6 @@ canvas { /* 3D background inside section */
 
 section {
     border-bottom: ridge 8px whitesmoke;
-    overflow: hidden;
     transition: box-shadow 0.25s;
 }
 
