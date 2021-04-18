@@ -5,6 +5,7 @@
         url("../webfonts/mozartnbp.woff2") format("woff2");
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -14,6 +15,7 @@
         url("../webfonts/OksFree.woff2") format("woff2");
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face { /* Made by ivancr72 */
@@ -23,6 +25,7 @@
         url("../webfonts/PixelUnicode.woff2") format("woff2");
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 :root {
