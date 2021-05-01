@@ -97,7 +97,8 @@ var projectData = [
         `<p><span class="highlight">gmdialogue</span> is a dialogue system for GameMaker Studio 2.3+ that uses command blocks to apply effects to the text</p>
         <br>
         <p>Project along with a documentation is available on <a target="_blank" href="https://github.com/danielpancake/gmdialogue">_github_</a></p>`,
-        "dialogue"
+        "dialogue",
+        "right"
     ),
 
     new Project(
