@@ -97,15 +97,17 @@
     max-width: 100%;
 }
 
-#additionalBlocks {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-#donation {
+#additionalBlocksWrapper {
     position: sticky;
     top: 4px;
+}
+
+#art a div {
+    background: url(../images/gallery/album.png);
+    background-size: 50%;
+    background-position: center;
+    height: 200px;
+    margin-top: 4px;
 }
 
 .donationback {
@@ -143,14 +145,14 @@
 }
 
 #flanders img {
-    filter: drop-shadow(0 0 15px var(--bold-blue));
+    filter: drop-shadow(0 0 5px var(--bold-blue));
     height: 256px;
     position: relative;
     transition: filter 1s;
 }
 
 #flanders:hover > img {
-    filter: drop-shadow(0 0 15px whitesmoke);
+    filter: drop-shadow(0 0 5px whitesmoke);
 }
 
 #donation .block {

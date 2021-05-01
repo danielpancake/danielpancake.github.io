@@ -92,19 +92,12 @@ function Project(title="", brief="", description="", banner="", bannerPosition="
 
 var projectData = [
     new Project(
-        "ShinyInu",
-        "An android gallery app full of shibas",
-        `<p><span class="highlight">ShinyInu</span> is an android gallery app that shows random pictures of Shiba Inu from <a target="_blank" href="https://shibe.online">shibe.online</a> website.</p>
-        <img src="https://raw.githubusercontent.com/DanielPancake/shinyinu/master/assets/preview2.webp" loading="lazy">
-        <p>Features:</p>
-        <p align="left">- Open-source android application</p>
-        <p align="left">- Built-in image viewer</p>
-        <p align="left">- Ability to favourite and save images</p>
-        <p align="left">- A good mood after each cute and fluffy Shiba (100% guarantee) :)</p>
+        "gmdialogue",
+        "A dialogue system for GameMaker Studio 2.3+",
+        `<p><span class="highlight">gmdialogue</span> is a dialogue system for GameMaker Studio 2.3+ that uses command blocks to apply effects to the text</p>
         <br>
-        <p>Download release .apk file from <a target="_blank" href="https://github.com/danielpancake/shinyinu/releases">_github_</a></p>
-        <p>ShinyInu's repository is available on <a target="_blank" href="https://github.com/danielpancake/shinyinu">_github_</a></p>`,
-        "shiny"
+        <p>Project along with a documentation is available on <a target="_blank" href="https://github.com/danielpancake/gmdialogue">_github_</a></p>`,
+        "dialogue"
     ),
 
     new Project(
@@ -121,6 +114,22 @@ var projectData = [
         <br>
         <p>Project along with a setup guide and examples is available on <a target="_blank" href="https://github.com/danielpancake/gmdungeon">_github_</a></p>`,
         "dungeon"
+    ),
+
+    new Project(
+        "ShinyInu",
+        "An android gallery app full of shibas",
+        `<p><span class="highlight">ShinyInu</span> is an android gallery app that shows random pictures of Shiba Inu from <a target="_blank" href="https://shibe.online">shibe.online</a> website.</p>
+        <img src="https://raw.githubusercontent.com/DanielPancake/shinyinu/master/assets/preview2.webp" loading="lazy">
+        <p>Features:</p>
+        <p align="left">- Open-source android application</p>
+        <p align="left">- Built-in image viewer</p>
+        <p align="left">- Ability to favourite and save images</p>
+        <p align="left">- A good mood after each cute and fluffy Shiba (100% guarantee) :)</p>
+        <br>
+        <p>Download release .apk file from <a target="_blank" href="https://github.com/danielpancake/shinyinu/releases">_github_</a></p>
+        <p>ShinyInu's repository is available on <a target="_blank" href="https://github.com/danielpancake/shinyinu">_github_</a></p>`,
+        "shiny"
     ),
 
     new Project(

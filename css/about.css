@@ -34,13 +34,13 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 0 12px;
+    margin: 0 min(2vw, 8px);
     padding-bottom: 192px;
 }
 
 .box {
     color: whitesmoke;
-    margin: 0 16px;
+    margin: 0 min(2vw, 8px);
     max-width: 520px;
     text-shadow: 0 0 15px black, 1px 1px 0 black;
 }

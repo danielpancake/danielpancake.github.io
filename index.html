@@ -46,7 +46,9 @@
                     background: var(--bold-blue) url(./images/noscript.png);
                 }
                 #about .box:nth-of-type(3) .highlight { background-color: #3d8c15; }
-                #contact form { display: none; }
+                #contact form {
+                    display: none;
+                }
             </style>
         </noscript>
     </head>
@@ -137,10 +139,10 @@
                 <div class="wrapper">
                     <ul id="projects">
                         <noscript>
-                            <li class="withBorder projectBanner" style="background: url(images/projects/.png); background-position: center;">
+                            <li class="withBorder projectBanner" style="background: url(images/projects/old.webp); background-position: center;">
                                 <div class="shape">
                                     <div></div>
-                                    <p><span class="title">{{title}}</span><br>{{brief}}</p>
+                                    <p><span class="title">Hey there!</span><br>Check out a list of my projects</p>
                                 </div>
                             </li>
 
@@ -151,19 +153,21 @@
                     </ul>
 
                     <div id="additionalBlocks">
-                        <div id="donation">
-                            <a target="_blank" href="https://ko-fi.com/danielpancake">
-                                <div class="block withBorder">
-                                    <div id="flanders">
-                                        <div class="donationback"></div>
-                                        <div class="donationback"></div>
-                                        <div class="donationback"></div>
-                                        <img src="./images/flanders.gif" alt="">
+                        <div id="additionalBlocksWrapper">
+                            <div id="donation">
+                                <a target="_blank" href="https://ko-fi.com/danielpancake">
+                                    <div class="block withBorder">
+                                        <div id="flanders">
+                                            <div class="donationback"></div>
+                                            <div class="donationback"></div>
+                                            <div class="donationback"></div>
+                                            <img src="./images/flanders.gif" alt="">
+                                        </div>
+                                        
+                                        <h1>Donate</h1><p></p>
                                     </div>
-                                    
-                                    <h1>Donate</h1><p></p>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -196,7 +200,8 @@
                             </form>
 
                             <noscript>
-                                <p>TODO: email button</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis <a href="mailto:test@gmail.com">e-mail me</a> exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. No javascript.
+                                </p>
                             </noscript>
                         </div>
                     </div>

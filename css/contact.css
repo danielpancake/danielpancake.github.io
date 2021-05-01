@@ -40,12 +40,20 @@
     justify-content: center;
 }
 
-#contact form {
+#contact a {
+    color: whitesmoke;
+}
+
+#contact p {
+    text-align: justify;
+}
+
+#contact form, #contact p {
     color: whitesmoke;
     max-width: 600px;
 }
 
-#contact label {
+#contact label, #contact p {
     font-size: calc(var(--text) * 1.15);
     text-shadow: 0 0 5px black;
 }

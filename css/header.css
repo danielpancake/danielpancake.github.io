@@ -1,5 +1,6 @@
 #header {
     background-color: #202020;
+    overflow: hidden;
 }
 
 #header ul {

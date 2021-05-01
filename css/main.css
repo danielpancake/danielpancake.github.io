@@ -38,6 +38,11 @@
 
 h1 { font-size: min(16vw, 64pt); }
 
+::-moz-selection {
+    background-color: var(--bold-blue);
+    color: whitesmoke;
+}
+
 ::selection {
     background-color: var(--bold-blue);
     color: whitesmoke;
@@ -70,7 +75,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 #content-box {
-    box-shadow: 0 0 0.5vw black;
+    -webkit-box-shadow: 0 0 0.5vw black;
+            box-shadow: 0 0 0.5vw black;
 }
 
 canvas { /* 3D background inside section */
@@ -81,7 +87,11 @@ canvas { /* 3D background inside section */
 
 section {
     border-bottom: ridge 8px whitesmoke;
+    -webkit-transition: -webkit-box-shadow 0.25s;
+    transition: -webkit-box-shadow 0.25s;
+    -o-transition: box-shadow 0.25s;
     transition: box-shadow 0.25s;
+    transition: box-shadow 0.25s, -webkit-box-shadow 0.25s;
 }
 
 label {
@@ -98,7 +108,7 @@ input[type=submit], a {
 
 @media screen and (min-width: 961px) {
     body::-webkit-scrollbar { width: 16px; }
-    .dropShadow { filter: drop-shadow(15px 5px 20px #000000cc); }
+    .dropShadow { -webkit-filter: drop-shadow(15px 5px 20px #000000cc); filter: drop-shadow(15px 5px 20px #000000cc); }
     #content-box { border-radius: 24px; }
     footer { border-radius: 0 0 24px 24px; }
     #header { border-radius: 24px 24px 0 0; }
@@ -106,7 +116,7 @@ input[type=submit], a {
 
 @media screen and (max-width: 960px) {
     body::-webkit-scrollbar { width: 2vw; }
-    .dropShadow { filter: drop-shadow(1.25vw 1vw 1.75vw #000000cc); }
+    .dropShadow { -webkit-filter: drop-shadow(1.25vw 1vw 1.75vw #000000cc); filter: drop-shadow(1.25vw 1vw 1.75vw #000000cc); }
     #content-box { border-radius: 2vw; }
     footer { border-radius: 0 0 2vw 2vw; }
     #header { border-radius: 2vw 2vw 0 0; }
@@ -123,7 +133,6 @@ input[type=submit], a {
     cursor: url(../images/cursor_pointer.png), auto;
     -webkit-touch-callout: none;
     -webkit-user-select:   none;
-     -khtml-user-select:   none;
        -moz-user-select:   none;
         -ms-user-select:   none;
             user-select:   none;
@@ -137,6 +146,8 @@ input[type=submit], a {
 .inner {
     height: 0;
     overflow: hidden;
+    -webkit-transition: all 0.25s;
+    -o-transition: all 0.25s;
     transition: all 0.25s;
 }
 
@@ -152,7 +163,11 @@ input[type=submit], a {
 .projectBanner {
     background-repeat: no-repeat !important;
     background-size: cover !important;
-    image-rendering: pixelated;
+    -ms-interpolation-mode: nearest-neighbor;
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: -moz-crisp-edges;
+        image-rendering: -o-pixelated;
+        image-rendering: pixelated;
 }
 
 .sectionTitle {
@@ -163,6 +178,7 @@ input[type=submit], a {
 }
 
 breakflex {
-    flex-basis: 100%;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
     height: 0;
 }
