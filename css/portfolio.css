@@ -1,5 +1,5 @@
 #portfolio {
-    animation: backgroundSpace 10s linear infinite;
+    animation: backgroundSpace 25s linear infinite;
     background-image: url(../images/bg_stars2.png), url(../images/bg_stars.png);
 }
 
