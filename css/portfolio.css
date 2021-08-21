@@ -3,10 +3,6 @@
     background-image: url(../images/bg_stars2.png), url(../images/bg_stars.png);
 }
 
-#portfolio:hover {
-    box-shadow: -15px 0 30px -15px #101010, 15px 0 30px -15px #101010;
-}
-
 #portfolio .sectionTitle {
     text-shadow: 0 0 16px blue, -3px -4px 0 #aa0080, 0 2px 6px #1214a1, 3px 4px 0 #5000cc;
 }

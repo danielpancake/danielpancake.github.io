@@ -1,29 +1,23 @@
 #about {
     background-color: #101010;
-}
-
-#about:hover {
-    box-shadow: -15px 0 30px -15px #101010, 15px 0 30px -15px #101010;
-}
-
-#about .parallax {
-    background-position: bottom;
-    background-size: contain;
-    image-rendering: pixelated;
-    margin: 0 auto;
-    max-width: 1280px;
+    position: relative;
+    overflow: hidden;
 }
 
 #bg {
-    animation: parallax_bg 60s infinite ease-in-out;
-    background: url(../images/bg_piano_lamps_and_laptop.png) no-repeat;
-    will-change: background-position;
+    animation: parallax_bg 60s ease-in-out infinite;
+    bottom: 300px;
+    image-rendering: pixelated;
+    left: 50%;
+    position: absolute;
 }
 
 #fbg {
-    animation: parallax_fbg 60s infinite ease-in-out;
-    background: url(../images/fbg_piano_lamps_and_laptop.png) no-repeat;
-    will-change: background-position;
+    animation: parallax_fbg 60s ease-in-out infinite;
+    bottom: 50px;
+    image-rendering: pixelated;
+    left: 30%;
+    position: absolute;
 }
 
 #about .sectionTitle {
@@ -36,6 +30,7 @@
     justify-content: center;
     margin: 0 min(2vw, 8px);
     padding-bottom: 192px;
+    position: relative;
 }
 
 .box {
@@ -72,13 +67,13 @@
 }
 
 @keyframes parallax_bg {
-    0% { background-position: -50px bottom; }
-    50% { background-position: 50px bottom; }
-    100% { background-position: -50px bottom; }
+    0% { transform: translateX(-50px); }
+    50% { transform: translateX(50px); }
+    100% { transform: translateX(-50px); }
 }
 
 @keyframes parallax_fbg {
-    0% { background-position: -100px bottom; }
-    50% { background-position: 100px bottom; }
-    100% { background-position: -100px bottom; }
+    0% { transform: translateX(-100px); }
+    50% { transform: translateX(100px); }
+    100% { transform: translateX(-100px); }
 }

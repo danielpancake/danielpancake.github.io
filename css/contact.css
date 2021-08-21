@@ -13,10 +13,6 @@
     max-width: 960px;
 }
 
-#contact:hover {
-    box-shadow: -15px 0 30px -15px darkcyan, 15px 0 30px -15px darkcyan;
-}
-
 #contact .sectionTitle {
     text-shadow: 0 0 16px aqua, -3px -4px 0 #1a4050, 0 2px 6px #12a176, 3px 4px 0 #037080;
 }

@@ -11,10 +11,6 @@
     padding-top: 16px;
 }
 
-#home:hover {
-    box-shadow: inset -35px 0 35px -25px var(--bold-blue), -15px 0 30px -15px gold, 15px 0 30px -15px var(--bold-blue);
-}
-
 #pointer {
     animation: cursor 20s infinite;
     position: absolute;
