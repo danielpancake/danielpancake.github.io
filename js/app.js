@@ -80,13 +80,15 @@ window.onresize = () => resize();
 window.onload = () => resize();
 
 // Portfolio section
-function Project(title="", brief="", description="", banner="", bannerPosition="center") {
+function Project(title="", brief="", description="", banner="", bannerPosition="", flavour="unknown yet", year="20XX") {
     return {
         title: title,
         brief: brief,
         description: description, // HTML
         banner: banner,
-        bannerPosition: bannerPosition
+        bannerPosition: (bannerPosition == "" ? "center" : bannerPosition),
+        flavour: flavour,
+        year: year
     };
 }
 
@@ -98,7 +100,9 @@ var projectData = [
         <br>
         <p>Project along with a documentation is available on <a target="_blank" href="https://github.com/danielpancake/gmdialogue">_github_</a></p>`,
         "dialogue",
-        "right"
+        "right",
+
+        "game assets", "2021"
     ),
 
     new Project(
@@ -106,15 +110,17 @@ var projectData = [
         "A procedural dungeon generator for GameMaker Studio 2",
         `<p><span class="highlight">gmdungeon</span> is a dungeon template generating asset for GameMaker: Studio 1.4 and GameMaker Studio 2</p>
         <br>
-        <p>This asset can be used in projects that require the procedual generation of dungeons. It's pretty easy to use!</p>
+        <p>This asset can be used in projects that require the procedual generation of a dungeon. It's pretty easy to use!</p>
         <img src="https://raw.githubusercontent.com/danielpancake/gmdungeon/master/assets/example3.gif" loading="lazy">
         <p>Features:</p>
         <p align="left">- Scripts to procedurally generate a dungeon</p>
         <p>- Ability to add icons to display on the minimap and custom room types</p>
-        <p>- Using masks to define the shape of the dungeon</p>
+        <p>- Using masks to give a dungeon a shape</p>
         <br>
         <p>Project along with a setup guide and examples is available on <a target="_blank" href="https://github.com/danielpancake/gmdungeon">_github_</a></p>`,
-        "dungeon"
+        "dungeon", "",
+
+        "game assets", "2020-2021"
     ),
 
     new Project(
@@ -126,11 +132,13 @@ var projectData = [
         <p align="left">- Open-source android application</p>
         <p align="left">- Built-in image viewer</p>
         <p align="left">- Ability to favourite and save images</p>
-        <p align="left">- A good mood after each cute and fluffy Shiba (100% guarantee) :)</p>
+        <p align="left">- A good mood after each cute and fluffy Shiba (99.9% guarantee) :)</p>
         <br>
         <p>Download release .apk file from <a target="_blank" href="https://github.com/danielpancake/shinyinu/releases">_github_</a></p>
         <p>ShinyInu's repository is available on <a target="_blank" href="https://github.com/danielpancake/shinyinu">_github_</a></p>`,
-        "shiny"
+        "shiny", "",
+
+        "android application", "2020"
     ),
 
     new Project(
@@ -138,36 +146,42 @@ var projectData = [
         "A game for Ludum Dare 42 competition",
         `<p><span class="highlight">Dr.Helper</span> is a silly puzzle game on the theme of running out of space.</p>
         <br>
-        <p>"Do you want to remove a dangerous virus from your computer, but can't afford expensive software licences? Let us introduce our latest invention - the best free antivirus software, made in the span of just two days - Dr. Helper. He knows more than 1.000.000 types of malwares, 350.000 types of spywares and tons of jokes!</p>
+        <p>"Do you want to remove a dangerous virus from your computer? Yet you cannot afford expensive software licences? Let us introduce our latest invention, the best free antivirus software made in the span of just two days, Dr. Helper. He knows more than 1.000.000 types of malwares, 350.000 types of spywares and tons of jokes!</p>
         <br>
-        <p>If there is a problem, Dr. Helper can help you! He will help not only you, but your friends and even your grandma defeat any type of computer, microwave and java-based mobile phone viruses.</p>
+        <p>If there is a problem, Dr. Helper can help you! He will help defeat any type of computer, microwave and java-based mobile phone viruses not only for you but your friends and even your grandma!</p>
         <br>
         <p>Keep viruses away, get Dr.Helper today!"</p>
         <img src="https://m.gjcdn.net/content/700/2043310-p7zsbhjs-v4.webp" loading="lazy">
         <p>In 2018, I entered Ludum Dare 42 competition. It was my first experience in game speed-development.</p>
         <br>
         <p>Dr.Helper is available on <a target="_blank" href="https://gamejolt.com/games/drhelper/361111">_gamejolt_</a></p>`,
-        "drhelper"
+        "drhelper",
+
+        "gamejam game", "Aug. 2018"
     ),
 
     new Project(
         "Cubicus DEMO",
         "Weird indie demo",
-        `<p>"Something which looks like the devil himself appears on the screen of your computer. It says that something in the system is broken. But he could help. Would you accept his offer?.."</p>
+        `<p>"Someone who looks like the devil himself appears on the screen of your computer. They says that something is wrong with your system. He wants to help. But what's the catch?.."</p>
         <br>
-        <p><span class="highlight">Cubicus DEMO</span> is the first game ever made by me. It's absurd and poorly made but I like it regardless. Eventually I will finish the full game and present it to the world!..</p>
+        <p><span class="highlight">Cubicus DEMO</span> is the first game ever made by me. It's absurd and poorly made but I kinda like it regardless. Eventually I will finish the full game and present it to the world!..</p>
         <br>
         <p>Cubicus DEMO is available on <a target="_blank" href="https://gamejolt.com/games/nocubicus/260121">_gamejolt_</a></p>`,
-        "old"
+        "old", "",
+
+        "old game projects / 2017"
     ),
 
     new Project(
         "Epic dungeon game",
         "Grid-based dungeon rpg",
-        `<p>Monsters and explostions ahead! This is a game which takes place in the underground world. Only devlog is available for now.</p>
+        `<p>Monsters and explosions ahead! It's a game which takes place in the underground world. Only devlog is available for now.</p>
         <br>
         <p>Devlog is available on <a target="_blank" href="https://gamejolt.com/games/edg/507835">_gamejolt_</a></p>`,
-        "edg"
+        "edg", "",
+
+        "ongoing game project", "2020 - now"
     ),
 
     new Project(
@@ -177,24 +191,30 @@ var projectData = [
         <br>
         <p>Check it out <a target="_blank" href="https://danielpancake.github.io/tedxyouth-agiouandreou">here</a> or on <a target="_blank" href="https://github.com/danielpancake/tedxyouth-agiouandreou">_github_</a></p>`,
         "tedxyouth",
-        "right"
+        "right",
+
+        "website", "2020"
     ),
 
     new Project(
         "spongebob-search",
         '"In which episode did they say that?.."',
-        `<p><span class="highlight">spongebob-search</span> is CLI with which you can search through transcripts from SpongeBob wiki page.</p>
+        `<p><span class="highlight">spongebob-search</span> is CLI for searching through transcripts from SpongeBob wiki.</p>
         <br>
         <p>You can find it on the <a target="_blank" href="https://github.com/danielpancake/spongebobsearch">_github_</a></p>`,
-        "sponge"
+        "sponge", "",
+
+        "command line application", "2020"
     ),
     
     new Project(
         "Even this webpage",
-        "yeah, it's open-source too",
+        "yeah, it's on my github too",
         '<p>The source code of this webpage is available on <a target="_blank" href="https://github.com/danielpancake/danielpancake.github.io">_github_</a></p>',
         "little_website",
-        "right"
+        "right",
+
+        "website", "2018 - now"
     ),
 ];
 
@@ -202,7 +222,7 @@ var projectData = [
 var projects = document.getElementById("projects");
 for (let project of projectData) {
     projects.innerHTML += Mustache.render(
-        '<li class="toggle withBorder projectBanner" style="background: url(images/projects/{{banner}}.webp); background-position: {{bannerPosition}};"><div class="shape"><div></div><p><span class="title">{{title}}</span><br>{{brief}}</p></div></li><div class="inner withBorder description">{{{description}}}</div>',
+        '<li class="toggle withBorder projectBanner" style="background: url(images/projects/{{banner}}.webp); background-position: {{bannerPosition}};"><div class="shape"><div></div><p><span class="title">{{title}}</span><br>{{brief}}</p></div></li><div class="inner withBorder description"><p class="flavour">{{flavour}} / {{year}}<p><hr>{{{description}}}</div>',
         project
     );
 }

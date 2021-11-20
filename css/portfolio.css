@@ -106,6 +106,12 @@
     margin-top: 4px;
 }
 
+.flavour {
+    background-color: whitesmoke;
+    color: grey;
+    text-align: right;
+}
+
 .donationback {
     position: absolute;
     width: 100%;
