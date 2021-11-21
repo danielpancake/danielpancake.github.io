@@ -99,8 +99,7 @@ var projectData = [
         `<p><span class="highlight">gmdialogue</span> is a dialogue system for GameMaker Studio 2.3+ that uses command blocks to apply effects to the text</p>
         <br>
         <p>Project along with a documentation is available on <a target="_blank" href="https://github.com/danielpancake/gmdialogue">_github_</a></p>`,
-        "dialogue",
-        "right",
+        "dialogue", "right",
 
         "game assets", "2021"
     ),
@@ -155,14 +154,14 @@ var projectData = [
         <p>In 2018, I entered Ludum Dare 42 competition. It was my first experience in game speed-development.</p>
         <br>
         <p>Dr.Helper is available on <a target="_blank" href="https://gamejolt.com/games/drhelper/361111">_gamejolt_</a></p>`,
-        "drhelper",
+        "drhelper", "",
 
         "gamejam game", "Aug. 2018"
     ),
 
     new Project(
         "Cubicus DEMO",
-        "Weird indie demo",
+        "A weird indie demo",
         `<p>"Someone who looks like the devil himself appears on the screen of your computer. They says that something is wrong with your system. He wants to help. But what's the catch?.."</p>
         <br>
         <p><span class="highlight">Cubicus DEMO</span> is the first game ever made by me. It's absurd and poorly made but I kinda like it regardless. Eventually I will finish the full game and present it to the world!..</p>
@@ -170,12 +169,27 @@ var projectData = [
         <p>Cubicus DEMO is available on <a target="_blank" href="https://gamejolt.com/games/nocubicus/260121">_gamejolt_</a></p>`,
         "old", "",
 
-        "old game projects / 2017"
+        "old game projects", "2017"
+    ),
+
+    new Project(
+        "Gosh, I love Summer!",
+        "A turn-based puzzle game for local jam",
+        `<p>"Gosha loves summer.. and his mother. This summer, they went on vacation to the sunny seashore. The sun was playing on the screen of Gosha's old mp3 player while he was listening to the new album of his favorite artist, Dmitry Kvadrat...
+        <br><br>
+        "GOSHA! Bring me a can of Coke, please. I'm so thirsty" - unfortunately for him, he heard. It's better not to argue with your mother. So, have to go..."</p>
+        <br>
+        <p>A winner of local IGD gamejam held at the Innopolis University</p>
+        <br>
+        <p>"Gosh, I love Summer!" is available on <a target="_blank" href="https://danielpancake.itch.io/gosh-i-love-summer">_itch.io_</a></p>`,
+        "gosha", "right",
+
+        "gamejam game", "Nov. 2021"
     ),
 
     new Project(
         "Epic dungeon game",
-        "Grid-based dungeon rpg",
+        "A grid-based dungeon rpg",
         `<p>Monsters and explosions ahead! It's a game which takes place in the underground world. Only devlog is available for now.</p>
         <br>
         <p>Devlog is available on <a target="_blank" href="https://gamejolt.com/games/edg/507835">_gamejolt_</a></p>`,
@@ -190,8 +204,7 @@ var projectData = [
         `<p>I made a webpage for the TEDxYouth event @ Agiou Andreou.</p>
         <br>
         <p>Check it out <a target="_blank" href="https://danielpancake.github.io/tedxyouth-agiouandreou">here</a> or on <a target="_blank" href="https://github.com/danielpancake/tedxyouth-agiouandreou">_github_</a></p>`,
-        "tedxyouth",
-        "right",
+        "tedxyouth", "right",
 
         "website", "2020"
     ),
@@ -211,8 +224,7 @@ var projectData = [
         "Even this webpage",
         "yeah, it's on my github too",
         '<p>The source code of this webpage is available on <a target="_blank" href="https://github.com/danielpancake/danielpancake.github.io">_github_</a></p>',
-        "little_website",
-        "right",
+        "little_website", "right",
 
         "website", "2018 - now"
     ),
@@ -221,14 +233,18 @@ var projectData = [
 // Appending projects to portfolio
 var projects = document.getElementById("projects");
 for (let project of projectData) {
+    // TODO: make flavour picker under donate button
+    // console.log(project.flavour);
+
     projects.innerHTML += Mustache.render(
+        // A mess, but still better than copying that everytime I add new project
         '<li class="toggle withBorder projectBanner" style="background: url(images/projects/{{banner}}.webp); background-position: {{bannerPosition}};"><div class="shape"><div></div><p><span class="title">{{title}}</span><br>{{brief}}</p></div></li><div class="inner withBorder description"><p class="flavour">{{flavour}} / {{year}}<p><hr>{{{description}}}</div>',
         project
     );
 }
 
 // Changing example name
-var nameList = ["Alexander", "Danila", "Steve", "Maria", "David", "Henry", "Owen", "Daisy", "Daniel", "George", "Dolores", "Yaraslava", "Oscar", "Jacob"];
+var nameList = ["Alexander", "Danila", "Steve", "Maria", "David", "Henry", "Owen", "Daisy", "Daniel", "George", "Dolores", "Yaraslava", "Oscar", "Jacob", "Lawrence", "Kaiden", "Desmond", "Ben"];
 
 var nameListPos = 0;
 var nameListLength = nameList.length;
