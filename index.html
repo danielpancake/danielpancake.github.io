@@ -83,46 +83,63 @@
                     <img id="heart" class="dropShadow disableDragging" src="./images/pancakes.png" alt="Always fluttering">
                 </div>
             </section>
+            
+            <section id="motd">
+                <marquee id="motd-printer">
+                    <noscript>
+                        This is just a silly message that is updated every day if JavaScript is enabled.
+                    </noscript>
+                </marquee>
+                <div id="motd-secret"></div>
+            </section>
 
             <section id="about" class="colourChanger" data-colour="#101010">
-                <img id="bg" src="./images/bg_piano_lamps_and_laptop.png">
-                <img id="fbg" src="./images/fbg_piano_lamps_and_laptop.png">
+                <div id="parallaxHandler">
+                    <img id="bg" src="./images/bg_piano_lamps_and_laptop.png">
+                    <img id="fbg" src="./images/fbg_piano_lamps_and_laptop.png">
+                </div>
+
+                <div id="cardboardSign">
+                    <div id="cardboard-left"><img src="./images/cardboard_arrow.png"></div>
+                    <div id="cardboard-right"><img src="./images/cardboard_arrow.png"></div>
+                </div>
                 
                 <h1 class="sectionTitle">About me</h1>
-                
                 <div class="wrapper">
                     <div class="box">
-                        <p class="title">🙋<u>Hey! I'm danielpancake</u><br><sup>My skills are listed below</sup></p>
+                        <p class="title">🙋<u>Hey! I'm the cool guy above</u><br><sup>and my skills are listed below</sup></p>
                     </div>
                     
                     <breakflex></breakflex>
                     
-                    <div class="box"> <!-- Workaround OG ligature -->
-                            <p class="title"><u>PrOgramming skills</u></p>
-                            <ul class="listOfSkills">
-                                <ul class="listOfSkills">
-                                    <li>Desktop game development with <span class="highlight">GameMaker Studio</span>.</li>
-                                    <li>Building web applications and scrapers with <span class="highlight">Go</span>.</li>
-                                    <li>Have experience working with <span class="highlight">git</span>.</li>
-                                    <li>Mobile apps development with <span class="highlight">Java, Android Studio</span>.</li>
-                                    <li>Web development and design with <span class="highlight">HTML, CSS and JavaScript</span>.</li>
-                                    <li>Writing scientific documents using <span class="highlight">LaTeX</span>.</li>
-                                    <li>Comfortable working on both <span class="highlight">Windows and Linux</span>.</li>
-                                    <li>Using <span class="highlight">Heroku</span> for web applications deployment.</li>
-                                    <li>Have basic knowledge of <span class="highlight">C++, haxe and MySQL</span>.</li>
-                            </ul>
-                        </div>
-                        <div class="box">
-                            <p class="title"><u>Personal skills</u></p>
-                            <ul class="listOfSkills">
-                                <li><span class="highlight" data-colour="#3d8c15">Responsible</span> high school graduate with an <span class="highlight" data-colour="#3d8c15">ability to easily adapt</span> to a new study & work environment.</li>
-                                <li><span class="highlight" data-colour="#3d8c15">Respectful of authorities</span> and supportive in arranging various activities.</li>
-                                <li>Easy to get along with and respected by other members of the team.</li>
-                                <li><span class="highlight" data-colour="#3d8c15">Focused and driven</span>. Open to new discoveries and innovations. Capable of learning new packages, expressing non-standard ideas.</li>
-                                <li>Possess strong <span class="highlight" data-colour="#3d8c15">IT, problem-solving and math</span> skills.</li>
-                                <li>Have a great command of <span class="highlight" data-colour="#3d8c15">Russian</span> (Native speaker) and <span class="highlight" data-colour="#3d8c15">English</span> (B2 Level).</li>
-                            </ul>
-                        </div>
+                    <div class="box">
+                        <p class="title"><u>Tech-saVvy skills</u></p>
+                        <ul class="listOfSkills">
+                            <li>Designing webpages with <span class="highlight">HTML, CSS and JavaScript</span> (pure or with frameworks).</li>
+                            <li>Developing backend applications with <span class="highlight">Go</span>.</li>
+                            <li>...desktop applications with <span class="highlight">Python and C#</span>.</li>
+                            <li>...games with <span class="highlight">GameMaker</span> and <span class="highlight">Haskell + Gloss</span>.</li>
+                            <li>...mobile apps with <span class="highlight">Java and Android Studio</span>.</li>
+                            <li>Drawing in <span class="highlight">mspaint, Aseprite and Adobe Sketchbook</span>.</li>
+                            <li>Editing videos with <span class="highlight">Magix Vegas Pro</span>.</li>
+                            <li>Making <span class="highlight">wacky animations</span> using various tools.</li>
+                            <li>Programming basic things with <span class="highlight">Haskell, C, C++, C#, Java, and Haxe</span>.</li>
+                            <li>Writing scientific documents with <span class="highlight">LaTeX</span>.</li>
+                        </ul>
+                    </div>
+
+                    <div class="box">
+                        <p class="title"><u>Personal skills</u></p>
+                        <ul class="listOfSkills">
+                            <li><span class="highlight" data-colour="#3d8c15">Responsible</span> 2<sup>nd</sup>-year undergraduate student with an <span class="highlight" data-colour="#3d8c15">ability to easily adapt</span> to a new study & work environment.</li>
+                            <li><span class="highlight" data-colour="#3d8c15">Respectful of authorities</span> and supportive in arranging various activities.</li>
+                            <li>Easy to get along with and respected by other members of the team.</li>
+                            <li><span class="highlight" data-colour="#3d8c15">Focused and driven</span>. Open to new discoveries and innovations. Capable of learning new packages, expressing non-standard ideas.</li>
+                            <li>Possess strong <span class="highlight" data-colour="#3d8c15">IT, problem-solving and math</span> skills.</li>
+                            <li>Have a great command of <span class="highlight" data-colour="#3d8c15">Russian</span> (Native speaker) and <span class="highlight" data-colour="#3d8c15">English</span> (B2 Level).</li>
+                        </ul>
+                    </div>
+
                     <breakflex></breakflex>
                     <div id="resume"></div>
                 </div>
@@ -130,6 +147,13 @@
 
             <section id="portfolio" class="colourChanger" data-colour="black">
                 <h1 class="sectionTitle">Portfolio</h1>
+                
+                <div class="wrapper2">
+                    <div class="box">
+                        <p class="title"><u>I made these</u><br><sup>...</sup></p>
+                    </div>
+                </div>
+
                 <div class="wrapper">
                     <ul id="projects">
                         <noscript>
@@ -181,16 +205,16 @@
                             <form onsubmit='const sender = document.getElementById("sender"); sender.disabled = true; sender.value = "Please, wait..."; sendfeedback(); return false;'>
                                 <div id="envelope">
                                     <label>What's your name?</label>
-                                    <input id="name" placeholder="* For example, George" class="withBorder" required="required" type="text">
+                                    <input id="name" placeholder="* Is it George?" class="withBorder" required="required" type="text">
                                     
                                     <label>What's your letter about?</label>
-                                    <input id="subject" placeholder="* Informative title" class="withBorder" required="required" type="text">
+                                    <input id="subject" placeholder="* Concise title" class="withBorder" required="required" type="text">
                                     
-                                    <label>What's your email?</label>
+                                    <label>Reply email:</label>
                                     <input id="email" placeholder="* -- not necessary --" class="withBorder" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
                                     
                                     <label>Your message:</label>
-                                    <textarea id="body" placeholder="* I was wondering if..." class="withBorder" required="required" rows="5"></textarea>
+                                    <textarea id="body" placeholder="* I really like/dislike what you are doing..." class="withBorder" required="required" rows="5"></textarea>
                                 </div>
                                 
                                 <input id="sender" class="withBorder" type="submit" value=">> Send <<">
@@ -220,7 +244,17 @@
             </div>
             
             <footer>
-                <p>Copyright danielpancake 2020 - 2021</p>
+                <p>
+                    Fonts used: Mozart NBP, OksFree, Pixel Unicode
+                    (<a href="https://danielpancake.github.io/webfonts/copyright.txt" target="_blank">please, see the copyright note</a>)
+                    <br>
+                    Portfolio section inspired by <a href="https://yal.cc/works/" target="_blank">YellowAfterlife's page</a>
+                    <br>
+                    "Pancakes" image by <a href="https://unsplash.com/photos/HzVHlwvQlyw" target="_blank">@nikldn</a>
+                    <br>♥<br>
+                    Website copyright danielpancake 2018 - 2022
+                    <br><br>
+                </p>
             </footer>
         </div>
     </body>
@@ -230,6 +264,7 @@
     <script type="text/javascript" src="./js/classes.js"></script>
     <script type="text/javascript" src="./js/colourChanger.js"></script>
     <script type="text/javascript" src="./js/highlight.js"></script>
+    <script type="text/javascript" src="./js/motd.js"></script>
     <script type="text/javascript" src="./js/toggles.js"></script>
     <script type="text/javascript" src="https://smtpjs.com/v3/smtp.js"></script>
 </html>

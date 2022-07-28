@@ -1,7 +1,13 @@
 #about {
     background-color: #101010;
     position: relative;
+}
+
+#parallaxHandler {
+    height: 100%;
     overflow: hidden;
+    position: absolute;
+    width: 100%;
 }
 
 #bg {
@@ -21,7 +27,8 @@
 }
 
 #about .sectionTitle {
-    text-shadow: 0 0 16px #ee3030, -3px -4px 0 #cf4817, 0 2px 6px #a13812, 3px 4px 0 #ec9213;
+    position: relative;
+    text-shadow: 0 0 16px #ee3030, -3px -4px 0 #cf4817, 0 2px 6px #a13812, 3px 4px 0 #ec9213;    
 }
 
 #about .wrapper {
@@ -45,6 +52,7 @@
     font-size: var(--subtitle);
     text-align: center;
     margin: 8px 0 12px 0;
+    white-space: nowrap;
 }
 
 .listOfSkills {
@@ -64,6 +72,53 @@
 
 .listOfSkills li::before {
     content: "* ";
+}
+
+#cardboardSign {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#cardboardSign div {
+    position: absolute;
+}
+
+@keyframes cardboard-floating {
+	0%   { transform: translateY(0) rotate(0); }
+	25%  { transform: translateX(-30px) translateY(-10px) rotate(-35deg) scale(1.1); }
+	50%  { transform: translateX(-10px) translateY(15px) rotate(-5deg); }
+	75%  { transform: translateY(-10px) rotate(5deg) scale(0.95); }
+	100% { transform: translateY(0) rotate(0); }
+}
+
+#cardboardSign img {
+    animation: cardboard-floating 30s ease-in-out infinite;
+    filter: drop-shadow(0 0 16px #451010);
+    image-rendering: pixelated;
+    width: 100%;
+}
+
+#cardboard-right img {
+    animation-delay: 5s;
+}
+
+@media screen and (min-width: 961px) {
+    #cardboardSign div {
+        max-width: 275px;
+        top: -80px;
+        width: 35%;
+    }
+    #cardboard-left { transform: translateX(-130%); }
+    #cardboard-right { transform: translateX(130%) rotate(180deg); }
+}
+
+@media screen and (max-width: 960px) {
+    #cardboardSign div {
+        max-width: calc(1.75 * var(--header));
+    }
+    #cardboard-left { transform: translateX(-120%) translateY(-20%); }
+    #cardboard-right { transform: translateX(125%) rotate(180deg); }
 }
 
 @keyframes parallax_bg {

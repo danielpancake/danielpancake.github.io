@@ -1,6 +1,7 @@
 #home {
     box-shadow: inset -35px 0 35px -25px var(--bold-blue);
     overflow: hidden;
+    border-bottom: solid whitesmoke 4px;
 }
 
 #home .wrapper {

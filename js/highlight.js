@@ -21,7 +21,7 @@ window.onload = () => {
     });
     
     let styles = document.createElement("style");
-    styles.innerHTML += ".highlight span{animation:highlighting 20s steps(7) infinite;}@keyframes highlighting{0%,15%,85%,100%{background-color:transparent;}20%,80%{background-color:var(--highlight-colour);color:white;}}";
+    styles.innerHTML += ".highlight span{will-change:background-color;animation:highlighting 20s steps(7) infinite;}@keyframes highlighting{0%,15%,85%,100%{background-color:transparent;}20%,80%{background-color:var(--highlight-colour);color:white;}}";
 
     colours.forEach((colour) => {
         styles.innerHTML += `.__hglght${colour.substring(1)} { --highlight-colour: ${colour}; }`;

@@ -1,33 +1,35 @@
 // Drawing that cool background
 var home = document.getElementById("home");
+
 function homeGetWidth() { return home.innerWidth || home.clientWidth; }
 function homeGetHeight() { return home.innerHeight || home.clientHeight; }
 
 var clock = new THREE.Clock();
 var scene = new THREE.Scene();
-var camera = new THREE.PerspectiveCamera(90, homeGetWidth() / homeGetHeight());
-var renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.15));
+var camera = new THREE.PerspectiveCamera(100, homeGetWidth() / homeGetHeight());
+var renderer = new THREE.WebGLRenderer();
+renderer.setClearColor(0x2020e0, 1);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1));
 renderer.setSize(home.offsetWidth, home.offsetHeight - 8);
 
-var geometry = new THREE.TorusGeometry(30, 20, 36, 100);
+var geometry = new THREE.TorusGeometry(30, 20, 36, 72);
 var material = new THREE.ShaderMaterial({
     vertexShader: [
         "varying vec2 vUv;",
         "varying vec3 vPos;",
         "uniform float uTime;",
-        
+
         "void main() {",
         "float time = uTime * 0.05;",
         "vUv = uv;",
-    
+
         "vec3 transformed = position;",
         "transformed.x *= 1.5;",
         "transformed += sin((position.x / 25.0 - time) * 5.0);",
         "transformed += cos((position.y / 25.0 - time) * 5.0);",
-    
+
         "vPos = transformed;",
-    
+
         "gl_Position = projectionMatrix * modelViewMatrix * vec4(transformed, 1.5);",
         "}"].join("\n"),
     fragmentShader: [
@@ -35,7 +37,7 @@ var material = new THREE.ShaderMaterial({
         "varying vec3 vPos;",
         "uniform float uTime;",
         "uniform sampler2D uTexture;",
-        
+
         "void main() {",
         "float time = uTime * 0.05;",
         "vec2 uv = vUv;",
@@ -44,7 +46,7 @@ var material = new THREE.ShaderMaterial({
 
         "vec4 tex = texture2D(uTexture, uv);",
         "tex.a *= clamp(vPos.z / 20.0, 0.0, 1.0);",
-        
+
         "gl_FragColor = tex;",
         "}"].join("\n"),
     uniforms: {
@@ -77,10 +79,11 @@ function resize() {
 }
 
 window.onresize = () => resize();
-window.onload = () => resize();
+
+resize();
 
 // Portfolio section
-function Project(title="", brief="", description="", banner="", bannerPosition="", flavour="unknown yet", year="20XX") {
+function Project(title = "", brief = "", description = "", banner = "", bannerPosition = "", flavour = "unknown yet", year = "20XX") {
     return {
         title: title,
         brief: brief,
@@ -156,7 +159,7 @@ var projectData = [
         <p>Dr.Helper is available on <a target="_blank" href="https://gamejolt.com/games/drhelper/361111">_gamejolt_</a></p>`,
         "drhelper", "",
 
-        "gamejam game", "Aug. 2018"
+        "gamejam submission", "Aug. 2018"
     ),
 
     new Project(
@@ -184,7 +187,7 @@ var projectData = [
         <p>"Gosh, I love Summer!" is available on <a target="_blank" href="https://danielpancake.itch.io/gosh-i-love-summer">_itch.io_</a></p>`,
         "gosha", "right",
 
-        "gamejam game", "Nov. 2021"
+        "gamejam submission", "Nov. 2021"
     ),
 
     new Project(
@@ -219,7 +222,7 @@ var projectData = [
 
         "command line application", "2020"
     ),
-    
+
     new Project(
         "Even this webpage",
         "yeah, it's on my github too",
@@ -244,6 +247,7 @@ for (let project of projectData) {
 }
 
 // Changing example name
+var preName = ["Perhaps it's", "Maybe it's", "...or", "It's definitely", "Maybe", "I think, it's", "You must be"];
 var nameList = ["Alexander", "Danila", "Steve", "Maria", "David", "Henry", "Owen", "Daisy", "Daniel", "George", "Dolores", "Yaraslava", "Oscar", "Jacob", "Lawrence", "Kaiden", "Desmond", "Ben"];
 
 var nameListPos = 0;
@@ -252,7 +256,7 @@ var nameListLength = nameList.length;
 let nameInput = document.getElementById("name");
 setInterval(() => {
     nameListPos = ++nameListPos % nameListLength;
-    nameInput.placeholder = "* For example, " + nameList[nameListPos];
+    nameInput.placeholder = "* " + preName[Math.round(Math.random() * preName.length)] + " " + nameList[nameListPos];
 }, 5000);
 
 // Sending feedback

@@ -27,7 +27,7 @@ footer {
     background-color: #242424;
     border-bottom: none;
     display: table;
-    height: 42px;
+    min-height: 42px;
     width: 100%;
 }
 
@@ -36,6 +36,11 @@ footer p {
     display: table-cell;
     font-family: "Mozart", "PixelUnicode";
     font-size: calc(var(--text) * 0.85);
+    padding: 16px;
     text-align: center;
     vertical-align: middle;
+}
+
+footer a {
+    color: white;
 }
