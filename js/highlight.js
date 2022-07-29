@@ -1,31 +1,29 @@
+/* This script highlights text character by character */
 window.onload = () => {
-    let colours = new Set();
+  let colours = new Set();
 
-    document.querySelectorAll(".highlight").forEach((e) => {
-        let letters = e.textContent.split("");
-        let length = letters.length;
+  document.querySelectorAll(".highlight").forEach((e) => {
+    const letters = e.textContent.split("");
 
-        e.classList.add("__hglght" + (e.dataset.colour || "#2020e0").substring(1));
-        e.textContent = "";
+    e.classList.add("__hglght" + (e.dataset.colour || "#2020e0").substring(1));
+    e.textContent = "";
 
-        for (let i = 0; i < length; i++) {
-            var span = document.createElement("span");
+    for (let i = 0; i < letters.length; ++i) {
+      const span = document.createElement("span");
+      span.innerHTML = letters[i];
+      span.style.animationDelay = `${i * 100}ms`;
+      e.append(span);
+    }
 
-            span.innerHTML = letters[i];
-            span.style.animationDelay = `${i * 100}ms`;
+    colours.add(e.dataset.colour || "#2020e0");
+  });
 
-            e.append(span);
-        }
+  const styles = document.createElement("style");
+  styles.innerHTML += ".highlight span{animation:highlighting 20s steps(7) infinite;}@keyframes highlighting{0%,15%,85%,100%{background-color:transparent;}20%,80%{background-color:var(--highlight-colour);color:white;}}";
 
-        colours.add(e.dataset.colour || "#2020e0");
-    });
-    
-    let styles = document.createElement("style");
-    styles.innerHTML += ".highlight span{will-change:background-color;animation:highlighting 20s steps(7) infinite;}@keyframes highlighting{0%,15%,85%,100%{background-color:transparent;}20%,80%{background-color:var(--highlight-colour);color:white;}}";
+  colours.forEach((col) => {
+    styles.innerHTML += `.__hglght${col.substring(1)} {--highlight-colour: ${col};}`;
+  });
 
-    colours.forEach((colour) => {
-        styles.innerHTML += `.__hglght${colour.substring(1)} { --highlight-colour: ${colour}; }`;
-    });
-    
-    document.getElementsByTagName("head")[0].appendChild(styles);
-};
+  document.getElementsByTagName("head")[0].appendChild(styles);
+}

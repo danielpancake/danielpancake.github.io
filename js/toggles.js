@@ -1,41 +1,50 @@
-let inners = document.getElementsByClassName("inner");
+/* This script handles blocks visibility of which can be toggle switched */
+const inners = document.getElementsByClassName("inner");
 for (let e of inners) {
-    addClass(e, "hidden"); // Hide all inner elements
-    e.addEventListener("transitionend", (event) => {
-        if (event.propertyName == "height") {
-            e.style.height = "auto";
-        } // transition end listener sets height back to auto
-    }, false);
+  e.classList.add("hidden") // Hide all inner elements
+  e.addEventListener("transitionend", (event) => {
+    // Transition-end listener sets height back to auto
+    if (event.propertyName == "height") {
+      e.style.height = "auto";
+    }
+  }, false);
 }
 
-let getHeight = (element) => { return window.getComputedStyle(element, null).getPropertyValue("height"); };
-
-let toggles = document.getElementsByClassName("toggle");
+const toggles = document.getElementsByClassName("toggle");
 for (let e of toggles) {
-    const inner = findNextElementByClassName(e, "inner");
-    e.addEventListener("click", () => {
-        if (containsClass(e, "active")) {
-            removeClass(e, "active");
+  const inner = findNextElementByClassName(e, "inner");
 
-            inner.style.height = getHeight(inner);
-            setTimeout(() => { addClass(inner, "hidden"); }, 20);
-        } else {
-            addClass(e, "active");
-            
-            let currentHeight = getHeight(inner);
-            removeClass(inner, "hidden");
-            inner.style.height = "auto";
-            let initialHeight = getHeight(inner);
-            inner.style.height = currentHeight;
-            setTimeout(() => { inner.style.height = initialHeight; }, 20);
-        }
-    });
+  e.addEventListener("click", () => {
+    if (e.classList.contains("active")) {
+      e.classList.remove("active");
+
+      inner.style.height = getHeight(inner);
+      setTimeout(() => { inner.classList.add("hidden") }, 20);
+    } else {
+      e.classList.add("active");
+
+      const currentHeight = getHeight(inner);
+      inner.classList.remove("hidden");
+      inner.style.height = "auto";
+
+      const initialHeight = getHeight(inner);
+      inner.style.height = currentHeight;
+      setTimeout(() => { inner.style.height = initialHeight; }, 20);
+    }
+  });
 }
 
 function findNextElementByClassName(element, className) {
-    var next = element.nextElementSibling;
-    while (next) {
-        if (containsClass(next, className)) { return next; }
-        next = next.nextElementSibling;
+  let next = element.nextElementSibling;
+  while (next) {
+    if (next.classList.contains(className)) {
+      return next;
     }
+
+    next = next.nextElementSibling;
+  }
 }
+
+const getHeight = (el) => {
+  return window.getComputedStyle(el, null).getPropertyValue("height");
+};

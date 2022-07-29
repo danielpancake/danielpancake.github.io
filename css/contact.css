@@ -1,85 +1,89 @@
 #contact {
-    background-color: darkcyan;
-    overflow: hidden;
+  background-color: darkcyan;
+  overflow: hidden;
 }
 
 #web {
-    background-image: url(../images/web-bottom.png);
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: contain;
-    padding: 0 16px 64px 16px;
-    margin: 0 auto;
-    max-width: 960px;
+  background-image: url(../images/web-bottom.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+  padding: 0 16px 64px 16px;
+  margin: 0 auto;
+  max-width: 960px;
 }
 
 #contact .sectionTitle {
-    text-shadow: 0 0 16px aqua, -3px -4px 0 #1a4050, 0 2px 6px #12a176, 3px 4px 0 #037080;
+  text-shadow: 0 0 16px aqua, -3px -4px 0 #1a4050, 0 2px 6px #12a176, 3px 4px 0 #037080;
 }
 
 #contact .wrapper {
-    background-image: url(../images/web-top.png);
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: contain;
-    font-family: "Mozart", "PixelUnicode";
+  background-image: url(../images/web-top.png);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: contain;
+  font-family: "Mozart", "PixelUnicode";
 }
 
 #envelope {
-    margin-top: 8px;
-    padding-right: 18px;
+  margin-top: 8px;
+  padding-right: 18px;
 }
 
 #contact .flex {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 #contact a {
-    color: whitesmoke;
+  color: whitesmoke;
 }
 
 #contact p {
-    text-align: justify;
+  text-align: justify;
 }
 
-#contact form, #contact p {
-    color: whitesmoke;
-    max-width: 600px;
+#contact form,
+#contact p {
+  color: whitesmoke;
+  max-width: 600px;
 }
 
-#contact label, #contact p {
-    font-size: calc(var(--text) * 1.15);
-    text-shadow: 0 0 5px black;
+#contact label,
+#contact p {
+  font-size: calc(var(--text) * 1.15);
+  text-shadow: 0 0 5px black;
 }
 
-#contact input, #contact textarea {
-    font-family: "Mozart", "PixelUnicode";
-    font-size: var(--text);
-    margin: 0 auto;
-    margin-bottom: 8px;
-    max-height: 320px;
-    min-height: 20px;
-    outline: none;
-    overflow-wrap: break-word;
-    padding-left: 8px;
-    resize: none;
-    width: 100%;
+#contact input,
+#contact textarea {
+  font-family: "Mozart", "PixelUnicode";
+  font-size: var(--text);
+  margin: 0 auto;
+  margin-bottom: 8px;
+  max-height: 320px;
+  min-height: 20px;
+  outline: none;
+  overflow-wrap: break-word;
+  padding-left: 8px;
+  resize: none;
+  width: 100%;
 }
 
 #banner {
-    animation: banner 30s infinite;
-    color: whitesmoke;
-    font-size: calc(var(--text) * 1.15);
-    margin-right: 16px;
-    text-align: end;
-    text-shadow: 0 0 5px black;
-    writing-mode: vertical-rl;
+  animation: banner 30s infinite;
+  color: whitesmoke;
+  font-size: calc(var(--text) * 1.15);
+  margin-right: 16px;
+  text-align: end;
+  text-shadow: 0 0 5px black;
+  writing-mode: vertical-rl;
 }
 
 @keyframes banner {
-    0% { transform: translateY(-150%); }
-    40%, 60% { transform: translateY(0); }
-    100% { transform: translateY(150%); }
+  0%   { transform: translateY(-150%); }
+  40%,
+  60%  { transform: translateY(0); }
+  100% { transform: translateY(150%); }
 }

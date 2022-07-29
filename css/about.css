@@ -1,134 +1,132 @@
 #about {
-    background-color: #101010;
-    position: relative;
+  background-color: #101010;
+  position: relative;
 }
 
 #parallaxHandler {
-    height: 100%;
-    overflow: hidden;
-    position: absolute;
-    width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
 }
 
 #bg {
-    animation: parallax_bg 60s ease-in-out infinite;
-    bottom: 300px;
-    image-rendering: pixelated;
-    left: 50%;
-    position: absolute;
+  animation: parallax_bg 60s ease-in-out infinite;
+  bottom: 300px;
+  image-rendering: pixelated;
+  left: 50%;
+  position: absolute;
 }
 
 #fbg {
-    animation: parallax_fbg 60s ease-in-out infinite;
-    bottom: 50px;
-    image-rendering: pixelated;
-    left: 30%;
-    position: absolute;
+  animation: parallax_fbg 60s ease-in-out infinite;
+  bottom: 50px;
+  image-rendering: pixelated;
+  left: 30%;
+  position: absolute;
 }
 
 #about .sectionTitle {
-    position: relative;
-    text-shadow: 0 0 16px #ee3030, -3px -4px 0 #cf4817, 0 2px 6px #a13812, 3px 4px 0 #ec9213;    
+  position: relative;
+  text-shadow: 0 0 16px #ee3030, -3px -4px 0 #cf4817, 0 2px 6px #a13812, 3px 4px 0 #ec9213;
 }
 
 #about .wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 0 min(2vw, 8px);
-    padding-bottom: 192px;
-    position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 min(2vw, 8px);
+  padding-bottom: 192px;
+  position: relative;
 }
 
 .box {
-    color: whitesmoke;
-    margin: 0 min(2vw, 8px);
-    max-width: 520px;
-    text-shadow: 0 0 15px black, 1px 1px 0 black;
+  color: whitesmoke;
+  margin: 0 min(2vw, 8px);
+  max-width: 520px;
+  text-shadow: 0 0 15px black, 1px 1px 0 black;
 }
 
 .box .title {
-    font-family: "OksFree";
-    font-size: var(--subtitle);
-    text-align: center;
-    margin: 8px 0 12px 0;
-    white-space: nowrap;
+  font-family: "OksFree";
+  font-size: var(--subtitle);
+  text-align: center;
+  margin: 8px 0 12px 0;
+  white-space: nowrap;
 }
 
 .listOfSkills {
-    font-family: "Mozart", "PixelUnicode";
-    font-size: var(--text);
-    list-style-type: none;
-    padding: 0;
-    text-align: justify;
+  font-family: "Mozart", "PixelUnicode";
+  font-size: var(--text);
+  list-style-type: none;
+  padding: 0;
+  text-align: justify;
 }
 
 .listOfSkills li {
-    background-color: #101010a0;
-    border-radius: 4px;
-    padding: 2px 8px;
-    margin: 2px 0;
+  background-color: #101010a0;
+  border-radius: 4px;
+  padding: 2px 8px;
+  margin: 2px 0;
 }
 
 .listOfSkills li::before {
-    content: "* ";
+  content: "* ";
 }
 
 #cardboardSign {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 #cardboardSign div {
-    position: absolute;
+  position: absolute;
 }
 
 @keyframes cardboard-floating {
-	0%   { transform: translateY(0) rotate(0); }
-	25%  { transform: translateX(-30px) translateY(-10px) rotate(-35deg) scale(1.1); }
-	50%  { transform: translateX(-10px) translateY(15px) rotate(-5deg); }
-	75%  { transform: translateY(-10px) rotate(5deg) scale(0.95); }
-	100% { transform: translateY(0) rotate(0); }
+  0% { transform: translate(0, 0px); }
+  50% { transform: rotate(-15deg) scale(1.05) translate(0, -35px); }
+  100% { transform: translate(0, 0px); }
 }
 
 #cardboardSign img {
-    animation: cardboard-floating 30s ease-in-out infinite;
-    filter: drop-shadow(0 0 16px #451010);
-    image-rendering: pixelated;
-    width: 100%;
+  animation: cardboard-floating 60s cubic-bezier(0.37, 0, 0.63, 1) infinite;
+  filter: drop-shadow(0 0 16px #451010);
+  width: 100%;
 }
 
 #cardboard-right img {
-    animation-delay: 5s;
+  animation-delay: 1s;
 }
 
 @media screen and (min-width: 961px) {
-    #cardboardSign div {
-        max-width: 275px;
-        top: -80px;
-        width: 35%;
-    }
-    #cardboard-left { transform: translateX(-130%); }
-    #cardboard-right { transform: translateX(130%) rotate(180deg); }
+  #cardboardSign div {
+    max-width: 275px;
+    top: -80px;
+    width: 35%;
+  }
+
+  #cardboard-left { transform: translateX(-125%); }
+  #cardboard-right { transform: translateX(125%) rotate(180deg); }
 }
 
 @media screen and (max-width: 960px) {
-    #cardboardSign div {
-        max-width: calc(1.75 * var(--header));
-    }
-    #cardboard-left { transform: translateX(-120%) translateY(-20%); }
-    #cardboard-right { transform: translateX(125%) rotate(180deg); }
+  #cardboardSign div {
+    max-width: calc(1.75 * var(--header));
+  }
+  #cardboard-left { transform: translateX(-120%) translateY(-20%); }
+  #cardboard-right { transform: translateX(125%) rotate(180deg); }
 }
 
 @keyframes parallax_bg {
-    0% { transform: translateX(-50px); }
-    50% { transform: translateX(50px); }
-    100% { transform: translateX(-50px); }
+  0% { transform: translateX(-50px); }
+  50% { transform: translateX(50px); }
+  100% { transform: translateX(-50px); }
 }
 
 @keyframes parallax_fbg {
-    0% { transform: translateX(-100px); }
-    50% { transform: translateX(100px); }
-    100% { transform: translateX(-100px); }
+  0% { transform: translateX(-100px); }
+  50% { transform: translateX(100px); }
+  100% { transform: translateX(-100px); }
 }
