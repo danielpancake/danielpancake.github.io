@@ -43,14 +43,9 @@
         to { background-position: 600px 200px; }
       }
       .inner { height: auto !important; }
-      .highlight { background-color: var(--bold-blue); }
       #home {
         animation: __slide 20s linear infinite;
         background: var(--bold-blue) url(./images/noscript.png);
-      }
-      /* Personal skills highting hardcoded */
-      #about .box:nth-of-type(3) .highlight {
-        background-color: #3d8c15;
       }
       #contact form { display: none; }
     </style>
@@ -84,9 +79,9 @@
     <section id="home" class="colourChanger" data-colour="#2020e0">
       <div class="wrapper">
         <img id="me" class="dropShadow disableDragging" src="./images/author.gif" alt="danielpancake's photo" />
-        <img id="wordart" class="disableDragging" src="./images/wordart.png" alt="danielpancake">
+        <img id="wordart" class="disableDragging" src="./images/wordart.png" alt="danielpancake logo">
         <img id="pointer" class="dropShadow disableDragging" src="./images/pointer1.png" alt="x">
-        <img id="heart" class="dropShadow disableDragging" src="./images/pancakes.png" alt="Always fluttering">
+        <img id="heart" class="dropShadow disableDragging" src="./images/pancakes.png" alt="Pancakes: HOT Sales!">
       </div>
     </section>
 
@@ -121,36 +116,51 @@
         <div class="box">
           <p class="title"><u>Tech-saVvy skills</u></p>
           <ul class="listOfSkills">
-            <li>Designing webpages with <span class="highlight">HTML, CSS and JavaScript</span> (pure or with
+            <li>Designing webpages with <span style="--ind:1; --col:var(--bold-blue)" class="highlight-lite">HTML, CSS and
+                JavaScript</span> (pure or with
               frameworks).</li>
-            <li>Developing backend applications with <span class="highlight">Go</span></li>
-            <li>...desktop applications with <span class="highlight">Python and C#</span></li>
-            <li>...games with <span class="highlight">GameMaker</span> and <span class="highlight">Haskell +
+            <li>Developing backend applications with <span style="--ind:2; --col:var(--bold-blue)"
+                class="highlight-lite">Go</span></li>
+            <li>...desktop applications with <span style="--ind:3; --col:var(--bold-blue)" class="highlight-lite">Python and
+                C#</span></li>
+            <li>...games with <span style="--ind:4; --col:var(--bold-blue)" class="highlight-lite">GameMaker</span> and <span
+                style="--ind:5; --col:var(--bold-blue)" class="highlight-lite">Haskell +
                 Gloss</span></li>
-            <li>...mobile apps with <span class="highlight">Java and Android Studio</span>.</li>
-            <li>Drawing in <span class="highlight">mspaint, Aseprite and Adobe Sketchbook</span>.</li>
-            <li>Editing videos with <span class="highlight">Magix Vegas Pro</span>.</li>
-            <li>Making <span class="highlight">wacky animations</span> using various tools.</li>
-            <li>Programming basic things with <span class="highlight">Haskell, C, C++, C#, Java, and Haxe</span>.</li>
-            <li>Writing scientific documents with <span class="highlight">LaTeX</span>.</li>
+            <li>...mobile apps with <span style="--ind:6; --col:var(--bold-blue)" class="highlight-lite">Java and Android
+                Studio</span>.</li>
+            <li>Drawing in <span style="--ind:7; --col:var(--bold-blue)" class="highlight-lite">mspaint, Aseprite and Adobe
+                Sketchbook</span>.</li>
+            <li>Editing videos with <span style="--ind:8; --col:var(--bold-blue)" class="highlight-lite">Magix Vegas Pro</span>.
+            </li>
+            <li>Making <span style="--ind:9; --col:var(--bold-blue)" class="highlight-lite">wacky animations</span> using
+              various tools.</li>
+            <li>Programming basic things with <span style="--ind:10; --col:var(--bold-blue)" class="highlight-lite">Haskell, C,
+                C++, C#, Java, and Haxe</span>.</li>
+            <li>Writing scientific documents with <span style="--ind:11; --col:var(--bold-blue)"
+                class="highlight-lite">LaTeX</span>.</li>
           </ul>
         </div>
-
+        
         <div class="box">
           <p class="title"><u>Personal skills</u></p>
           <ul class="listOfSkills">
-            <li><span class="highlight" data-colour="#3d8c15">Responsible</span> 2<sup>nd</sup>-year undergraduate
-              student with an <span class="highlight" data-colour="#3d8c15">ability to easily adapt</span> to a new
+            <li><span style="--ind:12; --col:#3d8c15" class="highlight-lite">Responsible</span> 2<sup>nd</sup>-year
+              undergraduate
+              student with an <span style="--ind:13; --col:#3d8c15" class="highlight-lite">ability to easily adapt</span> to a
+              new
               study & work environment.</li>
-            <li><span class="highlight" data-colour="#3d8c15">Respectful of authorities</span> and supportive in
+            <li><span style="--ind:14; --col:#3d8c15" class="highlight-lite">Respectful of authorities</span> and supportive in
               arranging various activities.</li>
             <li>Easy to get along with and respected by other members of the team.</li>
-            <li><span class="highlight" data-colour="#3d8c15">Focused and driven</span>. Open to new discoveries and
+            <li><span style="--ind:15; --col:#3d8c15" class="highlight-lite">Focused and driven</span>. Open to new discoveries
+              and
               innovations. Capable of learning new packages, expressing non-standard ideas.</li>
-            <li>Possess strong <span class="highlight" data-colour="#3d8c15">IT, problem-solving and math</span> skills.
+            <li>Possess strong <span style="--ind:16; --col:#3d8c15" class="highlight-lite">IT, problem-solving and math</span>
+              skills.
             </li>
-            <li>Have a great command of <span class="highlight" data-colour="#3d8c15">Russian</span> (Native speaker)
-              and <span class="highlight" data-colour="#3d8c15">English</span> (B2 Level).</li>
+            <li>Have a great command of <span style="--ind:17; --col:#3d8c15" class="highlight-lite">Russian</span> (Native
+              speaker)
+              and <span style="--ind:18; --col:#3d8c15" class="highlight-lite">English</span> (B2 Level).</li>
           </ul>
         </div>
 

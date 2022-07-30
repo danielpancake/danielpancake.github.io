@@ -74,6 +74,22 @@
   content: "* ";
 }
 
+.highlight-lite {
+  animation: 60s highlight infinite;
+  animation-delay: calc(5s + calc(var(--ind) * 0.25s));
+  background-color: none;
+  background: linear-gradient(90deg, var(--col) 50%, #0000 50%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+}
+
+@keyframes highlight {
+  5%   { background-position: 0 0; }
+  75%  { background-position: 0 0; }
+  80%  { background-position: -100% 0; }
+  100% { background-position: -100% 0; }
+}
+
 #cardboardSign {
   display: flex;
   flex-wrap: wrap;

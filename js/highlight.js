@@ -26,4 +26,12 @@ window.onload = () => {
   });
 
   document.getElementsByTagName("head")[0].appendChild(styles);
-}
+};
+
+/* Liteweight version of the highlighting */
+document.querySelectorAll(".highlight-lite").forEach((e) => {
+  e.setAttribute("style",
+    `animation-timing-function: steps(${e.textContent.length}, end);`
+    + e.getAttribute("style")
+  );
+});
