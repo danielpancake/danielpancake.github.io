@@ -13,13 +13,14 @@
 }
 
 #social img {
+  image-rendering: pixelated;
   transition: 0.2s;
   width: 48px;
   will-change: filter transform;
 }
 
 #social img:hover {
-  filter: drop-shadow(0 0 15px black);
+  filter: drop-shadow(0 0 8px black);
   transform: scale3d(1.28, 1.28, 1);
 }
 

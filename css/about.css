@@ -100,20 +100,30 @@
   position: absolute;
 }
 
-@keyframes cardboard-floating {
-  0% { transform: translate(0, 0px); }
-  50% { transform: rotate(-15deg) scale(1.05) translate(0, -35px); }
+@keyframes cardboard-floating-left {
+  0%   { transform: translate(0, 0px); }
+  50%  { transform: rotate(-15deg) scale(1.05) translate(0, -35px); }
+  100% { transform: translate(0, 0px); }
+}
+
+@keyframes cardboard-floating-right {
+  0%   { transform: translate(0, 0px); }
+  50%  { transform: rotate(-8deg) scale(1.05) translate(0, -15px); }
   100% { transform: translate(0, 0px); }
 }
 
 #cardboardSign img {
-  animation: cardboard-floating 60s cubic-bezier(0.37, 0, 0.63, 1) infinite;
   filter: drop-shadow(0 0 16px #451010);
   width: 100%;
 }
 
+#cardboard-left img {
+  animation: cardboard-floating-left 60s cubic-bezier(0.37, 0, 0.63, 1) infinite;
+}
+
 #cardboard-right img {
-  animation-delay: 1s;
+  animation: cardboard-floating-right 60s cubic-bezier(0.37, 0, 0.63, 1) infinite;
+  animation-delay: 2s;
 }
 
 @media screen and (min-width: 961px) {
