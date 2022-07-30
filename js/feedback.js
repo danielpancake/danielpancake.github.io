@@ -7,7 +7,10 @@ const nameInput = document.getElementById("name");
 let nameListPos = 0;
 setInterval(() => {
   nameListPos = ++nameListPos % nameList.length;
-  nameInput.placeholder = "* " + preName[Math.round(Math.random() * preName.length)] + " " + nameList[nameListPos];
+  nameInput.placeholder =
+    "* " + preName[
+    Math.round(Math.random() * (preName.length - 1))
+    ] + " " + nameList[nameListPos];
 }, 5000);
 
 const smtpjs = (name, email, subject, body) => {

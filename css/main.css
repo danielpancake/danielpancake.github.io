@@ -187,11 +187,6 @@ a {
 .projectBanner {
   background-repeat: no-repeat !important;
   background-size: cover !important;
-  -ms-interpolation-mode: nearest-neighbor;
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: -moz-crisp-edges;
-  image-rendering: -o-pixelated;
-  image-rendering: pixelated;
 }
 
 .sectionTitle {
@@ -226,7 +221,7 @@ breakflex {
 }
 
 @keyframes openMOTD {
-  0% { max-height: 32px; }
+  0%   { max-height: 32px; }
   100% { max-height: 4px; }
 }
 

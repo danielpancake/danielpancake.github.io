@@ -23,7 +23,7 @@ var projectData = [
     "haskell-outrun",
     'An outrun-like racing game made in Haskell',
 
-    `<p>I made this project as a part of the Haskell course final assignment in Innopolis University. It is an outrun-like game with pseudo-3d graphics made in Haskell. Most inspiration came from <a href="http://www.extentofthejam.com/pseudo" target="_blank">Lou's Article</a> and games like <a href="ttps://youtu.be/CJKgefRQh1I" target="_blank">Max DownForce</a> and original Out Run.</p>
+    `<p>I made this project as a part of the Haskell course final assignment at Innopolis University. It's an racing game with pseudo-3d graphics made in Haskell. Most inspiration came from <a href="http://www.extentofthejam.com/pseudo" target="_blank">Lou's Article</a> and games like <a href="ttps://youtu.be/CJKgefRQh1I" target="_blank">Max DownForce</a> and the original Out Run.</p>
     <br>
     <p>Features:</p>
     <p align="left">- Basic functionality for the outrun-like game</p>
@@ -69,17 +69,17 @@ var projectData = [
     "Animation \"Cheese\"",
     "from SHOP: A Pop Opera",
 
-    `<p>This is my take on re-animating one of the songs from <a href="https://youtu.be/tSkz4vATkQE" target="_blank">"SHOP: A Pop Opera"</a> made by <a href="https://www.youtube.com/c/JackStauber" target="_blank">Jack Stauber</a>.</p>
+    `<p>"Cheese" is my take on re-animating the song with the same name from <a href="https://youtu.be/tSkz4vATkQE" target="_blank">"SHOP: A Pop Opera"</a> by <a href="https://www.youtube.com/c/JackStauber" target="_blank">Jack Stauber</a>.</p>
     <br>
     <div class="video-container"><iframe id="ytplayer" type="text/html" src="https://www.youtube.com/embed/341JYVmMF0o" frameborder="0" loading="lazy"></iframe></div>
     <br><br>
-    <p>Below you can see most of the assets used in the animation. All of them were made using a mouse and drawing tablet in Aseprite. A good advice for the future would be to separate mouths from head sprites.</p>
+    <p>Below you can see most of the assets used in the animation, which were drawn using a mouse and a graphic tablet in Aseprite. A good piece of advice for the future would be to separate mouths from head sprites.</p>
     <img loading="lazy" src="./images/misc/work.webp">
     <p>After finishing the faces, I began filming. I shot at 0.75x of the initial speed to make movement coordination look better.
     <br><br>
     I usually use Vegas Pro to edit videos on my laptop.
     <br><br>
-    There, I keyed the background out, tracked the movement of my head, and began composing the frames. For the 3d text animation I used Paint 3d.</p>`,
+    There, I keyed the background out, tracked the movement of my head, and began composing the frames. For the 3d text animation, I used Paint 3d.</p>`,
 
     "cheese_pop_opera", "right",
     "animation", "Jun 2021"
@@ -91,13 +91,13 @@ var projectData = [
 
     `<p><span class="highlight">gmdungeon</span> is a dungeon template generation asset for GameMaker: Studio 1.4 and GameMaker Studio 2</p>
     <br>
-    <p>This asset can be used in projects that require the procedual generation of a dungeon. It's pretty easy to use!</p>
+    <p>You can use this asset if you wish to add procedurally generated dungeons to your game. It's pretty easy to use!</p>
     <br>
     <p>Features:</p>
     <p align="left">- Procedural dungeon generation</p>
     <p align="left">- Customizable room icons for the minimap</p>
     <p align="left">- Customizable room types</p>
-    <p align="left">- Dungeon shape masks</p>
+    <p align="left">- Masks defining dungeon shape</p>
     <img src="https://raw.githubusercontent.com/danielpancake/gmdungeon/master/assets/example3.gif" loading="lazy">
 
     <p>Project along with a setup guide and examples is available on <a target="_blank" href="https://github.com/danielpancake/gmdungeon">_github_</a></p>`,
@@ -115,70 +115,70 @@ var projectData = [
     <p>Features:</p>
     <p align="left">- Open-source android application</p>
     <p align="left">- Built-in image viewer</p>
-    <p align="left">- Ability to favourite and save images</p>
+    <p align="left">- Ability to favouritise and save images</p>
     <p align="left">- A good mood after each cute and fluffy Shiba (99.9% guarantee) :)</p>
     <br>
     <p>Download release .apk file from <a target="_blank" href="https://github.com/danielpancake/shinyinu/releases">_github_</a></p>
     <p>ShinyInu's repository is available on <a target="_blank" href="https://github.com/danielpancake/shinyinu">_github_</a></p>`,
 
     "shiny", "",
-    "android application", "Apr-Jun 2020"
+    "android app", "Apr-Jun 2020"
   ),
 
   new Project(
-    "Dr.Helper",
+    "Dr Helper",
     "A game for Ludum Dare 42 competition",
 
-    `<p><span class="highlight">Dr.Helper</span> is a silly puzzle game on the theme of running out of space.</p>
+    `<p><span class="highlight">Dr Helper</span> is a silly puzzle game about running out of space.</p>
     <br>
-    <p>"Do you want to remove a dangerous virus from your computer? Yet you cannot afford expensive software licences? Let us introduce our latest invention, the best free antivirus software made in the span of just two days, Dr. Helper. He knows more than 1.000.000 types of malwares, 350.000 types of spywares and tons of jokes!</p>
+    <p>"Do you want to remove a dangerous virus from your computer? Yet you cannot afford expensive software licences? Let us introduce our latest invention, the best free antivirus software made in just two days, Dr Helper! He knows more than 1,000,000 types of malware, 350,000 types of spyware and tons of jokes!</p>
     <br>
-    <p>If there is a problem, Dr. Helper can help you! He will help defeat any type of computer, microwave and java-based mobile phone viruses not only for you but your friends and even your grandma!</p>
+    <p>If there is a problem, Dr Helper will help you! Dr Helper will protect you, your friends and even your grandmother from all viruses that infect computers, microwaves, and java-based mobile phones!</p>
     <br>
-    <p>Keep viruses away, get Dr.Helper today!"</p>
+    <p>Keep the viruses away - get Dr Helper today!"</p>
     <img src="https://m.gjcdn.net/content/700/2043310-p7zsbhjs-v4.webp" loading="lazy">
-    <p>In 2018, I entered Ludum Dare 42 competition. It was my first experience in game speed-development.</p>
+    <p>In 2018, I entered Ludum Dare 42 competition. It was my first experience in game speed development.</p>
     <br>
-    <p>Dr.Helper is available on <a target="_blank" href="https://gamejolt.com/games/drhelper/361111">_gamejolt_</a></p>`,
+    <p>Dr Helper is available on <a target="_blank" href="https://gamejolt.com/games/drhelper/361111">_gamejolt_</a></p>`,
 
     "drhelper", "",
-    "gamejam submission", "Aug 2018"
+    "game jam submission", "Aug 2018"
   ),
 
   new Project(
     "Cubicus DEMO",
     "A weird indie demo",
 
-    `<p>"Someone who looks like the devil himself appears on the screen of your computer. They says that something is wrong with your system. He wants to help. But what's the catch?.."</p>
+    `<p>"Someone who looks like the devil himself appears on the computer screen. They say that something is wrong with your system. He wants to help. But what's the catch?.."</p>
     <br>
-    <p><span class="highlight">Cubicus DEMO</span> is the first game ever made by me. It's absurd and poorly made but I kinda like it regardless. Eventually I will finish the full game and present it to the world!..</p>
+    <p><span class="highlight">Cubicus DEMO</span> is the first ever game I made. It's absurd and not of the best quality but I like it regardless. Once I complete its development, I'll present it to the world!..</p>
     <br>
     <p>Cubicus DEMO is available on <a target="_blank" href="https://gamejolt.com/games/nocubicus/260121">_gamejolt_</a></p>`,
 
     "old", "",
-    "old game projects", "2017"
+    "???", "2017"
   ),
 
   new Project(
     "Gosh, I love Summer!",
-    "A turn-based puzzle game for local jam",
-    `<p>"Gosha loves summer.. and his mother. This summer, they went on vacation to the sunny seashore. The sun was playing on the screen of Gosha's old mp3 player while he was listening to the new album of his favorite artist, Dmitry Kvadrat...
+    "A turn-based puzzle game for the local jam",
+    `<p>"Gosha loves summer. He also loves his mother. This summer, they went on a vacation to the sunny seashore. The sun was playing on the screen of Gosha's old mp3 player while he was listening to the new album of his favourite musical artist, Dmitry Kvadrat...
     <br><br>
-    "GOSHA! Bring me a can of Coke, please. I'm so thirsty" - unfortunately for him, he heard. It's better not to argue with your mother. So, have to go..."</p>
+    "GOSHA! Fetch a can of Coke for me, please", his mother asked, disturbing Gosha's tranquillity. It's better not to argue with your mother. So, he better go..."</p>
     <br>
-    <p>A winner of local IGD gamejam held at the Innopolis University</p>
+    <p>A winner of the local IGD game jam held at the Innopolis University.</p>
     <br>
     <p>"Gosh, I love Summer!" is available on <a target="_blank" href="https://danielpancake.itch.io/gosh-i-love-summer">_itch.io_</a></p>`,
 
     "gosha", "right",
-    "gamejam submission", "Nov 2021"
+    "game jam submission", "Nov 2021"
   ),
 
   new Project(
     "Epic dungeon game",
     "A grid-based dungeon rpg",
 
-    `<p>Monsters and explosions ahead! It's a game which takes place in the underground world. This game uses gmdungeon assest under the hood</p>
+    `<p>Monsters and explosions ahead! It's a game which takes place in the underground world. This game uses the gmdungeon asset under the hood.</p>
     <br>
     <p>Devlog is available on <a target="_blank" href="https://gamejolt.com/games/edg/507835">_gamejolt_</a></p>`,
     
@@ -190,7 +190,9 @@ var projectData = [
     "TEDxYouth at Limassol",
     "⋆ Beyound!",
 
-    `<p>I was commissioned to design and make a webpage for the TEDxYouth event @ Agiou Andreou</p>
+    `<p>I was asked to design and make a webpage for the TEDxYouth event @ Agiou Andreou.
+    <br><br>
+    It was the first ever TEDxYouth event in Cyprus, organized by the initiative of the IMS Private School.</p>
     <br>
     <p>Check it out <a target="_blank" href="https://danielpancake.github.io/tedxyouth-agiouandreou">here</a> or on <a target="_blank" href="https://github.com/danielpancake/tedxyouth-agiouandreou">_github_</a></p>`,
     
@@ -202,7 +204,7 @@ var projectData = [
     "spongebob-search",
     'A text searching tool for Spongebob episodes',
 
-    `<p><span class="highlight">spongebob-search</span> is CLI for searching through transcripts from SpongeBob wiki</p>
+    `<p><span class="highlight">spongebob-search</span> is CLI for searching through transcripts from the SpongeBob wiki.</p>
     <br>
     <p>You can find it on the <a target="_blank" href="https://github.com/danielpancake/spongebobsearch">_github_</a></p>`,
     

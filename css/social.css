@@ -15,7 +15,8 @@
 #social img {
   image-rendering: pixelated;
   transition: 0.2s;
-  width: 48px;
+  min-width: 40px;
+  margin: 0 4px;
   will-change: filter transform;
 }
 
