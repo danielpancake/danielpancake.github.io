@@ -69,10 +69,20 @@ var projectData = [
     "Animation \"Cheese\"",
     "from SHOP: A Pop Opera",
 
-    `<div class="video-container"><iframe id="ytplayer" type="text/html" src="https://www.youtube.com/embed/341JYVmMF0o" frameborder="0" loading="lazy"></iframe></div>`,
+    `<p>This is my take on re-animating one of the songs from <a href="https://youtu.be/tSkz4vATkQE" target="_blank">"SHOP: A Pop Opera"</a> made by <a href="https://www.youtube.com/c/JackStauber" target="_blank">Jack Stauber</a>.</p>
+    <br>
+    <div class="video-container"><iframe id="ytplayer" type="text/html" src="https://www.youtube.com/embed/341JYVmMF0o" frameborder="0" loading="lazy"></iframe></div>
+    <br><br>
+    <p>Below you can see most of the assets used in the animation. All of them were made using a mouse and drawing tablet in Aseprite. A good advice for the future would be to separate mouths from head sprites.</p>
+    <img loading="lazy" src="./images/misc/work.webp">
+    <p>After finishing the faces, I began filming. I shot at 0.75x of the initial speed to make movement coordination look better.
+    <br><br>
+    I usually use Vegas Pro to edit videos on my laptop.
+    <br><br>
+    There, I keyed the background out, tracked the movement of my head, and began composing the frames. For the 3d text animation I used Paint 3d.</p>`,
 
     "cheese_pop_opera", "right",
-    "animation", "2021"
+    "animation", "Jun 2021"
   ),
 
   new Project(
@@ -132,7 +142,7 @@ var projectData = [
     <p>Dr.Helper is available on <a target="_blank" href="https://gamejolt.com/games/drhelper/361111">_gamejolt_</a></p>`,
 
     "drhelper", "",
-    "gamejam submission", "Aug. 2018"
+    "gamejam submission", "Aug 2018"
   ),
 
   new Project(
@@ -161,7 +171,7 @@ var projectData = [
     <p>"Gosh, I love Summer!" is available on <a target="_blank" href="https://danielpancake.itch.io/gosh-i-love-summer">_itch.io_</a></p>`,
 
     "gosha", "right",
-    "gamejam submission", "Nov. 2021"
+    "gamejam submission", "Nov 2021"
   ),
 
   new Project(
@@ -207,7 +217,7 @@ var projectData = [
     '<p>The source code of this webpage is available on <a target="_blank" href="https://github.com/danielpancake/danielpancake.github.io">_github_</a></p>',
 
     "little_website", "right",
-    "webpage", "2018 - now"
+    "webpage", "2018-now"
   )
 ];
 
