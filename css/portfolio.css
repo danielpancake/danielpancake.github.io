@@ -7,6 +7,7 @@
 #portfolio .sectionTitle {
   position: relative;
   text-shadow: 0 0 16px blue, -3px -4px 0 #aa0080, 0 2px 6px #1214a1, 3px 4px 0 #5000cc;
+  z-index: 1;
 }
 
 #portfolio .wrapper2 {
@@ -26,6 +27,8 @@
 #portfolio ul {
   font-family: "Mozart", "PixelUnicode";
   list-style: none;
+  position: relative;
+  filter: drop-shadow(0 0 5px black);
 }
 
 #projects li {
@@ -229,10 +232,27 @@
   width: 100%;
 }
 
-@media screen and (max-width: 600px) {
-  #additionalBlocks {
-    margin-top: 8px;
-  }
+#tentacle {
+  position: absolute;
+  top: -128px;
+}
+
+#tentacle img {
+  animation: tentacle_dance 60s infinite;
+  filter: drop-shadow(0 0 15px black);
+  position: relative;
+  margin-right: 345px;
+}
+
+@keyframes tentacle_dance {
+  0%   { transform: rotate(0deg); }
+  50%  { transform: rotate(-10deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@media screen and (max-width: 900px) {
+  #additionalBlocks { margin-top: 8px; }
+  #tentacle { display: none; }
 
   .donationback,
   #flanders {
@@ -240,63 +260,20 @@
   }
 }
 
-@media screen and (min-width: 601px) {
+@media screen and (min-width: 901px) {
+  #additionalBlocks { margin-left: 4px; }
+  #donation a:hover>.block p::after {
+    content: "😳oh dear!";
+  }
   #portfolio .wrapper {
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
   }
-
-  #portfolio ul {
-    flex: 3;
-  }
-
-  #additionalBlocks {
-    margin-left: 4px;
-  }
-
-  #donation a:hover>.block p::after {
-    content: "😳oh dear!";
-  }
+  #portfolio ul { flex: 3; }
 }
 
 @keyframes backgroundSpace {
-  0% { background-position: 0px 0px, 0px 0px; }
+  0%   { background-position: 0px 0px, 0px 0px; }
   100% { background-position: 256px 256px, 512px 512px; }
-}
-
-#words::before {
-  animation: first-words 60s linear infinite forwards;
-  content: "";
-}
-
-#words::after {
-  animation: second-words 48s linear infinite forwards;
-  content: "";
-}
-
-@keyframes first-words {
-  0%   { content: "cool"; }
-  10%  { content: "peculiar"; }
-  20%  { content: "wacky"; }
-  30%  { content: "inspiring"; }
-  40%  { content: "silly"; }
-  50%  { content: "creative"; }
-  60%  { content: "complex"; }
-  70%  { content: "intriguing"; }
-  80%  { content: "hair-raising"; }
-  90%  { content: "conspicuous"; }
-  100% { content: "cool"; }
-}
-
-@keyframes second-words {
-  0%    { content: "games"; }
-  12.5% { content: "videos"; }
-  25%   { content: "webpages"; }
-  37.5% { content: "content"; }
-  50%   { content: "entertainment"; }
-  62.5% { content: "stuff"; }
-  75%   { content: "projects"; }
-  87.5% { content: "stories"; }
-  100%  { content: "games"; }
 }
