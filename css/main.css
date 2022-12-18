@@ -33,7 +33,7 @@
   --bold-blue: #2020e0;
   --bolder-blue: #1717a0;
 
-  --header: min(16vw, 64pt);
+  --header: min(16vw, 92pt);
   --subtitle: min(8vw, 32pt);
   --text: min(6.25vw, 20pt);
 }
@@ -192,7 +192,7 @@ a {
 .sectionTitle {
   color: whitesmoke;
   font-family: "OksFree";
-  padding: 32px 0 16px 0;
+  padding: 16px 0 16px 0;
   text-align: center;
 }
 
@@ -202,7 +202,7 @@ breakflex {
   height: 0;
 }
 
-#motd {
+#aboutme {
   background: linear-gradient(90deg, #000 0%, var(--bolder-blue) 20%, var(--bolder-blue) 80%, #000 100%);
   border-bottom: none;
   position: relative;
@@ -210,7 +210,7 @@ breakflex {
 
 #motd-secret {
   animation: openMOTD 3s ease-in-out forwards;
-  animation-delay: 15s;
+  animation-delay: 10s;
   background-color: #101010;
   border-top: solid #a1a1a1 4px;
   bottom: -4px;
