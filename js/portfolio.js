@@ -23,7 +23,7 @@ var projectData = [
     "haskell-outrun",
     'An outrun-like racing game made in Haskell',
 
-    `<p>I made this project as a part of the Haskell course final assignment at Innopolis University. It's an racing game with pseudo-3d graphics made in Haskell. Most inspiration came from <a href="http://www.extentofthejam.com/pseudo" target="_blank">Lou's Article</a> and games like <a href="ttps://youtu.be/CJKgefRQh1I" target="_blank">Max DownForce</a> and the original Out Run.</p>
+    `<p>I made this project as a part of the Haskell course final assignment at Innopolis University. It's an racing game with pseudo-3d graphics made in Haskell. Most inspiration came from <a href="https://web.archive.org/web/20230126045954/http://www.extentofthejam.com/pseudo/" target="_blank">Lou's Article</a> and games like <a href="https://youtu.be/CJKgefRQh1I" target="_blank">Max DownForce</a> and the original Out Run.</p>
     <br>
     <p>Features:</p>
     <p align="left">- Basic functionality for the outrun-like game</p>
