@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>danielpancake</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />
+
+  <meta name="author" content="danielpancake" />
+  <meta http-equiv="Cache-Control" content="public" />
+  <meta name="description" property="og:description"
+    content="danielpancake - the greatest pancake alive! Happy content creator and developer." />
+  <meta name="google" content="notranslate" />
+  <meta name="google-site-verification" content="JHRMulxU0O2n3QKi7Wkgrxsv-c8xfYE8l_dpI12soAs" />
+  <meta name="googlebot" content="index, follow" />
+  <meta name="image" property="og:image" content="./images/socialpreview.jpg" />
+  <meta name="keywords"
+    content="danielpancake, daniel pancake, cubicus, gmdungeon, game maker studio, shinyinu, devlog, gamejolt" />
+  <meta name="robots" content="all" />
+  <meta name="yandex" content="index, follow" />
+
+  <meta name="apple-mobile-web-app-status-bar-style" content="#202020" />
+  <meta name="theme-color" content="#202020" />
+
+  <!-- Should redesign icon -->
+  <link rel="icon" type="image/x-icon" href="./images/favicon.png?v=2"">
+  <link rel="preload" as="image" href="./images/pointer2.png">
+
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/header.css">
+  <link rel="stylesheet" href="./css/home.css">
+  <link rel="stylesheet" href="./css/about.css">
+  <link rel="stylesheet" href="./css/portfolio.css">
+  <link rel="stylesheet" href="./css/contact.css">
+  <link rel="stylesheet" href="./css/social.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
+
+  <noscript>
+    <style>
+      @keyframes __slide {
+        from { background-position: 0 0; }
+        to { background-position: 600px 200px; }
+      }
+      .inner { height: auto !important; }
+      #home {
+        animation: __slide 20s linear infinite;
+        background: var(--bold-blue) url(./images/noscript.png);
+      }
+      #contact form { display: none; }
+      #tentacle { display: none; }
+    </style>
+  </noscript>
+</head>
+
+<body>
+  <div id="content-box">
+    <section id="header" class="colourChanger" data-colour="#202020">
+      <ul id="menu-mobile">
+        <li id="menu-switch" class="toggle">
+          <a class="disableDragging" href="#"><img src="./images/ic_menu.png" alt="Menu toggle"></a>
+        </li>
+
+        <div class="inner">
+          <li><a href="#aboutme">About me</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="https://t.me/dpancake">Blog</a></li>
+        </div>
+      </ul>
+
+      <ul id="menu">
+        <li><a href="#aboutme">About me</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="https://t.me/dpancake">Blog</a></li>
+      </ul>
+    </section>
+
+    <section id="home" class="colourChanger" data-colour="#2020e0">
+      <div class="wrapper">
+        <img id="me" class="dropShadow disableDragging" src="./images/author.gif" alt="danielpancake's photo" />
+        <img id="wordart" class="disableDragging" src="./images/wordart.png" alt="danielpancake logo">
+        <img id="pointer" class="dropShadow disableDragging" src="./images/pointer1.png" alt="x">
+        <img id="heart" class="dropShadow disableDragging" src="./images/pancakes.png" alt="Pancakes: HOT Sales!">
+      </div>
+    </section>
+
+    <section id="aboutme">
+      <marquee id="motd-printer">
+        <noscript>
+          This is just a silly message that is updated every day if JavaScript is enabled.
+        </noscript>
+      </marquee>
+      <div id="motd-secret"></div>
+    </section>
+
+    <section id="about" class="colourChanger" data-colour="#101010">
+      <div id="parallaxHandler">
+        <img id="bg" src="./images/bg_piano_lamps_and_laptop.png">
+        <img id="fbg" src="./images/fbg_piano_lamps_and_laptop.png">
+      </div>
+
+      <div id="cardboardSign">
+        <div id="cardboard-left"><img src="./images/cardboard_arrow.png"></div>
+        <div id="cardboard-right"><img src="./images/cardboard_arrow.png"></div>
+      </div>
+
+      <h1 class="sectionTitle">About me</h1>
+      <div class="wrapper">
+        <div class="box">
+          <p class="title">🙋<u>Hey! I'm the cool guy above</u><br><sup>and my skills are listed below</sup></p>
+        </div>
+
+        <breakflex></breakflex>
+
+        <div class="box">
+          <p class="title"><u>Tech-saVvy skills</u></p>
+          <ul class="listOfSkills">
+            <li>Designing webpages with <span style="--ind:1; --col:var(--bold-blue)" class="highlight-lite">HTML, CSS and
+                JavaScript</span> (pure or with
+              frameworks).</li>
+            <li>Developing backend applications with <span style="--ind:2; --col:var(--bold-blue)"
+                class="highlight-lite">Go</span></li>
+            <li>...desktop applications with <span style="--ind:3; --col:var(--bold-blue)" class="highlight-lite">Python and
+                C#</span></li>
+            <li>...games with <span style="--ind:4; --col:var(--bold-blue)" class="highlight-lite">GameMaker</span> and <span
+                style="--ind:5; --col:var(--bold-blue)" class="highlight-lite">Haskell +
+                Gloss</span></li>
+            <li>...mobile apps with <span style="--ind:6; --col:var(--bold-blue)" class="highlight-lite">Java and Android
+                Studio</span>.</li>
+            <li>Drawing in <span style="--ind:7; --col:var(--bold-blue)" class="highlight-lite">mspaint, Aseprite and Adobe
+                Sketchbook</span>.</li>
+            <li>Editing videos with <span style="--ind:8; --col:var(--bold-blue)" class="highlight-lite">Magix Vegas Pro</span>.
+            </li>
+            <li>Making <span style="--ind:9; --col:var(--bold-blue)" class="highlight-lite">wacky animations</span> using
+              various tools.</li>
+            <li>Programming basic things with <span style="--ind:10; --col:var(--bold-blue)" class="highlight-lite">Haskell, C,
+                C++, C#, Java, and Haxe</span>.</li>
+            <li>Writing scientific documents with <span style="--ind:11; --col:var(--bold-blue)"
+                class="highlight-lite">LaTeX</span>.</li>
+          </ul>
+        </div>
+
+        <div class="box">
+          <p class="title"><u>Personal skills</u></p>
+          <ul class="listOfSkills">
+            <li><span style="--ind:12; --col:#3d8c15" class="highlight-lite">Responsible</span> 2<sup>nd</sup>-year
+              undergraduate
+              student with an <span style="--ind:13; --col:#3d8c15" class="highlight-lite">ability to easily adapt</span> to a
+              new
+              study & work environment.</li>
+            <li><span style="--ind:14; --col:#3d8c15" class="highlight-lite">Respectful of authorities</span> and supportive in
+              arranging various activities.</li>
+            <li>Easy to get along with and respected by other members of the team.</li>
+            <li><span style="--ind:15; --col:#3d8c15" class="highlight-lite">Focused and driven</span>. Open to new discoveries
+              and
+              innovations. Capable of learning new packages, expressing non-standard ideas.</li>
+            <li>Possess strong <span style="--ind:16; --col:#3d8c15" class="highlight-lite">IT, problem-solving and math</span>
+              skills.
+            </li>
+            <li>Have a great command of <span style="--ind:17; --col:#3d8c15" class="highlight-lite">Russian</span> (Native
+              speaker)
+              and <span style="--ind:18; --col:#3d8c15" class="highlight-lite">English</span> (B2 Level).</li>
+          </ul>
+        </div>
+
+        <breakflex></breakflex>
+        <div id="resume"></div>
+      </div>
+    </section>
+
+    <section id="portfolio" class="colourChanger" data-colour="black">
+      <h1 class="sectionTitle">Portfolio</h1>
+
+      <div class="wrapper2">
+        <div class="box">
+          <p class="title"><u>This is what I make</u></p>
+        </div>
+      </div>
+
+      <div class="wrapper">
+        <div id="tentacle">
+          <img src="./images/tentacle.png">
+        </div>
+        
+        <ul id="projects">
+          <noscript>
+            <li class="withBorder projectBanner"
+              style="background: url(images/projects/dialogue.webp); background-position: center;">
+              <div class="shape">
+                <div></div>
+                <p><span class="title">Hey there!</span><br>Check out a list of my projects</p>
+              </div>
+            </li>
+
+            <div class="withBorder description">
+              <p>List of my most significant projects:</p>
+              <p>* <a target="_blank" href="https://github.com/danielpancake/gmdialogue">gmdialogue</a></p>
+              <p>* <a target="_blank" href="https://github.com/danielpancake/gmdungeon">gmdungeon</a></p>
+              <p>* <a target="_blank" href="https://github.com/danielpancake/danielpancake.github.io">this webpage</a>
+              </p>
+              <br>
+              <p>Enable javascript to see all projects</p>
+            </div>
+          </noscript>
+        </ul>
+
+        <div id="additionalBlocks">
+          <div id="additionalBlocksWrapper">
+            <div id="donation">
+              <a target="_blank" href="https://ko-fi.com/danielpancake">
+                <div class="block withBorder">
+                  <div id="flanders">
+                    <div class="donationback"></div>
+                    <div class="donationback"></div>
+                    <div class="donationback"></div>
+                    <img src="./images/flanders.gif" alt="">
+                  </div>
+
+                  <h1>Donate</h1>
+                  <p></p>
+                </div>
+              </a>
+            </div>
+          </div>
+    </section>
+
+    <section id="contact" class="colourChanger" data-colour="darkcyan">
+      <div id="web">
+        <div class="wrapper">
+          <h1 class="sectionTitle">Contact</h1>
+
+          <div class="flex">
+            <div id="banner"><span class="highlight">..or check my social media =></span></div>
+
+            <form
+              onsubmit='const sender = document.getElementById("sender"); sender.disabled = true; sender.value = "Please, wait..."; sendfeedback(); return false;'>
+              <div id="envelope">
+                <label>What's your name?</label>
+                <input id="name" placeholder="* Is it George?" class="withBorder" required="required" type="text">
+
+                <label>What's your letter about?</label>
+                <input id="subject" placeholder="* Concise title" class="withBorder" required="required" type="text">
+
+                <label>Reply email:</label>
+                <input id="email" placeholder="* -- not necessary --" class="withBorder" type="email"
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+
+                <label>Your message:</label>
+                <textarea id="body" placeholder="* I really like/dislike what you are doing..." class="withBorder"
+                  required="required" rows="5"></textarea>
+              </div>
+
+              <input id="sender" class="withBorder" type="submit" value=">> Send <<">
+            </form>
+
+            <noscript>
+              <br><br><br><br><br><br>
+              <p>Ooops... contact form seems to be missing.</p>
+              <br>
+              <p>Unfortunately, contact form cannot work with javascript disabled. Still, if you wish to contact me, you
+                can reach out through the social media listed below or <a href="mailto:inboxpancake@gmail.com">my email</a>.</p>
+            </noscript>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="social">
+      <div class="wrapper">
+        <a href="https://ko-fi.com/danielpancake" target="_blank"><img src="images/ic_kofi.png"></a>
+        <a href="https://gamejolt.com/@danielpancake" target="_blank"><img src="images/ic_gamejolt.png"></a>
+        <a href="https://github.com/danielpancake" target="_blank"><img src="images/ic_github.png"></a>
+        <a href="https://twitter.com/dpancakestuff" target="_blank"><img src="images/ic_twitter.png"></a>
+        <a href="https://instagram.com/dpancakestuff" target="_blank"><img src="images/ic_inst.png"></a>
+        <a href="https://t.me/dpancake" target="_blank"><img src="images/ic_telegram.png"></a>
+        <a href="https://youtube.com/channel/UCWdJsddl5Yw2tY6MPy2ByFA" target="_blank"><img src="images/ic_yt.png"></a>
+      </div>
+    </div>
+
+    <footer>
+      <p>
+        Fonts used: Mozart NBP, OksFree, Pixel Unicode
+        (<a href="https://danielpancake.github.io/webfonts/copyright.txt" target="_blank">please, see the copyright
+          note</a>)
+        <br>
+        Portfolio section inspired by <a href="https://yal.cc/works/" target="_blank">YellowAfterlife's page</a>
+        <br>
+        "Pancakes" image by <a href="https://unsplash.com/photos/HzVHlwvQlyw" target="_blank">@nikldn</a>
+        <br>♥<br>
+        Website copyright danielpancake 2018 - 2022
+        <br><br>
+      </p>
+    </footer>
+  </div>
+</body>
+
+<script src="./js/colourChanger.js"></script>
+<script src="./js/feedback.js"></script>
+<script src="./js/highlight.js"></script>
+<script src="./js/motd.js"></script>
+<script src="./js/portfolio.js"></script>
+<script src="./js/toggles.js"></script>
+<script src="./js/warp.js"></script>
+
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+</html>

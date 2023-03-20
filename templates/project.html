@@ -1,0 +1,10 @@
+
+<li class="toggle with-border project-banner" style="background: url(/images/projects/$banner$); background-position: $if(banner-position)$ $banner-position$ $else$ center $endif$;">
+  <div class="shape"></div>
+  <p><span class="title">$title$</span><br>$brief$</p>
+</li>
+
+<div class="inner with-border project-description">
+  <p class="label"> $if(flavour)$ $flavour$ $else$ unspecified $endif$ / $if(date)$ $date$ $else$ 20xx $endif$</p>
+  <hr>$body$
+</div>
