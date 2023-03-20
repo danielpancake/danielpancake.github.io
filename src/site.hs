@@ -21,24 +21,35 @@ main = do
   E.setLocaleEncoding E.utf8
   hakyll $ do
 
-    match "images/*" $ do
+    match "css/*.css" $ do
+      route   idRoute
+      compile compressCssCompiler
+
+    -- Copy website images, social icons, portfolio project banners, and js
+    match ("images/*" .||. "images/projects/*" .||. "images/social/*" .||. "js/*") $ do
       route   idRoute
       compile copyFileCompiler
 
-    match "projects/*" $ do
+    match ("content/projects/*" .||. "content/skills/*") $ do
       compile pandocCompiler
 
-    match "sections/*" $ do
-      compile templateBodyCompiler
-
-    match "templates/*" $ do
+    match ("sections/*" .||. "templates/*") $ do
       compile templateBodyCompiler
 
     match "index.html" $ do
       route idRoute
       compile $ do
+        -- Getting all css and js
+        css <- loadAll "css/*"
+        js  <- loadAll "js/*"
+
+        let cssCtx = listField "css" defaultContext (pure css)
+        let jsCtx  = listField "js"  defaultContext (pure js)
+        let ctx    = cssCtx <> jsCtx <> customDefaultContext
+
         getResourceString
-          >>= applyAsTemplate customDefaultContext
+          >>= applyAsTemplate ctx
+          >>= loadAndApplyTemplate "templates/main.html" ctx
           >>= relativizeUrls
 
     where
@@ -57,13 +68,15 @@ addSection = functionField "addSection" $ \args page -> do
       let sectionId = fromMaybe "" $ lookup "section-id" $ listOfStringToMap key_values
       -- Generating context for each section according to section-id
       sectionctx :: Context String <- case sectionId of
-        "about"     -> return defaultContext
+        "about"     -> do
+          -- Loading all skills and generate the context
+          skills <- byRelevance =<< loadAll "content/skills/*"
+          return (generateListsCtx skills "skills")
 
         "portfolio" -> do
-          -- Load all projects
-          projects <- byRelevance =<< loadAll "projects/*"
-          -- Generate the context for the projects
-          return (generateProjectsCtx projects)
+          -- Loading all projects and generate the context
+          projects <- byRelevance =<< loadAll "content/projects/*"
+          return (generateListsCtx projects "projects")
 
         _           -> return defaultContext
 
@@ -77,9 +90,9 @@ addSection = functionField "addSection" $ \args page -> do
       itemBody <$> compiler
 
 
-generateProjectsCtx :: [Item String] -> Context String
-generateProjectsCtx projects = mconcat
-  [ listField "projects" defaultContext (return projects)
+generateListsCtx :: [Item String] -> String -> Context String
+generateListsCtx list fieldName = mconcat
+  [ listField fieldName defaultContext (pure list)
   , defaultContext
   ]
 
@@ -91,7 +104,7 @@ relevance item = do
 
 
 byRelevance :: MonadMetadata m => [Item a] -> m [Item a]
-byRelevance = sortByM relevance
+byRelevance items = reverse <$> sortByM relevance items
   where
     sortByM :: (Monad m, Ord k) => (a -> m k) -> [a] -> m [a]
     sortByM f xs = fmap (map snd . sortBy (comparing fst)) (mapM (\x -> fmap (,x) (f x)) xs)
