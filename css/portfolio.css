@@ -44,8 +44,8 @@
   margin-top: 4px;
 }
 
-#projects li.active>.shape div,
-#projects li:hover>.shape div {
+#projects li.active > .shape div,
+#projects li:hover >. shape div {
   background-color: #0a0a47a0;
   padding-right: var(--text);
 }

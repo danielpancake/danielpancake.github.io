@@ -1,0 +1,42 @@
+#portfolio
+  animation: space-parallax 25s linear infinite
+  background-color: #101010
+  background-image: url(../images/bg-space-2.png), url(../images/bg-space.png)
+  position: relative
+
+  & .section-title
+    position: relative
+    text-shadow: 0 0 16px blue, -3px -4px 0 #aa0080, 0 2px 6px #1214a1, 3px 4px 0 #5000cc
+    z-index: 1
+
+  & .wrapper
+    display: flex
+    flex-wrap: nowrap
+    justify-content: center
+    margin: 0 auto
+    max-width: 960px
+    padding: 16px 12px 46px 12px
+
+#tentacle
+  position: absolute
+  top: -128px
+
+  & img
+    animation: tentacle-dance 60s infinite
+    // filter: drop-shadow(0 0 15px black)
+    position: relative
+    margin-right: 345px
+
+@keyframes space-parallax
+  0%
+    background-position: 0px 0px, 0px 0px
+  100%
+    background-position: 256px 256px, 512px 512px
+
+@keyframes tentacle-dance
+  0%
+    transform: rotate(0deg)
+  50%
+    transform: rotate(-10deg)
+  100%
+    transform: rotate(0deg)

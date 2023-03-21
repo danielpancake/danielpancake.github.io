@@ -1,0 +1,64 @@
+@import "variables"
+  
+#banner
+  & .wrapper
+    background: url(../images/strips.png) center repeat-y
+    display: flex
+    margin: 0 auto
+    max-width: $nav-menu-max-width
+    padding-top: 16px
+
+#pointer
+  animation: hot-pancakes-ad-cursor $banner-hot-pancakes-ad-duration infinite
+  position: absolute
+  z-index: 1
+
+#hot-pancakes-ad
+  animation: hot-pancakes-ad-popup $banner-hot-pancakes-ad-duration infinite
+  position: absolute
+  will-change: transform
+
+@media screen
+  @media (min-width: $nav-menu-max-width)
+    #banner
+      & .wrapper
+        box-shadow: inset 192px 0 gold, -650px 0 gold
+
+    #danielpancake-photo
+      height: 512px
+
+    #danielpancake-wordart
+      // filter: drop-shadow(8px 10px 15px pink)
+      height: 256px
+      transform: translate3d(-85px, 15px, 0)
+
+    #pointer
+      height: 42px
+
+    #hot-pancakes-ad
+      height: 256px
+      transform: translate3d(630px, 220px, 0) scale3d(1, 0, 1)
+
+    @keyframes hot-pancakes-ad-popup
+      0%, 29%
+        transform: translate3d(630px, 220px, 0) scale3d(1, 0, 1)
+      1%, 28%
+        transform: translate3d(630px, 220px, 0) scale3d(1, 1, 1)
+
+    @keyframes hot-pancakes-ad-cursor
+      0%, 100%
+        transform: translate3d(335px, 375px, 0)
+      25%, 29%
+        transform: translate3d(828px, 233px, 0)
+        content: url(../images/ptr-normal.png)
+      28%
+        content: url(../images/ptr-click.png)
+      50%
+        transform: translate3d(832px, 130px, 0)
+      65%
+        transform: translate3d(290px, 270px, 0)
+
+  @media (max-width: $nav-menu-max-width)
+    #banner
+      & .wrapper
+        box-shadow: inset 20vw 0 gold

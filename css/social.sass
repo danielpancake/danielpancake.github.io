@@ -1,0 +1,42 @@
+@import "variables"
+
+#social
+  background-color: #242424
+
+  & .wrapper
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    justify-content: space-around
+    margin: 0 auto
+    max-width: 640px
+    padding: 16px 8px 0 8px
+
+  & img
+    image-rendering: pixelated
+    transition: 0.2s
+    min-width: 40px
+    margin: 0 4px
+    will-change: filter transform
+
+    &:hover
+      // filter: drop-shadow(0 0 8px black)
+      transform: scale3d(1.28, 1.28, 1)
+
+footer
+  background-color: #242424
+  border-bottom: none
+  display: table
+  min-height: 42px
+  width: 100%
+
+  & p
+    color: white
+    display: table-cell
+    font-size: calc(#{$font-size-text} * 0.85)
+    padding: 16px
+    text-align: center
+    vertical-align: middle
+
+  & a
+    color: white
