@@ -5,40 +5,61 @@
 
 module Main (main) where
 
-import           Control.Monad   ((>>=))
-import           Data.List       (sortBy)
-import qualified Data.Map        as M
-import           Data.Maybe      (fromMaybe)
-import           Data.Ord        (comparing)
-import           Debug.Trace
-import qualified GHC.IO.Encoding as E
+import           Control.Monad              ((>>=))
+import           Data.List                  (sortBy)
+import qualified Data.Map                   as M
+import           Data.Maybe                 (fromMaybe)
+import           Data.Ord                   (comparing)
+import qualified GHC.IO.Encoding            as E
 import           Hakyll
-import           Text.Read       (readMaybe)
+import           Hakyll.Web.Sass            (sassCompiler)
+import           Text.Read                  (readMaybe)
 --------------------------------------------------------------------------------
+
+
+(.!!.) :: Pattern -> Pattern -> Pattern
+a .!!. b = a .&&. complement b
+
 
 main :: IO ()
 main = do
   E.setLocaleEncoding E.utf8
   hakyll $ do
 
-    match "images/*" $ do
+    -- Matching *.sass files, ignoring _*.sass
+    match ("css/*.sass" .!!. "css/_*.sass") $ do
+      route $ setExtension "css"
+      compile (fmap compressCss <$> sassCompiler)
+
+    match "css/*.css" $ do
+      route   idRoute
+      compile compressCssCompiler
+
+    -- Copying website images and fonts
+    match ("images/**" .||. "webfonts/**" ) $ do
       route   idRoute
       compile copyFileCompiler
 
-    match "projects/*" $ do
+    match "content/**" $ do
       compile pandocCompiler
 
-    match "sections/*" $ do
-      compile templateBodyCompiler
-
-    match "templates/*" $ do
+    match ("sections/*" .||. "templates/*") $ do
       compile templateBodyCompiler
 
     match "index.html" $ do
       route idRoute
       compile $ do
+        -- Getting all css and js
+        css <- loadAll "css/*.css"
+        js  <- loadAll "js/*.js"
+
+        let cssCtx = listField "css" defaultContext (pure css)
+        let jsCtx  = listField "js"  defaultContext (pure js)
+        let ctx    = cssCtx <> jsCtx <> customDefaultContext
+
         getResourceString
-          >>= applyAsTemplate customDefaultContext
+          >>= applyAsTemplate ctx
+          >>= loadAndApplyTemplate "templates/main.html" ctx
           >>= relativizeUrls
 
     where
@@ -57,13 +78,15 @@ addSection = functionField "addSection" $ \args page -> do
       let sectionId = fromMaybe "" $ lookup "section-id" $ listOfStringToMap key_values
       -- Generating context for each section according to section-id
       sectionctx :: Context String <- case sectionId of
-        "about"     -> return defaultContext
+        "about"     -> do
+          -- Loading all skills and generate the context
+          skills <- byRelevance =<< loadAll "content/skills/*"
+          return (generateListsCtx skills "skills")
 
         "portfolio" -> do
-          -- Load all projects
-          projects <- byRelevance =<< loadAll "projects/*"
-          -- Generate the context for the projects
-          return (generateProjectsCtx projects)
+          -- Loading all projects and generate the context
+          projects <- byRelevance =<< loadAll "content/projects/*"
+          return (generateListsCtx projects "projects")
 
         _           -> return defaultContext
 
@@ -77,9 +100,9 @@ addSection = functionField "addSection" $ \args page -> do
       itemBody <$> compiler
 
 
-generateProjectsCtx :: [Item String] -> Context String
-generateProjectsCtx projects = mconcat
-  [ listField "projects" defaultContext (return projects)
+generateListsCtx :: [Item String] -> String -> Context String
+generateListsCtx list fieldName = mconcat
+  [ listField fieldName defaultContext (pure list)
   , defaultContext
   ]
 
@@ -91,7 +114,7 @@ relevance item = do
 
 
 byRelevance :: MonadMetadata m => [Item a] -> m [Item a]
-byRelevance = sortByM relevance
+byRelevance items = reverse <$> sortByM relevance items
   where
     sortByM :: (Monad m, Ord k) => (a -> m k) -> [a] -> m [a]
     sortByM f xs = fmap (map snd . sortBy (comparing fst)) (mapM (\x -> fmap (,x) (f x)) xs)
@@ -113,3 +136,10 @@ listOfStringToMap :: [String] -> [(String, String)]
 listOfStringToMap []        = []
 listOfStringToMap [k]       = []
 listOfStringToMap (k:val:r) = (k, val) : listOfStringToMap r
+
+
+-- compressJsCompiler :: Compiler (Item String)
+-- compressJsCompiler = do
+--   let minifyJS = C.unpack . minify . C.pack . itemBody
+--   s <- getResourceString
+--   return $ itemSetBody (minifyJS s) s

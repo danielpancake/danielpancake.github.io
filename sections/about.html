@@ -1,0 +1,23 @@
+
+<div id="cardboard-signs">
+  <div id="cardboard-sign-left"><img src="./images/cardboard-arrow.png" alt="cardboard arrow"></div>
+  <div id="cardboard-sign-right"><img src="./images/cardboard-arrow.png" alt="cardboard arrow"></div>
+</div>
+
+<h1 class="section-title">About me</h1>
+<div class="wrapper">
+  <div class="skill-box">
+    <h2 class="section-subtitle">🙋<u>Hey! I'm the cool guy above</u><br><sup>and my skills are listed below</sup></h2>
+  </div>
+
+  <div class="breakflex"></div>
+
+  $for(skills)$
+  <div class="skill-box">
+    <h2 class="skill-box-title">$title$</h2>
+    <ul class="skill-table">
+      $body$
+    </ul>
+  </div>
+  $endfor$
+</div>
