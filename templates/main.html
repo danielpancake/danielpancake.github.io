@@ -10,14 +10,14 @@
   $endfor$
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  $for(js)$
-  <script src="$url$"></script>
-  $endfor$
 </head>
 
 <body>
   <div id="content-box">
     $body$
   </div>
+  $for(js)$
+  <script src="$url$"></script>
+  $endfor$
 </body>
 </html>

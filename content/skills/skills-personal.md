@@ -1,11 +1,11 @@
 ---
 title: Personal Skills
-highlight-colour: green
+highlight-colour: 3d8c15
 ---
 
-- Responsible 2nd-year undergraduate student with an ability to easily adapt to a new study & work environment.
-- Respectful of authorities and supportive in arranging various activities.
+- <mark>Responsible</mark> 2<sup>nd</sup>-year undergraduate student with an <mark>ability to easily adapt</mark> to a new study & work environment.
+- <mark>Respectful of authorities</mark> and supportive in arranging various activities.
 - Easy to get along with and respected by other members of the team.
-- Focused and driven. Open to new discoveries and innovations. Capable of learning new packages, expressing non-standard ideas.
-- Possess strong IT, problem-solving and math skills.
-- Have a great command of Russian (Native speaker) and English (B2 Level).
+- <mark>Focused and driven.</mark> Open to new discoveries and innovations. Capable of learning new packages, expressing non-standard ideas.
+- Possess strong <mark>IT, problem-solving and math skills.</mark>
+- Have a great command of <mark>Russian</mark> (Native speaker) and <mark>English</mark> (B2 Level).

@@ -1,3 +1,30 @@
 
 <h1 class="section-title">Contact</h1>
 <script src="https://smtpjs.com/v3/smtp.js"></script>
+<div class="wrapper">
+  <div class="flex">
+    <!-- <div id="social-below"><span class="highlight">..or check my social media =></span></div> -->
+    <form onsubmit='const sender = document.getElementById("submit-feedback"); sender.disabled = true; sender.value = "Please, wait..."; sendfeedback(); return false;'>
+      <div id="envelope">
+        <label>What's your name?</label>
+        <input class="with-border" id="name" placeholder="" required="required" type="text">
+        <label>What's your letter about?</label>
+        <input class="with-border" id="subject" placeholder="" required="required" type="text">
+        <label>Reply email:</label>
+        <input class="with-border" id="email" placeholder="" type="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+">
+        <label>Your message:</label>
+        <textarea class="with-border" id="body" placeholder="" required="required" rows="5"></textarea>
+      </div>
+
+      <input class="with-border" id="submit-feedback" type="submit" value=">> Send <<">
+    </form>
+
+    <noscript>
+      <br><br><br><br><br><br>
+      <p>Ooops... contact form seems to be missing.</p>
+      <br>
+      <p>Unfortunately, contact form cannot work with javascript disabled. Still, if you wish to contact me, you
+        can reach out through the social media listed below or <a href="mailto:inboxpancake@gmail.com">my email</a>.</p>
+    </noscript>
+  </div>
+</div>

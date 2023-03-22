@@ -1,5 +1,44 @@
+@import "variables"
+
 #contact
   background-color: darkcyan
 
   & .section-title
     text-shadow: 0 0 16px aqua, -3px -4px 0 #1a4050, 0 2px 6px #12a176, 3px 4px 0 #037080
+
+  .flex
+    position: relative
+    display: flex
+    flex-direction: row
+    justify-content: center
+
+  form
+    display: flex
+    align-items: center
+    flex-direction: column
+    padding: 32px
+    max-width: 600px
+
+  label
+    color: whitesmoke
+    text-shadow: 0 0 5px #1a4050
+
+#envelope
+  & input, & textarea
+    box-sizing: border-box
+    margin: 0 auto
+    margin-bottom: 8px
+    max-height: 320px
+    min-height: 20px
+    outline: none
+    overflow-wrap: break-word
+    padding-left: 8px
+    resize: none
+    width: 100%
+
+#submit-feedback
+  width: 50%
+
+#social-below
+  text-align: end
+  writing-mode: vertical-rl

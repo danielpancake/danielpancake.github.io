@@ -1,4 +1,5 @@
 @import "variables"
+// Though @import is deprecated, @use does not work with hakyll-sass
 
 @font-face
   font-family: "Mozart"
@@ -43,31 +44,43 @@ body
     background: whitesmoke
 
 @media screen
-  @media (min-width: $mobile-version-critical-width)
+  @media (min-width: $mobile-version-critical-width-secondary)
     body
       padding: 1vw
 
-  @media (min-width: $nav-menu-max-width)
+    #content-box
+      border-radius: 16px
+      box-shadow: 0 0 10px black
+
+  @media (min-width: $mobile-version-critical-width)
     body::-webkit-scrollbar
       width: 16px
 
-  @media (max-width: $nav-menu-max-width)
+    .drop-shadow
+      -webkit-filter: drop-shadow(15px 5px 20px #000000cc)
+      filter: drop-shadow(15px 5px 20px #000000cc)
+
+  @media (max-width: $mobile-version-critical-width)
     body::-webkit-scrollbar
       width: 2vw
 
+  .drop-shadow
+      -webkit-filter: drop-shadow(1.25vw 1vw 1.75vw #000000cc)
+      filter: drop-shadow(1.25vw 1vw 1.75vw #000000cc)
+
 #content-box
-  border-radius: 16px
   overflow: hidden
 
 section
   border-bottom: ridge 8px whitesmoke
+  position: relative
 
 h1, section .section-title,
 h2, section .section-subtitle
-    color: whitesmoke
-    font-family: "OksFree"
-    text-align: center
-    white-space: nowrap
+  color: whitesmoke
+  font-family: "OksFree"
+  text-align: center
+  white-space: nowrap
 
 h1, section .section-title
   font-size: $font-size-title
@@ -78,7 +91,10 @@ h2, section .section-subtitle
   font-weight: normal
   margin: 8px 0 12px 0
 
-p, li
+canvas
+  position: absolute
+
+p, li, label, input, textarea, marquee
   font-family: "Mozart", "PixelUnicode"
   font-size: $font-size-text
 
@@ -99,13 +115,29 @@ input[type=submit], a
 
 .latex
   sup
-    font-size: 0.85em
-    horizontal-align: -0.2em
-    vertical-align: 0.18em
-    margin-left: -0.3em
-    margin-right: -0.05em
-
+    font-size: 0.9em
+    vertical-align: 0.16em
+    margin-left: -0.18em
   sub
+    font-size: 1em
     vertical-align: -0.4ex
-    margin-left: -0.1667em
-    margin-right: -0.025em
+    margin-left: -0.07em
+
+mark
+  animation: 60s highlight-lite infinite
+  animation-delay: calc(5s + 1 * 0.25s)
+  background-color: none
+  background: linear-gradient(90deg, var(--highlight-colour) 50%, #0000 50%)
+  background-size: 200% 100%
+  background-position: 100% 0
+  color: whitesmoke
+
+@keyframes highlight-lite
+  5%
+    background-position: 0 0
+  75%
+    background-position: 0 0
+  80%
+    background-position: -100% 0
+  100%
+    background-position: -100% 0

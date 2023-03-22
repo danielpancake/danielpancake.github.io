@@ -5,15 +5,15 @@
 
 module Main (main) where
 
-import           Control.Monad              ((>>=))
-import           Data.List                  (sortBy)
-import qualified Data.Map                   as M
-import           Data.Maybe                 (fromMaybe)
-import           Data.Ord                   (comparing)
-import qualified GHC.IO.Encoding            as E
+import           Control.Monad   ((>>=))
+import           Data.List       (sortBy)
+import qualified Data.Map        as M
+import           Data.Maybe      (fromMaybe)
+import           Data.Ord        (comparing)
+import qualified GHC.IO.Encoding as E
 import           Hakyll
-import           Hakyll.Web.Sass            (sassCompiler)
-import           Text.Read                  (readMaybe)
+import           Hakyll.Web.Sass (sassCompiler)
+import           Text.Read       (readMaybe)
 --------------------------------------------------------------------------------
 
 
@@ -35,8 +35,12 @@ main = do
       route   idRoute
       compile compressCssCompiler
 
+    match "js/*.js" $ do
+      route   idRoute
+      compile getResourceString
+
     -- Copying website images and fonts
-    match ("images/**" .||. "webfonts/**" ) $ do
+    match ("images/**" .||. "webfonts/*") $ do
       route   idRoute
       compile copyFileCompiler
 
@@ -50,18 +54,15 @@ main = do
       route idRoute
       compile $ do
         -- Getting all css and js
-        css <- loadAll "css/*.css"
-        js  <- loadAll "js/*.js"
-
-        let cssCtx = listField "css" defaultContext (pure css)
-        let jsCtx  = listField "js"  defaultContext (pure js)
-        let ctx    = cssCtx <> jsCtx <> customDefaultContext
+        let ctx = mconcat
+              (fmap (\ (x, path) -> listField x defaultContext (loadAll path))
+              [("css", "css/*"), ("js", "js/*")])
+              <> customDefaultContext
 
         getResourceString
           >>= applyAsTemplate ctx
           >>= loadAndApplyTemplate "templates/main.html" ctx
           >>= relativizeUrls
-
     where
       customDefaultContext = addSection <> defaultContext
 
@@ -78,7 +79,7 @@ addSection = functionField "addSection" $ \args page -> do
       let sectionId = fromMaybe "" $ lookup "section-id" $ listOfStringToMap key_values
       -- Generating context for each section according to section-id
       sectionctx :: Context String <- case sectionId of
-        "about"     -> do
+        "about-me"     -> do
           -- Loading all skills and generate the context
           skills <- byRelevance =<< loadAll "content/skills/*"
           return (generateListsCtx skills "skills")
@@ -137,9 +138,3 @@ listOfStringToMap []        = []
 listOfStringToMap [k]       = []
 listOfStringToMap (k:val:r) = (k, val) : listOfStringToMap r
 
-
--- compressJsCompiler :: Compiler (Item String)
--- compressJsCompiler = do
---   let minifyJS = C.unpack . minify . C.pack . itemBody
---   s <- getResourceString
---   return $ itemSetBody (minifyJS s) s

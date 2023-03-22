@@ -1,5 +1,4 @@
-_*
-.old
+_cache
+_site
 .vscode
-.stack-work
 dist-newstyle

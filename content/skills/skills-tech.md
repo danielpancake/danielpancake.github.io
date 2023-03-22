@@ -1,6 +1,6 @@
 ---
 title: Tech-savvy Skills
-highlight-colour: blue
+highlight-colour: 2020e0
 relevance: 1
 ---
 

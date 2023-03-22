@@ -22,9 +22,7 @@ const motdList =
   The father of The Great Simulation
   The mother of The Great Simulation
   Do not speak unless having something to say
-  
-  `
-    .split("\n");
+  `.split("\n");
 
 String.prototype.hashCode = function () {
   let hash = 0;
@@ -47,8 +45,6 @@ function shuffle(array, seed) {
     var i = Math.floor(random(seed--) * n--);
     shuffled.push(copy.splice(i, 1)[0]);
   }
-
-  console.log(shuffled);
   return shuffled;
 }
 

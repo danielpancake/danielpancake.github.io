@@ -1,0 +1,97 @@
+@import "variables"
+
+#cardboard-signs
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+
+  div
+    position: absolute
+
+  img
+    width: 100%
+
+#cardboard-sign-left img
+  animation: cardboard-sign-left-floating 60s cubic-bezier(0.37, 0, 0.63, 1) infinite
+
+#cardboard-sign-right img
+  animation: cardboard-sign-right-floating 60s cubic-bezier(0.37, 0, 0.63, 1) infinite
+  animation-delay: 2s
+
+@media screen
+  @media (min-width: $mobile-version-critical-width)
+    #cardboard-signs div
+      max-width: 275px
+      top: -80px
+      width: 35%
+
+    #cardboard-sign-left
+      transform: translateX(-125%)
+
+    #cardboard-sign-right
+      transform: translateX(125%) rotate(180deg)
+
+  @media (max-width: $mobile-version-critical-width)
+    #cardboard-signs div
+      max-width: calc(1.75 * #{$font-size-title})
+
+    #cardboard-sign-left
+      transform: translateX(-120%) translateY(-20%)
+
+    #cardboard-sign-right
+      transform: translateX(125%) rotate(180deg)
+
+@keyframes cardboard-sign-left-floating
+  0%
+    transform: translate(0, 0px)
+  50%
+    transform: rotate(-15deg) scale(1.05) translate(0, -35px)
+  100%
+    transform: translate(0, 0px)
+
+@keyframes cardboard-sign-right-floating
+  0%
+    transform: translate(0, 0px)
+  50%
+    transform: rotate(-8deg) scale(1.05) translate(0, -15px)
+  100%
+    transform: translate(0, 0px)
+
+#about-me
+  background-color: #101010
+
+  & .section-title
+    position: relative
+    text-shadow: 0 0 16px #ee3030, -3px -4px 0 #cf4817, 0 2px 6px #a13812, 3px 4px 0 #ec9213
+
+  & .wrapper
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    margin: 0 calc(min(2vw, 8px))
+    padding-bottom: 192px
+    position: relative
+
+  & .skill-box
+    margin: 0 calc(min(2vw, 8px))
+    max-width: 580px
+
+    & .skill-box-title
+      font-size: $font-size-subtitle-bigger
+      text-align: center
+      text-decoration: underline
+      margin: 8px 0 12px 0
+      white-space: nowrap
+
+  & .skill-table li
+    background-color: #101010a0
+    border-radius: 4px
+    color: whitesmoke
+    list-style-type: none
+    margin: 2px 0
+    padding: 2px 8px
+    text-align: justify
+    text-shadow: 0 0 15px black, 1px 1px 0 black
+
+    &::before
+      content: "* "

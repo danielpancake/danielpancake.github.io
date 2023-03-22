@@ -1,0 +1,14 @@
+
+<h1 class="section-title">Portfolio</h1>
+<h2 class="section-subtitle"><u>This is what I make</u></h2>
+<div class="wrapper">
+  <div id="tentacle">
+    <img src="./images/tentacle.png" alt="beast from the depths of my coding projects">
+  </div>
+
+  <ul id="project-list">
+    $for(projects)$
+      $partial("templates/project.html")$
+    $endfor$
+  </ul>
+</div>

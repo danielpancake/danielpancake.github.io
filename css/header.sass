@@ -1,5 +1,4 @@
 @import "variables"
-// Though @import is deprecated, @use does not work
 
 #header
   background-color: #202020
@@ -7,7 +6,7 @@
   ul
     list-style-type: none
     margin: auto
-    max-width: $nav-menu-max-width
+    max-width: $mobile-version-critical-width
     padding: 0
 
   a
@@ -26,7 +25,7 @@
     width: 0.1%
 
   a:hover
-    background-color: $bolder-blue
+    background-color: $colour-bolder-blue
     text-decoration: underline
     text-shadow: 0 0 15px whitesmoke
 
@@ -46,13 +45,13 @@
   text-align: left
 
 @media screen
-  @media (min-width: $mobile-version-critical-width)
+  @media (min-width: $mobile-version-critical-width-secondary)
     #nav-menu
       display: block
     #nav-menu-mobile
       display: none
 
-  @media (max-width: $mobile-version-critical-width)
+  @media (max-width: $mobile-version-critical-width-secondary)
     #nav-menu
       display: none
     #nav-menu-mobile
