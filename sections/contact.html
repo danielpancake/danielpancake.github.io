@@ -1,30 +1,52 @@
 
-<h1 class="section-title">Contact</h1>
-<script src="https://smtpjs.com/v3/smtp.js"></script>
-<div class="wrapper">
-  <div class="flex">
-    <!-- <div id="social-below"><span class="highlight">..or check my social media =></span></div> -->
-    <form onsubmit='const sender = document.getElementById("submit-feedback"); sender.disabled = true; sender.value = "Please, wait..."; sendfeedback(); return false;'>
-      <div id="envelope">
-        <label>What's your name?</label>
-        <input class="with-border" id="name" placeholder="" required="required" type="text">
-        <label>What's your letter about?</label>
-        <input class="with-border" id="subject" placeholder="" required="required" type="text">
-        <label>Reply email:</label>
-        <input class="with-border" id="email" placeholder="" type="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+">
-        <label>Your message:</label>
-        <textarea class="with-border" id="body" placeholder="" required="required" rows="5"></textarea>
-      </div>
+<div id="windows-desktop">
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <h1 class="section-title">Contact</h1>
+  
+  <div class="wrapper">
+    <div class="flex">
+      <!-- <noscript> -->
+        <style>
+          #social-media-tag-billboard { background-color: #2020e0; }
+        </style>
+      <!-- </noscript> -->
+      <div id="social-media-tag-billboard"><p class="highlight">..or via my social media -></p></div>
 
-      <input class="with-border" id="submit-feedback" type="submit" value=">> Send <<">
-    </form>
+      <form id="feedback-form" onsubmit="
+        const fs = document.getElementById('feedback-submit');
+        fs.disabled = true;
+        fs.value = 'Sending an e-mail...';
+        return false">
+        <div>
+          <label>What's your name?</label>
+          <input class="with-border" id="feedback-name" placeholder="* Real name or a nickname" required="required" type="text">
+          <label>What's your letter about?</label>
+          <input class="with-border" id="feedback-subject" placeholder="* Concise subject line" required="required" type="text">
+          <label>Reply e-mail:</label>
+          <input class="with-border" id="feedback-reply-email" placeholder="* == not necessary ==" type="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+">
+          <label>E-mail body:</label>
+          <textarea class="with-border" id="feedback-body" placeholder="* Anything, you want me to hear.." required="required" rows="5"></textarea>
+        </div>
 
-    <noscript>
-      <br><br><br><br><br><br>
-      <p>Ooops... contact form seems to be missing.</p>
-      <br>
-      <p>Unfortunately, contact form cannot work with javascript disabled. Still, if you wish to contact me, you
-        can reach out through the social media listed below or <a href="mailto:inboxpancake@gmail.com">my email</a>.</p>
-    </noscript>
+        <input class="with-border" id="feedback-submit" type="submit" value="[ Send ]">
+      </form>
+
+      <noscript>
+        <style>
+          #feedback-form, #social-media-tag-billboard { display: none !important }
+        </style>
+
+        <form>
+          <p>Ooops… feedback form seems to be missing</p>
+          <br>
+          <p align="justify">
+            Unfortunately, this feedback form cannot work with javascript disabled.
+            Still, if you wish to contact me, you can reach out through
+            <a href="mailto:inboxpancake@gmail.com">my email</a> or the social media
+            listed below.
+          </p>
+        </form>
+      </noscript>
+    </div>
   </div>
 </div>

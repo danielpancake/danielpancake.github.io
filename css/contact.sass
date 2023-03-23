@@ -1,31 +1,69 @@
 @import "variables"
 
+#windows-desktop
+  margin: 0 auto
+  max-width: $mobile-version-critical-width
+  position: relative
+
+  &::before
+    background-image: url(../images/win98-desk-top.png)
+    background-repeat: no-repeat
+    background-position: top
+    background-size: contain
+    content: ""
+    filter: blur(3px)
+    height: 100%
+    position: absolute
+    width: 100%
+
 #contact
   background-color: darkcyan
+  overflow: hidden
 
   & .section-title
     text-shadow: 0 0 16px aqua, -3px -4px 0 #1a4050, 0 2px 6px #12a176, 3px 4px 0 #037080
 
-  .flex
+  & .wrapper
+    position: relative
+    
+    &::before
+      background-image: url(../images/win98-desk-bottom.png)
+      background-repeat: no-repeat
+      background-position: bottom
+      background-size: contain
+      content: ""
+      filter: blur(3px)
+      position: absolute
+      height: 100%
+      width: 100%
+
+  & .flex
+    align-items: center
     position: relative
     display: flex
     flex-direction: row
     justify-content: center
 
-  form
-    display: flex
+  & form
     align-items: center
+    display: flex
     flex-direction: column
     padding: 32px
     max-width: 600px
 
-  label
-    color: whitesmoke
-    text-shadow: 0 0 5px #1a4050
+    & p
+      text-shadow: 0 0 5px #1a4050
 
-#envelope
-  & input, & textarea
+#contact label, #social-media-tag-billboard
+  text-shadow: 0 0 5px black
+
+#feedback-form
+  // background-color: rgba(0, 0, 0, 0.25)
+  margin-bottom: 64px
+
+  div input, div textarea
     box-sizing: border-box
+    color: black
     margin: 0 auto
     margin-bottom: 8px
     max-height: 320px
@@ -36,9 +74,37 @@
     resize: none
     width: 100%
 
-#submit-feedback
-  width: 50%
+#feedback-submit
+  color: black
+  width: 100%
 
-#social-below
+  &:disabled
+    animation: barberpole 10s linear infinite
+    background: repeating-linear-gradient(45deg, #7497ff, #7497ff 10px, #6481d9 10px, #6481d9 20px)
+    background-size: 200% 200%
+    border-color: #6481d9
+    text-shadow: 0 0 15px black
+
+@keyframes barberpole
+  100%
+    background-position: 100% 100%
+
+#social-media-tag-billboard
+  animation: banner 30s infinite
+  color: whitesmoke
+  position: relative
+  font-size: $font-size-text
+  font-family: "Mozart", "PixelUnicode"
   text-align: end
   writing-mode: vertical-rl
+  
+  & p
+    padding: 1em 0
+
+@keyframes banner
+  0%
+    transform: translateY(-160%)
+  40%, 60%
+    transform: translateY(-10%)
+  100%
+    transform: translateY(140%)
