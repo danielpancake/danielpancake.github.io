@@ -98,4 +98,4 @@ const addWarpBanner = () => {
   resizeWarpFrame();
 }
 
-window.onload = () => addWarpBanner();
+window.onload = makeDoubleDelegate(window.onload, addWarpBanner);

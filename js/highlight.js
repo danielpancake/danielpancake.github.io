@@ -1,5 +1,5 @@
 /* This script highlights text character by character */
-window.onload = () => {
+window.onload = makeDoubleDelegate(window.onload, () => {
   let colours = new Set();
 
   document.querySelectorAll(".highlight").forEach((e) => {
@@ -26,7 +26,7 @@ window.onload = () => {
   });
 
   document.getElementsByTagName("head")[0].appendChild(styles);
-};
+});
 
 /* Liteweight version of the highlighting */
 document.querySelectorAll(".highlight-lite").forEach((e) => {

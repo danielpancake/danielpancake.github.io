@@ -1,14 +1,23 @@
 
 <h1 class="section-title">Portfolio</h1>
-<h2 class="section-subtitle"><u>This is what I make</u></h2>
-<div class="wrapper">
-  <div id="tentacle">
-    <img src="./images/tentacle.png" alt="beast from the depths of my coding projects">
-  </div>
+<h2 class="section-subtitle"><u>The list of stuff I've made</u>👨‍💻</h2>
 
-  <ul id="project-list">
-    $for(projects)$
-      $partial("templates/project.html")$
-    $endfor$
-  </ul>
+<div class="modal-content">
+  <div class="wrapper">
+    <div id="tentacle">
+      <img class="disable-dragging" src="./images/tentacle.png" alt="beast from the depths of my coding projects">
+    </div>
+
+    <div>
+      <ul id="project-list">
+        $for(projects)$
+          $partial("templates/project.html")$
+        $endfor$
+      </ul>
+    </div>
+
+    <!-- <div id="additional-blocks">
+      <div class="block with-border"></div>
+    </div> -->
+  </div>
 </div>

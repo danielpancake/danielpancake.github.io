@@ -1,21 +1,24 @@
 
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+
 <div id="windows-desktop">
-  <script src="https://smtpjs.com/v3/smtp.js"></script>
-  <h1 class="section-title">Contact</h1>
+  <h1 class="section-title">Cont@ct</h1>
+  <h2 class="section-subtitle">speak your mind (ಠ_ಠ)</h2>
   
   <div class="wrapper">
     <div class="flex">
-      <!-- <noscript> -->
+      <noscript>
         <style>
           #social-media-tag-billboard { background-color: #2020e0; }
         </style>
-      <!-- </noscript> -->
+      </noscript>
       <div id="social-media-tag-billboard"><p class="highlight">..or via my social media -></p></div>
 
       <form id="feedback-form" onsubmit="
         const fs = document.getElementById('feedback-submit');
         fs.disabled = true;
         fs.value = 'Sending an e-mail...';
+        sendfeedback();
         return false">
         <div>
           <label>What's your name?</label>

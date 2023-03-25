@@ -9,6 +9,7 @@
     position: absolute
 
   img
+    filter: drop-shadow(0 0 16px #451010)
     width: 100%
 
 #cardboard-sign-left img
@@ -58,7 +59,24 @@
     transform: translate(0, 0px)
 
 #about-me
+  animation: parallax_lamps 60s ease-in-out infinite
   background-color: #101010
+  background-image: url(../images/bg-lamps.png)
+  background-repeat: no-repeat
+  background-position: bottom
+  image-rendering: pixelated
+
+  &::before
+    animation: parallax_laptop 60s ease-in-out infinite
+    background-image: url(../images/bg-laptop.png)
+    background-repeat: no-repeat
+    background-position: bottom
+    bottom: 300px
+    content: ""
+    image-rendering: pixelated
+    height: 300px
+    position: absolute
+    width: 100%
 
   & .section-title
     position: relative
@@ -94,3 +112,19 @@
 
     &::before
       content: "* "
+
+@keyframes parallax_laptop
+  0%
+    background-position-x: calc(50% - 50px)
+  50%
+    background-position-x: calc(50% + 50px)
+  100%
+    background-position-x: calc(50% - 50px)
+
+@keyframes parallax_lamps
+  0%
+    background-position-x: calc(50% - 150px)
+  50%
+    background-position-x: calc(50% + 150px)
+  100%
+    background-position-x: calc(50% - 150px)

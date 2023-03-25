@@ -10,12 +10,16 @@
   $endfor$
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script>
+    function makeDoubleDelegate(fn1, fn2) { return function() {if (fn1) fn1(); if (fn2) fn2();} }
+  </script>
 </head>
 
 <body>
   <div id="content-box">
     $body$
   </div>
+
   $for(js)$
   <script src="$url$"></script>
   $endfor$

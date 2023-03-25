@@ -15,7 +15,7 @@
     height: 100%
     position: absolute
     width: 100%
-
+top
 #contact
   background-color: darkcyan
   overflow: hidden
@@ -23,14 +23,21 @@
   & .section-title
     text-shadow: 0 0 16px aqua, -3px -4px 0 #1a4050, 0 2px 6px #12a176, 3px 4px 0 #037080
 
+  & .section-subtitle
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+
+  & form
+    margin-bottom: 64px
+
   & .wrapper
     position: relative
-    
+
     &::before
       background-image: url(../images/win98-desk-bottom.png)
       background-repeat: no-repeat
       background-position: bottom
       background-size: contain
+      bottom: -6px
       content: ""
       filter: blur(3px)
       position: absolute
@@ -48,7 +55,7 @@
     align-items: center
     display: flex
     flex-direction: column
-    padding: 32px
+    padding: 16px
     max-width: 600px
 
     & p
@@ -58,10 +65,7 @@
   text-shadow: 0 0 5px black
 
 #feedback-form
-  // background-color: rgba(0, 0, 0, 0.25)
-  margin-bottom: 64px
-
-  div input, div textarea
+  & input, & textarea
     box-sizing: border-box
     color: black
     margin: 0 auto
@@ -74,8 +78,16 @@
     resize: none
     width: 100%
 
+  & textarea
+    color: black
+
+  & input[type=submit]
+    background-color: whitesmoke
+
+    &:active
+      background-color: #dddddd
+
 #feedback-submit
-  color: black
   width: 100%
 
   &:disabled
@@ -97,9 +109,10 @@
   font-family: "Mozart", "PixelUnicode"
   text-align: end
   writing-mode: vertical-rl
-  
+
   & p
     padding: 1em 0
+    padding-left: 8px
 
 @keyframes banner
   0%

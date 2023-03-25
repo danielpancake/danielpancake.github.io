@@ -65,8 +65,8 @@ body
       width: 2vw
 
   .drop-shadow
-      -webkit-filter: drop-shadow(1.25vw 1vw 1.75vw #000000cc)
-      filter: drop-shadow(1.25vw 1vw 1.75vw #000000cc)
+    -webkit-filter: drop-shadow(1.25vw 1vw 1.75vw #000000cc)
+    filter: drop-shadow(1.25vw 1vw 1.75vw #000000cc)
 
 #content-box
   overflow: hidden
@@ -98,19 +98,27 @@ a
   background-color: $colour-bold-blue
   color: whitesmoke
 
-
 ::selection
   background-color: $colour-bold-blue
   color: whitesmoke
 
-
 canvas
   position: absolute
 
-p, li, label, input, textarea, marquee
+p, li, label, input, textarea, .marquee
   color: whitesmoke
   font-family: "Mozart", "PixelUnicode"
   font-size: $font-size-text
+
+.marquee
+  animation: marquee 15s linear infinite
+  padding: 4px 0
+
+@keyframes marquee
+  0%
+    transform: translateX(100%)
+  100%
+    transform: translateX(-100%)
 
 // Assigning custom cursors
 label
@@ -122,10 +130,20 @@ input, textarea
 input[type=submit], a
   cursor: url(../images/cur-pointer.png), auto
 
+.disable-dragging
+  -webkit-user-drag: none
+  -khtml-user-drag: none
+  -moz-user-drag: none
+  -o-user-drag: none
+
 .breakflex
   -ms-flex-preferred-size: 100%
   flex-basis: 100%
   height: 0
+
+.with-border
+  border: ridge $border-radius whitesmoke
+  border-radius: $border-radius
 
 .latex
   sup
