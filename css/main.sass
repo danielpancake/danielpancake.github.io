@@ -71,6 +71,23 @@ body
 #content-box
   overflow: hidden
 
+main
+  position: relative
+
+  // &::before
+  //   background-color: red
+  //   content: ""
+  //   font-size: 128px
+  //   color: black
+  //   font-weight: bold
+  //   display: block
+  //   position: absolute
+  //   width: 128px
+  //   height: 100%
+  //   left: calc(50% - 1000px)
+  //   z-index: 2
+    // margin: -8px 0 
+
 section
   border-bottom: ridge 8px whitesmoke
   position: relative
@@ -157,7 +174,7 @@ input[type=submit], a
 
 mark
   animation: 60s highlight-lite infinite
-  animation-delay: calc(5s + 1 * 0.25s)
+  animation-delay: 5s
   background-color: none
   background: linear-gradient(90deg, var(--highlight-colour) 50%, #0000 50%)
   background-size: 200% 100%

@@ -1,4 +1,5 @@
 @import "variables"
+@import "mixins"
 
 #cardboard-signs
   display: flex
@@ -13,10 +14,10 @@
     width: 100%
 
 #cardboard-sign-left img
-  animation: cardboard-sign-left-floating 60s cubic-bezier(0.37, 0, 0.63, 1) infinite
+  animation: cardboard-sign-left-floating $cardboard-sign-floating-duration cubic-bezier(0.37, 0, 0.63, 1) infinite
 
 #cardboard-sign-right img
-  animation: cardboard-sign-right-floating 60s cubic-bezier(0.37, 0, 0.63, 1) infinite
+  animation: cardboard-sign-right-floating $cardboard-sign-floating-duration cubic-bezier(0.37, 0, 0.63, 1) infinite
   animation-delay: 2s
 
 @media screen
@@ -59,7 +60,7 @@
     transform: translate(0, 0px)
 
 #about-me
-  animation: parallax_lamps 60s ease-in-out infinite
+  animation: parallax_lamps $lamps_n_laptop_parallax_duration ease-in-out infinite
   background-color: #101010
   background-image: url(../images/bg-lamps.png)
   background-repeat: no-repeat
@@ -67,7 +68,7 @@
   image-rendering: pixelated
 
   &::before
-    animation: parallax_laptop 60s ease-in-out infinite
+    animation: parallax_laptop $lamps_n_laptop_parallax_duration ease-in-out infinite
     background-image: url(../images/bg-laptop.png)
     background-repeat: no-repeat
     background-position: bottom
@@ -79,8 +80,8 @@
     width: 100%
 
   & .section-title
+    @include section-title-shadow(#ee3030, #cf4817, #a13812, #ec9213)
     position: relative
-    text-shadow: 0 0 16px #ee3030, -3px -4px 0 #cf4817, 0 2px 6px #a13812, 3px 4px 0 #ec9213
 
   & .wrapper
     display: flex

@@ -1,6 +1,6 @@
 @import "variables"
 
-#project-list
+#project-list ul
   list-style: none
   position: relative
   z-index: 2
@@ -10,7 +10,7 @@
     border-radius: $border-radius
 
     &:not(:first-of-type)
-      margin-top: 6px
+      margin-top: $blocks-separation
 
   & .project-banner
     background-repeat: no-repeat !important
@@ -33,6 +33,7 @@
 
     & p
       --padding: calc(#{$font-size-text} * 0.35)
+      // Don't even ask... I'll deal with this later
       padding: calc(#{$font-size-text} * 0.25) calc(#{$font-size-text} * 0.85) var(--padding) var(--padding)
       transition: 0.1s
 
@@ -47,7 +48,7 @@
 
   & .project-title, .project-brief
     position: relative
-    font-size: #{$font-size-text}
+    font-size: $font-size-text
     line-height: calc(#{$font-size-text} * 0.55)
 
   & .project-title

@@ -1,4 +1,5 @@
 @import "variables"
+@import "mixins"
 
 #windows-desktop
   margin: 0 auto
@@ -15,21 +16,22 @@
     height: 100%
     position: absolute
     width: 100%
-top
+
 #contact
-  background-color: darkcyan
+  background-image: url(../images/misc328.jpg)
   overflow: hidden
 
   & .section-title
-    text-shadow: 0 0 16px aqua, -3px -4px 0 #1a4050, 0 2px 6px #12a176, 3px 4px 0 #037080
+    @include section-title-shadow(aqua, #19555e, black, #24873f)
 
   & .section-subtitle
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
-
-  & form
-    margin-bottom: 64px
+    font-family: "Comic Sans MS", "Comic Sans", cursive
 
   & .wrapper
+    align-items: center
+    display: flex
+    flex-direction: row
+    justify-content: center
     position: relative
 
     &::before
@@ -37,25 +39,16 @@ top
       background-repeat: no-repeat
       background-position: bottom
       background-size: contain
-      bottom: -6px
+      bottom: -5px
       content: ""
       filter: blur(3px)
       position: absolute
       height: 100%
       width: 100%
 
-  & .flex
-    align-items: center
-    position: relative
-    display: flex
-    flex-direction: row
-    justify-content: center
-
   & form
-    align-items: center
-    display: flex
-    flex-direction: column
     padding: 16px
+    padding-bottom: 64px
     max-width: 600px
 
     & p
@@ -102,11 +95,8 @@ top
     background-position: 100% 100%
 
 #social-media-tag-billboard
-  animation: banner 30s infinite
-  color: whitesmoke
+  animation: banner $social-media-tag-scrolling-duration infinite
   position: relative
-  font-size: $font-size-text
-  font-family: "Mozart", "PixelUnicode"
   text-align: end
   writing-mode: vertical-rl
 
