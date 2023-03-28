@@ -1,63 +1,82 @@
 @import "variables"
 @import "mixins"
 
-$crt-monitor-top: 86px
+$crt-monitor-top: 72px
+$contact-bottom-padding: 32px
+$social-media-tag-padding: 24px
+
+#power-cord
+  left: 100%
+  position: absolute
+  top: 100%
+  transform: translateX(-50%) translateY(-25%)
+  z-index: -1
 
 #crt-monitor
   background-image: url(../images/misc328.jpg)
-  position: absolute
+  border-radius: 32px
   left: 50%
+  height: calc(100% + #{$crt-monitor-top} - #{$contact-bottom-padding})
+  position: absolute
   top: -$crt-monitor-top
   transform: translateX(-50%)
-  height: calc(100% + #{$crt-monitor-top} - 16px)
+
+#crt
   border-radius: 32px
-  overflow: hidden
-
-  & img
-    height: 100%
-
-$social-media-tag-padding: 24px
-
-#social-media-tag-billboard
-  animation: banner $social-media-tag-scrolling-duration infinite
-  // Ugly, but it works! (hopefully)
-  left: calc(50% - min(300px + #{$social-media-tag-padding}, 50vw - #{$social-media-tag-padding}))
-  position: absolute
-  text-align: end
-  top: 20%
-  writing-mode: vertical-rl
-  z-index: -1
-
-@keyframes banner
-  0%
-    transform: translateY(-250%)
-  40%, 60%
-    transform: translateY(calc(50% + #{$crt-monitor-top}))
-  100%
-    transform: translateY(250%)
+  height: 100%
 
 #contact
   background: url(../images/num.gif)
 
   & .section-title
-    @include section-title-shadow(aqua, #19555e, black, #24873f)
+    @include section-title-shadow(#00ffff, #19555e, #000, #24873f)
 
   & .section-subtitle
     font-family: "Comic Sans MS", "Comic Sans", cursive
+
     & img
-      filter: drop-shadow(0 0 3px aqua)
+      filter: drop-shadow(0 0 3px #00ffff)
       vertical-align: middle
-      width: 3em
+      width: 2.5em
 
   & .wrapper
     position: relative
+    padding: 0 16px
+
+  & .flex
+    display: flex
+    flex-direction: row
+    gap: 8px
+    justify-content: center
 
   & form
-    padding: 16px
-    padding-left: calc(16px + 2*#{$social-media-tag-padding})
     padding-bottom: 186px
     max-width: 600px
-    margin: 0 auto
+
+  & label, .social-media-tag-billboard
+    text-shadow: 0 0 5px black
+
+  & textarea
+    color: black
+
+  & input[type=submit]
+    background-color: $colour-whitesmoke
+
+    &:active
+      background-color: #dddddd
+
+  & .social-media-tag
+    animation: banner $social-media-tag-scrolling-duration ease-out infinite
+    text-shadow: 0 0 5px black
+    writing-mode: vertical-rl
+
+@keyframes banner
+  0%
+    transform: translateY(0)
+  40%, 60%
+    transform: translateY(22.5%)
+  100%
+    transform: translateY(0)
 
 #feedback-form
   & input, & textarea
@@ -66,30 +85,18 @@ $social-media-tag-padding: 24px
     margin-bottom: 8px
     max-height: 320px
     min-height: 20px
-    outline: none
     overflow-wrap: break-word
+    outline: none
     padding-left: 8px
     resize: none
     width: 100%
-
-#contact label, #social-media-tag-billboard
-  text-shadow: 0 0 5px black
-
-  & textarea
-    color: black
-
-  & input[type=submit]
-    background-color: whitesmoke
-
-    &:active
-      background-color: #dddddd
 
 #feedback-submit
   width: 100%
 
   &:disabled
     animation: barberpole 10s linear infinite
-    color: whitesmoke
+    color: $colour-whitesmoke
     background: repeating-linear-gradient(45deg, #7497ff, #7497ff 10px, #6481d9 10px, #6481d9 20px)
     background-size: 200% 200%
     border-color: #6481d9

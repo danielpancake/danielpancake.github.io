@@ -41,7 +41,7 @@ body
     background: black
 
   &::-webkit-scrollbar-thumb
-    background: whitesmoke
+    background: $colour-whitesmoke
 
 @media screen
   @media (min-width: $mobile-version-critical-width-secondary)
@@ -89,41 +89,42 @@ main
     // margin: -8px 0 
 
 section
-  border-bottom: ridge 8px whitesmoke
+  border-bottom: ridge 8px $colour-whitesmoke
   position: relative
 
 h1, section .section-title,
 h2, section .section-subtitle
-  color: whitesmoke
+  color: $colour-whitesmoke
   font-family: "OksFree"
   text-align: center
   white-space: nowrap
 
 h1, section .section-title
   font-size: $font-size-title
-  padding: 16px 0 16px 0
+  padding-top: 0.1em
+  // padding: 16px 0 16px 0
 
 h2, section .section-subtitle
   font-size: $font-size-subtitle
   font-weight: normal
-  margin: 8px 0 12px 0
+  padding-top: 0.1em
 
 a
-  color: whitesmoke
+  color: $colour-whitesmoke
 
 ::-moz-selection
   background-color: $colour-bold-blue
-  color: whitesmoke
+  color: $colour-whitesmoke
 
 ::selection
   background-color: $colour-bold-blue
-  color: whitesmoke
+  color: $colour-whitesmoke
 
 canvas
   position: absolute
 
 p, li, label, input, textarea, .marquee
-  color: whitesmoke
+  color: $colour-whitesmoke
   font-family: "Mozart", "PixelUnicode"
   font-size: $font-size-text
 
@@ -152,6 +153,7 @@ input[type=submit], a
   -khtml-user-drag: none
   -moz-user-drag: none
   -o-user-drag: none
+  pointer-events: none
 
 .breakflex
   -ms-flex-preferred-size: 100%
@@ -159,7 +161,7 @@ input[type=submit], a
   height: 0
 
 .with-border
-  border: ridge $border-radius whitesmoke
+  border: ridge $border-radius $colour-whitesmoke
   border-radius: $border-radius
 
 .latex
@@ -179,7 +181,7 @@ mark
   background: linear-gradient(90deg, var(--highlight-colour) 50%, #0000 50%)
   background-size: 200% 100%
   background-position: 100% 0
-  color: whitesmoke
+  color: $colour-whitesmoke
 
 @keyframes highlight-lite
   5%

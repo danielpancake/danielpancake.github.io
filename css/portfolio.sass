@@ -31,7 +31,7 @@
 #tentacle
   flex: none
   position: absolute
-  top: -128px
+  top: -148px
 
   & img
     animation: tentacle-dance 60s infinite
@@ -87,6 +87,9 @@
 
 @media screen
   @media (max-width: $mobile-version-critical-width)
+    #tentacle
+      display: none // Not properly showing on mobile
+
     #portfolio .wrapper
       flex-direction: column
 

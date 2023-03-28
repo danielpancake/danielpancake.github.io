@@ -5,60 +5,59 @@
   <noscript>
     <style>#social-media-tag-billboard {background-color: #2020e0}</style>
   </noscript>
-
-  <div id="social-media-tag-billboard">
-    <p class="highlight">..or via my social media -></p>
-  </div>
-  <img src="./images/crt.png" alt="">
+  <!-- <img id="power-cord" class="disable-dragging" src="./images/power-cord.png" alt="power cord"> -->
+  <img id="crt" class="disable-dragging" src="./images/crt.png" alt="crt monitor">
 </div>
 
 <div class="wrapper">
   <h1 class="section-title">Cont@ct</h1>
-  <h2 class="section-subtitle">share your thoughts <img src="./images/why-is-it-thinking.png" alt=""></h2>
+  <h2 class="section-subtitle">share your thoughts <img src="./images/why-is-it-thinking.png" alt="screaming cat"></h2>
 
-  <form id="feedback-form" onsubmit="
-    const fs = document.getElementById('feedback-submit');
-    fs.disabled = true;
-    fs.value = 'Sending an e-mail...';
-    sendfeedback();
-    return false">
+  <div class="flex">
+    <div class="social-media-tag"><p class="highlight">..or via my social media -></p></div>
 
-    <div>
-      <label>What's your name?</label>
-      <input class="with-border" id="feedback-name" placeholder="* Real name or a nickname" required="required" type="text">
-      <label>What's your letter about?</label>
-      <input class="with-border" id="feedback-subject" placeholder="* Concise subject line" required="required" type="text">
-      <label>Reply e-mail:</label>
-      <input class="with-border" id="feedback-reply-email" placeholder="* == not necessary ==" type="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+">
-      <label>E-mail body:</label>
-      <textarea class="with-border" id="feedback-body" placeholder="* Anything, you want me to hear.." required="required" rows="5"></textarea>
-    </div>
+    <form id="feedback-form" onsubmit="
+      const fs = document.getElementById('feedback-submit');
+      fs.disabled = true;
+      fs.value = 'Sending an e-mail...';
+      sendfeedback();
+      return false">
 
-    <input class="with-border" id="feedback-submit" type="submit" value="Send">
+      <div>
+        <label>What's your name?</label>
+        <input class="with-border" id="feedback-name" placeholder="* Real name or a nickname" required="required" type="text">
+        <label>What's your letter about?</label>
+        <input class="with-border" id="feedback-subject" placeholder="* Concise subject line" required="required" type="text">
+        <label>Reply e-mail:</label>
+        <input class="with-border" id="feedback-reply-email" placeholder="* == not necessary ==" type="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+">
+        <label>E-mail body:</label>
+        <textarea class="with-border" id="feedback-body" placeholder="* Anything, you want me to hear.." required="required" rows="5"></textarea>
+      </div>
 
-    <p align="justify">
-      Alternatively, ( if you are not afraid to (•̀ᴗ•́ ) ) you can <a href="mailto:friendlypancake@gmail.com">e-mail</a> me directly at
-    </p>
-    <p align="center">
-      <br>
-      <a href="mailto:friendlypancake@gmail.com">friendlypancake@gmail.com</a>
-    </p>
-  </form>
+      <input class="with-border" id="feedback-submit" type="submit" value="Send">
 
-  <noscript>
-    <style>
-      #feedback-form, #social-media-tag-billboard { display: none !important }
-    </style>
-
-    <form>
-      <p align="center">Ooops… feedback form seems to be missing</p>
-      <br>
       <p align="justify">
-        Unfortunately, this feedback form cannot work with javascript disabled.
-        Still, if you wish to contact me, you can reach out through
-        <a href="mailto:inboxpancake@gmail.com">my email</a> or the social media
-        listed below.
+        Alternatively, ( if you are not afraid to (•̀ᴗ•́ ) ) you can <a href="mailto:friendlypancake@gmail.com">e-mail</a> me directly at
+      </p>
+
+      <p align="center">
+        <br><a href="mailto:friendlypancake@gmail.com">friendlypancake@gmail.com</a>
       </p>
     </form>
-  </noscript>
+
+    <noscript>
+      <style>#feedback-form, .social-media-tag { display: none !important }</style>
+
+      <form>
+        <p align="center">Ooops… feedback form seems to be missing</p>
+        <br>
+        <p align="justify">
+          Unfortunately, this feedback form cannot work with javascript disabled.
+          Still, if you wish to contact me, you can reach out through
+          <a href="mailto:inboxpancake@gmail.com">my email</a> or the social media
+          listed below.
+        </p>
+      </form>
+    </noscript>
+  </div>
 </div>
