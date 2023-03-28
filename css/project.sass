@@ -22,11 +22,12 @@
     min-height: 64px
     overflow: hidden
     position: relative
+    
+    &.active > .project-shape div, &:hover > .project-shape div
+      background-color: #0a0a47a0
+      padding-right: $font-size-text
 
     &.active
-      & > .project-shape, &:hover > .project-shape
-        background-color: #0a0a47a0
-        padding-right: $font-size-text
       & .project-title::before
         content: "> "
       & p

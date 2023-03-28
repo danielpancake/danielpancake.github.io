@@ -5,28 +5,34 @@ $crt-monitor-top: 72px
 $contact-bottom-padding: 32px
 $social-media-tag-padding: 24px
 
-#power-cord
-  left: 100%
-  position: absolute
-  top: 100%
-  transform: translateX(-50%) translateY(-25%)
-  z-index: -1
+// #power-cord
+//   left: 100%
+//   position: absolute
+//   top: 100%
+//   transform: translateX(-50%) translateY(-25%)
+//   z-index: -1
 
 #crt-monitor
+  height: 100%
+  position: absolute
+  width: 100%
+
+#crt
   background-image: url(../images/misc328.jpg)
   border-radius: 32px
+  display: block
   left: 50%
   height: calc(100% + #{$crt-monitor-top} - #{$contact-bottom-padding})
   position: absolute
   top: -$crt-monitor-top
   transform: translateX(-50%)
-
-#crt
-  border-radius: 32px
-  height: 100%
+  width: auto
 
 #contact
   background: url(../images/num.gif)
+
+  & p
+    line-height: 0.75em
 
   & .section-title
     @include section-title-shadow(#00ffff, #19555e, #000, #24873f)
@@ -50,7 +56,7 @@ $social-media-tag-padding: 24px
     justify-content: center
 
   & form
-    padding-bottom: 186px
+    padding-bottom: 200px
     max-width: 600px
 
   & label, .social-media-tag-billboard
