@@ -91,6 +91,14 @@
     padding-bottom: 192px
     position: relative
 
+  & mark
+    // Just copying
+    animation: 60s highlight-lite infinite
+    background-color: none
+    background: linear-gradient(90deg, var(--highlight-colour) 50%, #0000 50%)
+    background-size: 200% 100%
+    background-position: 100% 0
+
   & .skill-box
     flex: 1 0 48%
     margin: 0 calc(min(2vw, 8px))

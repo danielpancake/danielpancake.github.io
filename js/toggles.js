@@ -1,32 +1,4 @@
 /* This script handles blocks visibility of which can be toggle switched */
-// Add styles for toggles
-const style = document.createElement("style");
-style.innerHTML = `
-  .toggle {
-    cursor: url(../images/cur-pointer.png), auto;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-  .inner {
-    height: 0;
-    overflow: hidden;
-    -webkit-transition: all 0.25s;
-    -o-transition: all 0.25s;
-    transition: all 0.25s;
-  }
-  .inner.hidden {
-    height: 0 !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    border-top-width: 0 !important;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-  }`
-document.head.appendChild(style);
-
 const inners = document.getElementsByClassName("inner");
 for (let e of inners) {
   e.classList.add("hidden") // Hide all inner elements

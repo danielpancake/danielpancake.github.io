@@ -1,6 +1,6 @@
 ---
 title: Personal Skills
-highlight-colour: 3d8c15
+highlight-colour: "3d8c15"
 ---
 
 - <mark>Responsible</mark> 2<sup>nd</sup>-year undergraduate student with an <mark>ability to easily adapt</mark> to a new study & work environment.

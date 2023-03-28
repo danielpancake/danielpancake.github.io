@@ -1,7 +1,6 @@
 @import "variables"
 
-#project-list ul
-  list-style: none
+#project-list .ul
   position: relative
   z-index: 2
 
@@ -19,7 +18,6 @@
     border-bottom-left-radius: 0
     border-bottom-right-radius: 0
     box-shadow: inset 2px 2px 10px #00000080
-    min-height: 64px
     overflow: hidden
     position: relative
     
@@ -58,6 +56,7 @@
   & .project-brief
     display: block
     line-height: calc(#{$font-size-text} * 0.55)
+    min-height: calc(#{$font-size-text} * 2 * 0.55)
 
   & .project-title
     font-size: calc(#{$font-size-text} * 1.6)
@@ -77,11 +76,37 @@
     text-align: justify
     word-wrap: break-word
 
-    & p
+    & p, & mark, & h1, & h2, & li, & label, & input
       color: black
+
+    & li
+      margin-left: 1em
+
+    & figcaption
+      color: gray
+      text-align: center
+      font-size: calc(#{$font-size-text} * 0.8)
+
+    & figure
+      text-align: center
 
     & img
       border-radius: $border-radius
       box-shadow: 2.5px 2.5px 10px #000000aa
       margin: 8px 0
       max-width: 100%
+
+.video-container
+  height: 0
+  padding-bottom: 56.25%
+  position: relative
+
+.video-container iframe
+  border-radius: 5px
+  box-shadow: 2.5px 2.5px 10px #000
+  height: 100%
+  left: 0
+  margin: 8px 0
+  position: absolute
+  top: 0
+  width: 100%

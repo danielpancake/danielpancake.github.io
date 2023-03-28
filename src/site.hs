@@ -35,7 +35,7 @@ main = do
       route   idRoute
       compile compressCssCompiler
 
-    match "js/*.js" $ do
+    match "js/**.js" $ do
       route   idRoute
       compile getResourceString
 
@@ -56,7 +56,7 @@ main = do
         -- Getting all css and js
         let ctx = mconcat
               (fmap (\ (x, path) -> listField x defaultContext (loadAll path))
-              [("css", "css/*"), ("js", "js/*")])
+              [("css", "css/*"), ("js", "js/*"), ("preload-js", "js/preload/*")])
               <> customDefaultContext
 
         getResourceString

@@ -43,11 +43,13 @@ body
   &::-webkit-scrollbar-thumb
     background: $colour-whitesmoke
 
+#content-box
+  overflow: hidden
+
 @media screen
   @media (min-width: $mobile-version-critical-width-secondary)
     body
       padding: 1vw
-
     #content-box
       border-radius: 16px
       box-shadow: 0 0 10px black
@@ -55,7 +57,6 @@ body
   @media (min-width: $mobile-version-critical-width)
     body::-webkit-scrollbar
       width: 16px
-
     .drop-shadow
       -webkit-filter: drop-shadow(15px 5px 20px #000000cc)
       filter: drop-shadow(15px 5px 20px #000000cc)
@@ -63,30 +64,12 @@ body
   @media (max-width: $mobile-version-critical-width)
     body::-webkit-scrollbar
       width: 2vw
-
-  .drop-shadow
-    -webkit-filter: drop-shadow(1.25vw 1vw 1.75vw #000000cc)
-    filter: drop-shadow(1.25vw 1vw 1.75vw #000000cc)
-
-#content-box
-  overflow: hidden
+    .drop-shadow
+      -webkit-filter: drop-shadow(1.25vw 1vw 1.75vw #000000cc)
+      filter: drop-shadow(1.25vw 1vw 1.75vw #000000cc)
 
 main
   position: relative
-
-  // &::before
-  //   background-color: red
-  //   content: ""
-  //   font-size: 128px
-  //   color: black
-  //   font-weight: bold
-  //   display: block
-  //   position: absolute
-  //   width: 128px
-  //   height: 100%
-  //   left: calc(50% - 1000px)
-  //   z-index: 2
-    // margin: -8px 0 
 
 section
   border-bottom: ridge 8px $colour-whitesmoke
@@ -95,19 +78,23 @@ section
 h1, section .section-title,
 h2, section .section-subtitle
   color: $colour-whitesmoke
-  font-family: "OksFree"
+  font-family: $font-family-titles
   text-align: center
   white-space: nowrap
 
 h1, section .section-title
   font-size: $font-size-title
   padding-top: 0.1em
-  // padding: 16px 0 16px 0
 
 h2, section .section-subtitle
   font-size: $font-size-subtitle
   font-weight: normal
   padding-top: 0.1em
+
+p, li, label, input, textarea, figcaption, .marquee
+  color: $colour-whitesmoke
+  font-family: $font-family-text
+  font-size: $font-size-text
 
 a
   color: $colour-whitesmoke
@@ -123,10 +110,11 @@ a
 canvas
   position: absolute
 
-p, li, label, input, textarea, .marquee
-  color: $colour-whitesmoke
-  font-family: "Mozart", "PixelUnicode"
-  font-size: $font-size-text
+.center
+  text-align: center
+
+.justify
+  text-align: justify
 
 .marquee
   animation: marquee 15s linear infinite
@@ -175,13 +163,15 @@ input[type=submit], a
     margin-left: -0.07em
 
 mark
+  background: none
+  color: $colour-whitesmoke
+
+.highlight-lite
   animation: 60s highlight-lite infinite
-  animation-delay: 5s
   background-color: none
   background: linear-gradient(90deg, var(--highlight-colour) 50%, #0000 50%)
   background-size: 200% 100%
   background-position: 100% 0
-  color: $colour-whitesmoke
 
 @keyframes highlight-lite
   5%
