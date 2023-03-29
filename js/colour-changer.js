@@ -6,7 +6,7 @@ window.onload = makeDoubleDelegate(window.onload, () => {
 
     let tick = false;
 
-    function changeColour(position) {
+    function changeColour() {
       for (let colourChanger of colourChangers) {
         if (colourChanger.getBoundingClientRect().top < 10) {
           let colour = colourChanger.dataset.colour;

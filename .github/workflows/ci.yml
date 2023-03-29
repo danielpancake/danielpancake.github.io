@@ -1,0 +1,43 @@
+name: Build and deploy to github pages
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        cabal: ["3.10.1.0"]
+        ghc: ["9.4.4"]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: haskell/actions/setup@v1
+        id: setup-haskell-cabal
+        with:
+          ghc-version: ${{ matrix.ghc }}
+          cabal-version: ${{ matrix.cabal }}
+      - name: Cabal Update
+        run: |
+          cabal update
+          cabal freeze $CONFIG
+      - uses: actions/cache@v2.1.4
+        with:
+          path: |
+            ${{ steps.setup-haskell-cabal.outputs.cabal-store }}
+            dist-newstyle
+          key: ${{ runner.os }}-${{ matrix.ghc }}-${{ hashFiles('cabal.project.freeze') }}
+          restore-keys: |
+            ${{ runner.os }}-${{ matrix.ghc }}-
+      - name: Build Site
+        run: |
+          cabal build $CONFIG
+          cabal run site rebuild
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        if: github.ref == 'refs/heads/master'
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: master
+          folder: _site
+          clean: true
