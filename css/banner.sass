@@ -1,0 +1,115 @@
+@import "variables"
+
+#banner
+  border-bottom: solid $colour-whitesmoke 4px
+  overflow: hidden
+
+  & .wrapper
+    background-color: $colour-bold-blue
+
+  & .wrapper-secondary
+    background: url(../images/strips.png) center repeat-y
+    display: flex
+    margin: 0 auto
+    max-width: $mobile-version-critical-width
+    padding-top: 16px
+    position: relative
+
+#pointer
+  animation: hot-pancakes-ad-cursor $banner-hot-pancakes-ad-duration infinite
+  position: absolute
+  z-index: 1
+
+#hot-pancakes-ad
+  animation: hot-pancakes-ad-popup $banner-hot-pancakes-ad-duration infinite
+  position: absolute
+  will-change: transform
+
+@media screen
+  @media (min-width: $mobile-version-critical-width-secondary)
+    #banner::after
+      box-shadow: inset -35px 0 35px -25px $colour-bolder-blue
+      content: " "
+      height: 100%
+      position: absolute
+      right: 0
+      top: 0
+      width: 10%
+
+  @media (min-width: $mobile-version-critical-width)
+    #banner
+      & .wrapper-secondary
+        box-shadow: inset 192px 0 gold, -650px 0 gold
+
+    #danielpancake-photo
+      height: 512px
+
+    #danielpancake-wordart
+      filter: drop-shadow(8px 10px 15px pink)
+      height: 256px
+      transform: translate3d(-85px, 15px, 0)
+
+    #pointer
+      height: 42px
+
+    #hot-pancakes-ad
+      height: 256px
+      transform: translate3d(630px, 220px, 0) scale3d(1, 0, 1)
+
+    @keyframes hot-pancakes-ad-popup
+      0%, 29%
+        transform: translate3d(630px, 220px, 0) scale3d(1, 0, 1)
+      1%, 28%
+        transform: translate3d(630px, 220px, 0) scale3d(1, 1, 1)
+
+    @keyframes hot-pancakes-ad-cursor
+      0%, 100%
+        transform: translate3d(335px, 375px, 0)
+      25%, 29%
+        transform: translate3d(828px, 233px, 0)
+        content: url(../images/ptr-normal.png)
+      28%
+        content: url(../images/ptr-click.png)
+      50%
+        transform: translate3d(832px, 130px, 0)
+      65%
+        transform: translate3d(290px, 270px, 0)
+
+  @media (max-width: $mobile-version-critical-width)
+    #banner
+      & .wrapper-secondary
+        box-shadow: inset 20vw 0 gold
+
+    #danielpancake-photo
+      height: 54vw
+
+    #danielpancake-wordart
+      filter: drop-shadow(1vw 0.75vw 1.75vw pink)
+      height: 26.5vw
+      transform: translate(-9vw, 2vw)
+
+    #pointer
+      height: 4vw
+
+    #hot-pancakes-ad
+      height: 26vw
+      transform: translate(64vw, 24vw) scale3d(1, 0, 1)
+
+    @keyframes hot-pancakes-ad-popup
+      0%, 29%
+        transform: translate(64vw, 24vw) scale3d(1, 0, 1)
+      1%, 28%
+        transform: translate(64vw, 24vw) scale3d(1, 1, 1)
+
+    @keyframes hot-pancakes-ad-cursor
+      0%, 100%
+        transform: translate(35.5vw, 39vw)
+      25%, 29%
+        transform: translate(84vw, 25.5vw)
+        content: url(../images/ptr-normal.png)
+      28%
+        content: url(../images/ptr-click.png)
+      50%
+        transform: translate(85vw, 15vw)
+      65%
+        transform: translate(30vw, 30vw)

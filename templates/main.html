@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>danielpancake</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="Cache-Control" content="private">
+
+  <meta name="apple-mobile-web-app-status-bar-style" content="#242424">
+  <meta name="theme-color" content="#242424">
+
+  <meta name="author" content="danielpancake">
+  <meta name="description" property="og:description" content="I am danielpancake, and this is my web site for all sorts of weird projects and shenanigans.">
+  <meta name="google-site-verification" content="JHRMulxU0O2n3QKi7Wkgrxsv-c8xfYE8l_dpI12soAs">
+  <meta name="googlebot" content="index, follow">
+  <meta name="image" property="og:image" content="./images/socialpreview.jpg">
+  <meta name="keywords" content="danielpancake, daniel pancake, cubicus, gmdungeon, game maker, game developer">
+  <meta name="robots" content="all">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+  <meta name="yandex" content="index, follow">
+
+  <noscript>
+    <style>#feedback-form, .social-media-tag { display: none !important }</style>
+  </noscript>
+  
+  <!-- Should redesign icon -->
+  <link rel="icon" type="image/x-icon" href="./images/favicon.png?v=2"">
+  <!-- For smoother animation in the banner section -->
+  <link rel="preload" as="image" href="./images/ptr-click.png">
+
+  $for(css)$
+  <link rel="stylesheet" href="$url$">
+  $endfor$
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script>
+    function makeDoubleDelegate(fn1, fn2) { return function () { if (fn1) fn1(); if (fn2) fn2(); } }
+  </script>
+  
+  $for(preload-js)$
+  <script src="$url$"></script>
+  $endfor$
+</head>
+
+<body>
+  <div id="content-box">
+    $body$
+  </div>
+
+  $for(js)$
+  <script src="$url$"></script>
+  $endfor$
+</body>
+
+</html>

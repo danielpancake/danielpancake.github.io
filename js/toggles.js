@@ -40,7 +40,6 @@ function findNextElementByClassName(element, className) {
     if (next.classList.contains(className)) {
       return next;
     }
-
     next = next.nextElementSibling;
   }
 }
