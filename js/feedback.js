@@ -17,7 +17,7 @@ const smtpjs = (name, email, subject, body) => {
   let message = name + " wrote to you: " + body;
   if (email != "") { message += "Write back, " + email; }
   Email.send({
-    SecureToken: "2d60c5e6-b738-4a95-8e38-45075cf81d32",
+    SecureToken: "0ff255eb-9ec6-48de-a3f5-f6b77ce58e2b",
     To: "inboxpancake@gmail.com",
     From: "inboxpancake@gmail.com",
     Subject: subject,
