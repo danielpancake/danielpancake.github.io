@@ -8,8 +8,8 @@ date: 2018 - now
 relevance: -1
 ---
 
-The real beast (!) that now has hakyll site generator under the hood.
+The real beast (!) that now has [hakyll](https://jaspervdj.be/hakyll){target=blank} site generator under the hood.
 
 <br />
 
-The source code is available on [\_github\_](https://github.com/danielpancake/danielpancake.github.io) (may be scary)
+The source code is available on [\_github\_](https://github.com/danielpancake/danielpancake.github.io){target=blank} (may be scary)

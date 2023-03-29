@@ -7,7 +7,7 @@ flavour: website
 date: "2020"
 ---
 
-TEDxYouth@Limassol is an independently organized TEDx event, which is a part of the TEDxYouth program. The event is organized by the [TEDxYouth@AgiouAndreou](https://www.ted.com/tedx/events/39907) team, which is a group of young people who are passionate about sharing ideas and inspiring others.
+TEDxYouth@Limassol is an independently organized TEDx event, which is a part of the TEDxYouth program. The event is organized by the [TEDxYouth@AgiouAndreou](https://www.ted.com/tedx/events/39907){target=blank} team, which is a group of young people who are passionate about sharing ideas and inspiring others.
 
 <br />
 
@@ -19,4 +19,4 @@ It was the first ever TEDxYouth event in Cyprus, organized by the initiative of 
 
 <br />
 
-Check it out [here](https://danielpancake.github.io/tedxyouth-agiouandreou) or on [\_github\_](https://github.com/danielpancake/tedxyouth-agiouandreou)
+Check it out [here](https://danielpancake.github.io/tedxyouth-agiouandreou){target=blank} or on [\_github\_](https://github.com/danielpancake/tedxyouth-agiouandreou){target=blank}

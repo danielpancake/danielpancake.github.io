@@ -1,7 +1,7 @@
 /* This script highlights text character by character */
 window.onload = makeDoubleDelegate(window.onload, () => {
   let colours = new Set();
-
+  
   document.querySelectorAll(".highlight").forEach((e) => {
     const letters = e.textContent.split("");
 
@@ -29,9 +29,8 @@ window.onload = makeDoubleDelegate(window.onload, () => {
 });
 
 /* Liteweight version of the highlighting */
-document.querySelectorAll(".highlight-lite").forEach((e) => {
+document.querySelectorAll("#about mark").forEach((e) => {
   e.setAttribute("style",
-    `animation-timing-function: steps(${e.textContent.length}, end);`
-    + e.getAttribute("style")
+    `animation-timing-function: steps(${e.textContent.length}, end);` + (e.getAttribute("style") || "")
   );
 });

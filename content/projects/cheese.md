@@ -8,7 +8,7 @@ date: Jun 2021
 relevance: 1
 ---
 
-At the time, <mark class="highlight">"Cheese"</mark> is my most watched animation on the [YouTube](https://www.youtube.com/@danielpancake0). It is based on one of the animations from the short series ["SHOP: A Pop Opera"](https://youtu.be/tSkz4vATkQE) created by very talented (!) [Jack Stauber](https://www.youtube.com/c/JackStauber).
+At the time, <mark class="highlight">"Cheese"</mark> is my most watched animation on the [YouTube](https://www.youtube.com/@danielpancake0){target=blank}. It is based on one of the animations from the short series ["SHOP: A Pop Opera"](https://youtu.be/tSkz4vATkQE){target=blank} created by very talented (!) [Jack Stauber](https://www.youtube.com/c/JackStauber){target=blank}.
 <br/>
 
 <div class="video-container">
@@ -17,7 +17,7 @@ At the time, <mark class="highlight">"Cheese"</mark> is my most watched animatio
 
 <br/>
 
-Below, you can see most of the assets I created for this animation. I drew everything in the [Aseprite](https://www.aseprite.org/), using a mouse and a cheap graphic tablet.
+Below, you can see most of the assets I created for this animation. I drew everything in the [Aseprite](https://www.aseprite.org/){target=blank}, using a mouse and a cheap graphic tablet.
 An advice I'd like to give to the the *future me:* separate mouths from the head sprites. It will save you a lot of time!
 
 !["Cheese" assets](./images/posts/post-cheese.webp){loading=lazy}

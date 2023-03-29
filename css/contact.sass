@@ -72,17 +72,17 @@ $social-media-tag-padding: 24px
       background-color: #dddddd
 
   & .social-media-tag
-    animation: banner $social-media-tag-scrolling-duration ease-out infinite
+    animation: banner $social-media-tag-scrolling-duration ease-in-out infinite
     text-shadow: 0 0 5px black
     writing-mode: vertical-rl
 
 @keyframes banner
   0%
-    transform: translateY(0)
+    transform: translateY(-10%)
   40%, 60%
     transform: translateY(22.5%)
   100%
-    transform: translateY(0)
+    transform: translateY(-10%)
 
 #feedback-form
   & input, & textarea

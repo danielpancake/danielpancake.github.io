@@ -6,7 +6,7 @@ flavour: command line application
 date: 2020
 ---
 
-<mark class="highlight">spongebob-search</mark> is a command line application for searching through transcripts of Spongebob episodes from [Spongebob Wikia](https://spongebob.fandom.com/wiki/List_of_episodes).
+<mark class="highlight">spongebob-search</mark> is a command line application for searching through transcripts of Spongebob episodes from [Spongebob Wikia](https://spongebob.fandom.com/wiki/List_of_episodes){target=blank}.
 
 <br />
 
@@ -14,8 +14,8 @@ date: 2020
 
 <br />
 
-<mark class="highlight">spongebob-search</mark> uses simple full text search algorithm to search given words or phrases in the transcripts. I think, I used [this article](https://artem.krylysov.com/blog/2020/07/28/lets-build-a-full-text-search-engine/) as guide. In terms of efficiency, it is very bad, as any sufficient data structures are not used. But it does (did at least) the job. Do not expect much, as it was simply a high school project.
+<mark class="highlight">spongebob-search</mark> uses simple full text search algorithm to search given words or phrases in the transcripts. I think, I used [this article](https://artem.krylysov.com/blog/2020/07/28/lets-build-a-full-text-search-engine){target=blank} as guide. In terms of efficiency, it is very bad, as any sufficient data structures are not used. But it does (did at least) the job. Do not expect much, as it was simply a high school project.
 
 <br />
 
-You can find it on the [\_github\_](https://github.com/danielpancake/spongebobsearch)
+You can find it on the [\_github\_](https://github.com/danielpancake/spongebobsearch){target=blank}
