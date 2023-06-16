@@ -30,7 +30,7 @@ jobs:
         run: |
           cabal update
           cabal freeze $CONFIG
-          
+
       - name: Cache Cabal
         uses: actions/cache@v2
         with:
@@ -45,6 +45,15 @@ jobs:
         run: |
           cabal build $CONFIG
           cabal run site rebuild
+
+      - name: Install HTML tidy
+        run: |
+          sudo apt-get install tidy
+
+      - name: Tidy HTML
+        run: |
+          cd _site
+          tidy -utf8 -imq -w 170 --tidy-mark no index.html 2> /dev/null
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
