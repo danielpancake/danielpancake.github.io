@@ -21,8 +21,9 @@ const addWarpBanner = () => {
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(100, bannerGetWidth() / bannerGetHeight());
 
-  const renderer = new THREE.WebGLRenderer();
-  renderer.setClearColor(0x2020e0, 1);
+  const renderer = new THREE.WebGLRenderer( { antialias : false } );
+  renderer.setClearColor( 0x2020e0, 1 );
+  renderer.setPixelRatio( window.devicePixelRatio );
   renderer.setSize(bannerGetWidth(), bannerGetHeight());
 
   // Prepending the canvas to the wrapper div
@@ -30,7 +31,7 @@ const addWarpBanner = () => {
   renderer.domElement.setAttribute("id", "warp");
   div.prepend(renderer.domElement);
 
-  const wackyTorusGeometry = new THREE.TorusGeometry(30, 20, 36, 72);
+  const wackyTorusGeometry = new THREE.TorusGeometry(30, 20, 16, 100);
   const wackyTorusMaterial = new THREE.ShaderMaterial({
     vertexShader: `
       varying vec2 vUv;
@@ -81,8 +82,8 @@ const addWarpBanner = () => {
 
   // Handling animation of the torus and resizing of the warp frame
   const animateWarpFrame = () => {
-    renderer.render(scene, camera);
     wackyTorusMaterial.uniforms.uTime.value = clock.getElapsedTime();
+    renderer.render(scene, camera);
     requestAnimationFrame(animateWarpFrame);
   }
 
