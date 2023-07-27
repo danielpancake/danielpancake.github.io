@@ -21,6 +21,8 @@ jobs:
 
       - name: Generate website
         run: |
+          ls -a
+          chmod +x ./danielpancake-website-gen-x86_64_linux
           ./danielpancake-website-gen-x86_64_linux rebuild -v
 
       - name: Install HTML tidy
