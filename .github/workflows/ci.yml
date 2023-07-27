@@ -33,8 +33,8 @@ jobs:
         # exit code 1 returned by tidy on warns upsets the workflow 
         run: |
           cd _site
-          tidy -utf8 -imq -w 170 --tidy-mark no index.html 2> /dev/null
-
+          tidy -utf8 -imq -w 210 --drop-empty-elements no --tidy-mark no index.html
+ 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         if: github.ref == 'refs/heads/master'
