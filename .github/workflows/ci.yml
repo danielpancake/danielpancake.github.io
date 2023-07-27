@@ -10,41 +10,18 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        cabal: ["3.10.1.0"]
-        ghc: ["9.4.4"]
-
+        
     steps:
       - uses: actions/checkout@v2
 
-      - name: Setup Haskell
-        uses: haskell/actions/setup@v1
-        id: setup-haskell-cabal
+      - name: Get the latest release
+        uses: dsaltares/fetch-gh-release-asset@master
         with:
-          ghc-version: ${{ matrix.ghc }}
-          cabal-version: ${{ matrix.cabal }}
+          file: 'danielpancake-website-gen-x86_64_linux'
 
-      - name: Cabal Update
+      - name: Generate website
         run: |
-          cabal update
-          cabal freeze $CONFIG
-
-      - name: Cache Cabal
-        uses: actions/cache@v2
-        with:
-          path: |
-            ${{ steps.setup-haskell-cabal.outputs.cabal-store }}
-            dist-newstyle
-          key: ${{ runner.os }}-${{ matrix.ghc }}-${{ hashFiles('cabal.project.freeze') }}
-          restore-keys: |
-            ${{ runner.os }}-${{ matrix.ghc }}-
-
-      - name: Build Site
-        run: |
-          cabal build $CONFIG
-          cabal run site rebuild
+          ./danielpancake-website-gen-x86_64_linux rebuild -v
 
       - name: Install HTML tidy
         run: |
