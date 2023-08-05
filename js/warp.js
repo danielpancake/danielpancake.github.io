@@ -16,7 +16,7 @@ const addWarpBanner = () => {
     return banner.innerHeight || banner.clientHeight;
   }
 
-  // Setup 3d environment
+  // Setup 3D environment
   const clock = new THREE.Clock();
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(100, bannerGetWidth() / bannerGetHeight());
