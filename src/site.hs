@@ -39,8 +39,8 @@ main = do
       route   idRoute
       compile getResourceString
 
-    -- Copying website images and fonts
-    match ("images/**" .||. "webfonts/*") $ do
+    -- Copying website images, fonts, and other things
+    match ("images/**" .||. "webfonts/*" .||. "misc/**" .||. "robots.txt") $ do
       route   idRoute
       compile copyFileCompiler
 
@@ -137,4 +137,3 @@ listOfStringToMap :: [String] -> [(String, String)]
 listOfStringToMap []        = []
 listOfStringToMap [k]       = []
 listOfStringToMap (k:val:r) = (k, val) : listOfStringToMap r
-
