@@ -7,15 +7,15 @@ flavour: website
 date: "2020"
 ---
 
-TEDxYouth@Limassol is an independently organized TEDx event, which is a part of the TEDxYouth program. The event is organized by the [TEDxYouth@AgiouAndreou](https://www.ted.com/tedx/events/39907){target=blank} team, which is a group of young people who are passionate about sharing ideas and inspiring others.
+<mark class="highlight">TEDxYouth@Limassol</mark> is an independently organized TEDx event, which is part of the TEDxYouth program. The event is organized by the [TEDxYouth@AgiouAndreou](https://www.ted.com/tedx/events/39907){target=blank} team, which is a group of young people who are passionate about sharing ideas and inspiring others.
 
 <br />
 
-The event had a theme of <mark class="highlight">"Beyond!"</mark> and was held on the 6th of February 2021 in Limassol, Cyprus.
+With a theme of <mark class="highlight">"Beyond!"</mark>, the TEDxYouth@Limassol event took place on February 6, 2021 in Limassol, Cyprus, marking the first ever TEDxYouth event held in the country.
 
 <br />
 
-It was the first ever TEDxYouth event in Cyprus, organized by the initiative of the IMS Private School.
+This event was organized by the initiative of [IMS Private School](https://ims-edu.com/).
 
 <br />
 

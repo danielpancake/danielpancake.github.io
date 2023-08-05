@@ -7,25 +7,24 @@ flavour: unfinished game
 date: Jun-Jul 2022
 ---
 
-I made <mark class="highlight">haskell-outrun</mark> for the final project of the Functional Programming course at Innopolis University. It is a racing game with pseudo-3d graphics inspired by the classic SEGA game Outrun. The game is written in Haskell and uses the [Gloss](https://hackage.haskell.org/package/gloss){target=blank} library for graphics and input handling. Most inspiration and guidance came from [Lou\'s Article](https://web.archive.org/web/20230126045954/http://www.extentofthejam.com/pseudo/){target=blank} and games like [Max DownForce](https://youtu.be/CJKgefRQh1I){target=blank} and the original Outrun.
+I created <mark class="highlight">haskell-outrun</mark> for the final project in my Functional Programming course at Innopolis University. It is a retro-style racing game with pseudo-3D graphics, inspired by the SEGA classic Outrun. The game is written in Haskell using the [Gloss](https://hackage.haskell.org/package/gloss){target=blank} library for graphics and input.
+
+![haskell-outrun preview](https://raw.githubusercontent.com/danielpancake/haskell-outrun/main/assets/preview.gif){loading=lazy}
+
+In developing, I turned to [Lou\'s Article](https://web.archive.org/web/20230126045954/http://www.extentofthejam.com/pseudo/){target=blank}, [Max DownForce](https://youtu.be/CJKgefRQh1I){target=blank}, and the original Outrun for guidance and ideas.
 
 <br />
 
 Features:
 
-- Basic functionality for the Outrun-like game
-- Methods to build custom racing tracks
-- Infinite (looped) racing tracks
-- Hills and curvy roads
+- Basic gameplay elements of an Outrun-style racing game
+- Customizable racing track building methods
+- Infinite looping race tracks
+- Rolling hills and winding roads
 - Static and dynamic road objects
-- Game metrics: laps, time, and vehicle speed
-- Sprite loading and sprite-based font loading
-- Text rendering with a custom colour and font
+- Game metrics like laps, time, and speed
+- Sprite and sprite-based font loading
 
 <br />
 
-Project source code is available on [\_github\_](https://github.com/danielpancake/haskell-outrun){target=blank}
-
-<br />
-
-![haskell-outrun preview](https://raw.githubusercontent.com/danielpancake/haskell-outrun/main/assets/preview.gif){loading=lazy}
+The project's source code is available on [\_github\_](https://github.com/danielpancake/haskell-outrun){target=blank}

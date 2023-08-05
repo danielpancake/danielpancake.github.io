@@ -6,7 +6,7 @@ flavour: game jam submission
 date: Aug 2018
 ---
 
-<mark class="highlight">Dr Helper</mark> is a silly puzzle game about running out of space.. on the personal computer.
+<mark class="highlight">Dr Helper</mark> is a silly puzzle game about *running out of space* on your personal computer.
 
 <br />
 
@@ -24,7 +24,7 @@ date: Aug 2018
 
 ![Screenshot from Dr. Helper game](https://m.gjcdn.net/content/700/2043310-p7zsbhjs-v4.webp){loading=lazy}
 
-In 2018, I entered Ludum Dare 42 competition. It was my first game development contest experience.
+In 2018, I entered the Ludum Dare 42 game jam, which was my first game development competition experience.
 
 <br />
 

@@ -8,19 +8,19 @@ date: Jun 2023
 relevance: 2
 ---
 
-<mark class="highlight">Horns of Combustion</mark> is a small bullet hell game. In this game, you got two forms: human (portrayed as a triangle) and barell (portrayed as a barell), make sure to take advantage of both.
+<mark class="highlight">Horns of Combustion</mark> is a small bullet hell game. Players can switch between two forms - an armed human (portrayed as a triangle) and a fast barrel, leaking with gasoline (portrayed as a barrel).
 
 <br />
 
-Complete all waves and defeat the final boss!
+You must strategically switch between forms to complete all waves and defeat the final boss!
 
 <br />
 
-Horns of Combustion can be played in the browser on [\_itch.io\_](https://nertsal.itch.io/horns-of-combustion){target=blank} page.
+Horns of Combustion can be played in the browser on the [\_itch.io\_](https://nertsal.itch.io/horns-of-combustion){target=blank} and the [\_gamejolt\_](https://gamejolt.com/games/horns_of_combustion/818036){target=blank} page.
 
 <br />
 
-Made by an awesome team:
+The game was created by a talented development team:
 
 - [@Nertsal](https://github.com/Nertsal) - programming
 - [@danielpancake](https://github.com/danielpancake) - graphics, programming

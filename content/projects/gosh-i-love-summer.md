@@ -1,22 +1,22 @@
 ---
-title: Gosh, I love Summer!
-brief: A turn-based puzzle game for the local jam
+title: Gosh, I Love Summer!
+brief: A turn-based puzzle game
 banner: gosh-i-love-summer.webp
 banner-position: right
 flavour: game jam submission
 date: Nov 2021
 ---
 
-> Gosha loves summer. He also loves his mother. This summer, they went on a vacation to the sunny seashore. The sun was playing on the screen of Gosha's old mp3 player while he was listening to the new album of his favourite musical artist, Dmitry Kvadrat...
+> Gosha loves summer. He also loves his mom a lot. This summer, they went on vacation to the sunny beach. The sun shined on the screen of Gosha's old mp3 player while he listened to the new album from his favorite singer, Dmitry Kvadrat.
 
 <br />
 
-> "GOSHA! Fetch a can of Coke for me, please", his mother asked, disturbing Gosha's tranquillity. It's better not to argue with your mother. So, off he goes...
+> "GOSHA! Can you get me a can of Coke?" his mom asked, bothering Gosha's peace and quiet. It's best not to argue with your mom. So off he went to fetch the soda, though he'd rather stay...
 
 <br />
 
-A winner of the local IGD game jam held at the Innopolis University.
+The winner of the local IGD (Innopolis GameDev) game jam, which was held at Innopolis University.
 
 <br />
 
-"Gosh, I love Summer!" is available on [\_itch.io\_](https://danielpancake.itch.io/gosh-i-love-summer){target=blank}
+<mark class="highlight">"Gosh, I Love Summer!"</mark> is available on [\_itch.io\_](https://danielpancake.itch.io/gosh-i-love-summer){target=blank}
