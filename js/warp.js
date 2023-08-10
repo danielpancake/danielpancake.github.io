@@ -10,20 +10,23 @@ const addWarpBanner = () => {
 
   const bannerGetWidth = () => {
     return banner.innerWidth || banner.clientWidth;
-  }
+  };
 
   const bannerGetHeight = () => {
     return banner.innerHeight || banner.clientHeight;
-  }
+  };
 
   // Setup 3D environment
   const clock = new THREE.Clock();
   const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(100, bannerGetWidth() / bannerGetHeight());
+  const camera = new THREE.PerspectiveCamera(
+    100,
+    bannerGetWidth() / bannerGetHeight()
+  );
 
-  const renderer = new THREE.WebGLRenderer( { antialias : false } );
-  renderer.setClearColor( 0x2020e0, 1 );
-  renderer.setPixelRatio( window.devicePixelRatio );
+  const renderer = new THREE.WebGLRenderer({ antialias: false });
+  renderer.setClearColor(0x2020e0, 1);
+  renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(bannerGetWidth(), bannerGetHeight());
 
   // Prepending the canvas to the wrapper div
@@ -70,33 +73,35 @@ const addWarpBanner = () => {
     uniforms: {
       uTime: { value: 0 },
       uTexture: {
-        value: new THREE.TextureLoader().load("./images/the-most-creative-i-could-come-up-with.png")
-      }
+        value: new THREE.TextureLoader().load(
+          "./images/the-most-creative-i-could-come-up-with.png"
+        ),
+      },
     },
-    transparent: true
+    transparent: true,
   });
 
   const wackyTorus = new THREE.Mesh(wackyTorusGeometry, wackyTorusMaterial);
   wackyTorus.position.z = -20;
   scene.add(wackyTorus);
 
-  // Handling animation of the torus and resizing of the warp frame
+  // Handling torus animation and frame resizing
   const animateWarpFrame = () => {
     wackyTorusMaterial.uniforms.uTime.value = clock.getElapsedTime();
     renderer.render(scene, camera);
     requestAnimationFrame(animateWarpFrame);
-  }
+  };
 
   const resizeWarpFrame = () => {
     camera.aspect = bannerGetWidth() / bannerGetHeight();
     camera.updateProjectionMatrix();
     renderer.setSize(bannerGetWidth(), bannerGetHeight());
-  }
+  };
 
   window.onresize = () => resizeWarpFrame();
 
   animateWarpFrame();
   resizeWarpFrame();
-}
+};
 
 window.onload = makeDoubleDelegate(window.onload, addWarpBanner);
