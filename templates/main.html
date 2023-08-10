@@ -22,7 +22,7 @@
   <noscript>
     <style>#feedback-form, .social-media-tag { display: none !important }</style>
   </noscript>
-  
+
   <!-- Should redesign icon -->
   <link rel="icon" type="image/x-icon" href="./images/favicon.png?v=2"">
   <!-- For smoother animation in the banner section -->
@@ -31,12 +31,12 @@
   $for(css)$
   <link rel="stylesheet" href="$url$">
   $endfor$
-  
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script>
     function makeDoubleDelegate(fn1, fn2) { return function () { if (fn1) fn1(); if (fn2) fn2(); } }
   </script>
-  
+
   $for(preload-js)$
   <script src="$url$"></script>
   $endfor$
