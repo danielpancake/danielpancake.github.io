@@ -1,7 +1,7 @@
 /* This script highlights text character by character */
 window.onload = makeDoubleDelegate(window.onload, () => {
   let colours = new Set();
-  
+
   document.querySelectorAll(".highlight").forEach((e) => {
     const letters = e.textContent.split("");
 

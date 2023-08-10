@@ -105,6 +105,7 @@
       animation: carousel-horiz $weird-inventory-carousel-duration linear infinite
       flex-direction: row
       height: $weird-item-block-size
+      min-width: 128px
       width: 200% // Because items are duplicated
 
       & img
@@ -132,6 +133,7 @@
       flex-direction: column
       flex-wrap: nowrap
       justify-content: space-around
+      min-height: 128px
       height: 200% // Because items are duplicated
       position: absolute
       top: 0
@@ -150,4 +152,4 @@
   0%
     transform: translate3d(-50%, 0, 0)
   100%
-    transform: translate3d(0, 0, 0)
+    transform: translate3d(0%, 0, 0)

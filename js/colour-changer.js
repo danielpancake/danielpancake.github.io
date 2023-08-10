@@ -1,3 +1,16 @@
+// Mobile Theme Color Changer
+//
+// Changes the theme color meta tags on scroll
+// to match section-specific colors
+//
+// Assumptions:
+// - Color changer elements have 'data-color' with the color value
+// - Only enables on mobile devices
+//
+// Limitations:
+// - Only tested on Android Chrome
+// - Doesn't work on non-mobile browsers
+//
 window.onload = makeDoubleDelegate(window.onload, () => {
   if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     const colourChangers = Array.from(document.getElementsByClassName("colour-changer")).reverse();
@@ -10,8 +23,10 @@ window.onload = makeDoubleDelegate(window.onload, () => {
       for (let colourChanger of colourChangers) {
         if (colourChanger.getBoundingClientRect().top < 10) {
           let colour = colourChanger.dataset.colour;
+
           metaThemeColor.setAttribute("content", colour);
           appleThemeColor.setAttribute("content", colour);
+
           break;
         }
       }
@@ -23,7 +38,7 @@ window.onload = makeDoubleDelegate(window.onload, () => {
           changeColour();
           tick = false;
         });
-        
+
         tick = true;
       }
     });

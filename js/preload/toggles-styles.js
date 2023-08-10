@@ -1,4 +1,8 @@
-/* This script adds styles required for toggles.js to work */
+// Toggle Styles
+//
+// This script handles injecting reusable CSS styles
+// for toggle elements that open/close on click with toggles.js
+//
 const styleEl = document.createElement("style");
 styleEl.innerHTML = `
   .toggle{
@@ -22,5 +26,6 @@ styleEl.innerHTML = `
     border-top-width:0!important;
     margin-top:0!important;
     margin-bottom:0!important;
-  }`
+  }`;
+
 document.head.appendChild(styleEl);
