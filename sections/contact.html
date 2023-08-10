@@ -10,25 +10,46 @@
   <div class="flex">
     <div class="social-media-tag"><p class="highlight">..or via my social media -></p></div>
 
-    <!-- <form id="feedback-form" onsubmit="
-      const fs = document.getElementById('feedback-submit');
-      fs.disabled = true;
-      fs.value = 'Sending an e-mail...';
-      sendfeedback();
-      return false">
-
+    <!-- It is only 50 a month, please, be nice -->
+    <form id="feedback-form" action="https://formspree.io/f/mrgwpqqn" method="POST">
       <div>
         <label>What's your name?</label>
-        <input class="with-border" id="feedback-name" placeholder="* Real name or a nickname" required="required" type="text">
+        <input name="name"
+          class="with-border"
+          id="feedback-name"
+          placeholder="* Real name or a nickname"
+          required="required"
+          type="text">
+
         <label>What's your letter about?</label>
-        <input class="with-border" id="feedback-subject" placeholder="* Concise subject line" required="required" type="text">
+        <input name="subject"
+          class="with-border"
+          id="feedback-subject"
+          placeholder="* Concise subject line"
+          required="required"
+          type="text">
+
         <label>Reply e-mail:</label>
-        <input class="with-border" id="feedback-reply-email" placeholder="* == not necessary ==" type="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+">
+        <input name="email"
+          class="with-border"
+          id="feedback-reply-email"
+          placeholder="* == not necessary =="
+          type="email"
+          pattern="[^@\s]+@[^@\s]+\.[^@\s]+">
+
         <label>E-mail body:</label>
-        <textarea class="with-border" id="feedback-body" placeholder="* Anything, you want me to hear.." required="required" rows="5"></textarea>
+        <textarea name="message"
+          class="with-border"
+          id="feedback-body"
+          placeholder="* Anything, you want me to hear.."
+          required="required"
+          rows="5"></textarea>
       </div>
 
       <input class="with-border" id="feedback-submit" type="submit" value="Send">
+
+      <p class="center" id="feedback-form-status"></p>
+      <br>
 
       <p class="justify">
         Alternatively, if you're not afraid to (•̀ᴗ•́ ), you can <a href="mailto:friendlypancake@gmail.com">e-mail</a> me directly at
@@ -37,24 +58,12 @@
       <p class="center">
         <br><a href="mailto:friendlypancake@gmail.com">friendlypancake@gmail.com</a>
       </p>
-    </form> -->
-
-    <form>
-      <br><br><br><br><br>
-      <p class="center">Ooops… the feedback form is temporarily out of order</p>
-      <br>
-      <p class="justify">
-        Unfortunately, the feedback form does not work right now.
-        Still, if you wish to contact me, you can reach out through
-        <a href="mailto:inboxpancake@gmail.com">my email</a> or the social media
-        listed below.
-      </p>
-      <br><br><br><br><br><br><br>
     </form>
 
     <noscript>
       <form>
-        <p class="center">Ooops… feedback form seems to be missing</p>
+        <br><br><br><br>
+        <p class="center">Oops! The feedback form seems to be missing.</p>
         <br>
         <p class="justify">
           Unfortunately, this feedback form cannot work with javascript disabled.
@@ -62,7 +71,10 @@
           <a href="mailto:inboxpancake@gmail.com">my email</a> or the social media
           listed below.
         </p>
+        <br><br><br><br><br>
       </form>
     </noscript>
   </div>
 </div>
+
+<script src="./js/form.js"></script>
