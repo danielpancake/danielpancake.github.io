@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CloudFrogBot -- Returning to the telegram...</title>
+</head>
+
+<body>
+  <h1>CloudFrogBot</h1>
+  <p>Returning to the telegram...</p>
+</body>
+
+<script>
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const code = urlParams.get("code");
+
+  if (code != null) {
+    window.location.replace("http://t.me/friendlyfrog_bot?start=" + code);
+  }
+</script>
+
+</html>
