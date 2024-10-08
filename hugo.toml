@@ -1,0 +1,19 @@
+baseURL = "https://danielpancake.github.io/"
+title = "danielpancake — hi!"
+languageCode = "en-us"
+
+disableKinds = ["taxonomy", "term", "RSS", "sitemap", "robotsTXT", "404"]
+
+[params]
+  description = "I am danielpancake, and this is my web site for all sorts of weird projects and shenanigans."
+  keywords = ["danielpancake", "daniel", "pancake", "gamedev", "software"]
+
+[params.sassOpts]
+  transpiler = "libsass"
+  minify = true
+
+[params.jsOpts]
+  minify = false
+
+[markup.goldmark.renderer]
+  unsafe = true

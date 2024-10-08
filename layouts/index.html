@@ -1,0 +1,59 @@
+{{ define "head" }}
+  {{/* SASS -> CSS pipeline */}}
+  {{ range resources.Match "sass/[!_]*.sass" }}
+    {{ $style := . | toCSS site.Params.sassOpts | fingerprint }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" crossorigin="anonymous">
+  {{ end }}
+
+  {{/* JS Libraries */}}
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.168.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.168.0/examples/jsm/"
+      }
+    }
+  </script>
+
+  <script type="module">
+    import * as THREE from "three";
+    import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+
+    {{/*  EXPOSURE  */}}
+    window.THREE = THREE;
+    window.GLTFLoader = GLTFLoader;
+  </script>
+
+  {{/* JS Preload pipeline */}}
+  {{ range resources.Match "js/preload/[!_]*.js" }}
+  {{ $script := . | js.Build site.Params.jsOpts | fingerprint }}
+    <script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}" crossorigin="anonymous"></script>
+  {{ end }}
+{{ end }}
+
+{{ define "body" }}
+  {{ partial "section.html" (dict "id" "header" "colour" "#242424" "content" (partial "sections/header.html" .)) }}
+  {{ partial "section.html" (dict "id" "banner" "colour" "#2020e0" "content" (partial "sections/banner.html" .)) }}
+  {{ partial "section.html" (dict "id" "motd" "colour" "#101010" "content" (partial "sections/motd.html" .)) }}
+
+  {{ partial "section.html" (dict "id" "about-me" "content" (partial "sections/about-me.html" .)) }}
+  {{ partial "section.html" (dict "id" "portfolio" "content" (partial "sections/portfolio.html" .)) }}
+
+  {{ partial "section.html" (dict "id" "contact" "colour" "#008B8B" "content" (partial "sections/contact.html" .)) }}
+
+  {{ partial "sections/social.html" . }}
+  {{ partial "sections/footer.html" . }}
+
+  {{/* JS pipeline */}}
+  {{ range resources.Match "js/[!_]*.js" }}
+    {{ $script := . | js.Build site.Params.jsOpts | fingerprint }}
+    <script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}" crossorigin="anonymous"></script>
+  {{ end }}
+
+  <script>
+    const projects = document.getElementById("project-list").querySelectorAll(".toggle");
+    {{/*  Open the first project or specified by id in the anchor  */}}
+    {{/*  const anchor = window.location.hash;  */}}
+    projects[0].click();
+  </script>
+{{ end }}

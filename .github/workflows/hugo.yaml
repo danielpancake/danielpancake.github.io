@@ -1,0 +1,50 @@
+name: Deploy danielpancake site to Pages using Hugo
+
+on:
+  # Runs the workflow when you push a commit or tag.
+  push:
+    branches:
+      - master-hugo
+
+  # Runs the workflow when activity on a pull request in the workflow's repository occurs.
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+  # Allows to manually trigger a workflow run.
+  workflow_dispatch:
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      HUGO_VERSION: 0.133.0
+
+    steps:
+      - name: Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+
+      - name: Install Dart Sass
+        run: sudo snap install dart-sass
+
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+
+      - name: Build with Hugo
+        run: hugo --minify --gc
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: danielpancake-pages
+          folder: public
+          clean: true

@@ -1,0 +1,19 @@
+<div class="project">
+  <div class="toggle project-banner with-border"
+    style="background: url(./images/projects/{{ .Params.banner }}); background-position: {{ .Params.bannerPosition | default "center" }};">
+    <div class="project-shape">
+      <div></div>
+      <!-- ^^^ TODO: leave a comment about this div's purpose, 'cause I forgot -->
+      <p>
+        <span class="project-title">{{ .Title }}</span>
+        <br>
+        <span class="project-brief">{{ .Params.brief }}</span>
+      </p>
+    </div>
+  </div>
+
+  <div class="inner project-description with-border">
+    <p class="project-label">{{ .Params.flavour | default "???" }} / {{ .Params.period | default "recently" }}</p>
+    <hr>{{ .Content }}
+  </div>
+</div>

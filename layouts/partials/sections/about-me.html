@@ -1,0 +1,21 @@
+<div id="cardboard-signs">
+  <div id="cardboard-sign-left"><img src="./images/cardboard-arrow.png" alt="look up"></div>
+  <div id="cardboard-sign-right"><img src="./images/cardboard-arrow.png" alt="look down"></div>
+</div>
+
+<h1 class="section-title">About me</h1>
+<h2 class="section-subtitle">🙋<u>Hey! I'm the cool guy above</u><br><sup>and my skills are listed below</sup></h2>
+
+<div class="wrapper">
+  {{ $skills := where .Site.RegularPages "Section" "skills" }}
+  {{ $sortedSkills := sort $skills "Params.relevance" "desc" }}
+  {{ range $sortedSkills }}
+  <div class="skill-box">
+    <h2 class="skill-box-title">{{ .Title }}</h2>
+
+    <div class="skill-table" style="--highlight-colour:#{{ .Params.colour }}">
+      {{ .Content }}
+    </div>
+  </div>
+  {{ end }}
+</div>

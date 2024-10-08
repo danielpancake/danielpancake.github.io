@@ -1,0 +1,137 @@
+@import "variables"
+
+#project-list .ul
+  position: relative
+  z-index: 2
+
+  .project
+    border-radius: 5px
+    box-shadow: 0 0 8px 2px black
+
+    &:not(:first-of-type)
+      margin-top: $blocks-separation
+
+  .project-banner
+    background-repeat: no-repeat !important
+    background-size: cover !important
+    border-bottom: none
+    border-bottom-left-radius: 0
+    border-bottom-right-radius: 0
+    box-shadow: inset 2px 2px 10px #00000080
+    overflow: hidden
+    position: relative
+
+    &.active > .project-shape div,
+    &:hover > .project-shape div
+      background-color: #2600ff98
+      padding-right: $font-size-text
+
+    &.active > .project-shape p,
+    &:hover > .project-shape p
+      opacity: 1
+
+    &.active .project-title::before
+      content: "> "
+
+    a
+      color: $colour-bold-blue
+
+    p
+      --padding: calc(#{$font-size-text} * 0.35)
+      // Don't even ask... I'll deal with this later
+      color: $colour-whitesmoke
+      opacity: 0.9
+      text-shadow: 0 0 #{$font-size-text} #000
+      padding: calc(#{$font-size-text} * 0.25) calc(#{$font-size-text} * 0.85) var(--padding) var(--padding)
+
+  .project-shape
+    display: inline-block
+    height: 100%
+    position: relative
+
+    div
+      background-color: #00000070
+      clip-path: polygon(0 0, 100% 0, 95% 90%, 0 100%)
+      height: 100%
+      position: absolute
+      transition: 0.1s
+      width: 100%
+
+  .project-title, .project-brief
+    position: relative
+
+  .project-brief
+    font-style: italic
+    display: block
+    line-height: calc(#{$font-size-text} * 0.55)
+    min-height: calc(#{$font-size-text} * 2 * 0.55)
+
+  .project-title
+    font-size: calc(#{$font-size-text} * 1.6)
+    line-height: calc(#{$font-size-text} * 0.85)
+    transition: 0.2s
+
+  .project-label
+    color: grey
+    text-align: right
+
+  .project-description
+    background-color: $colour-whitesmoke
+    border-top: none
+    border-top-left-radius: 0
+    border-top-right-radius: 0
+    padding: 0.5em 1.5em 1em 1.5em
+    text-align: justify
+    word-wrap: break-word
+
+    h1, h2, h3
+      font-weight: normal
+
+    p + p, ul + p, p + .footnotes, blockquote + p, p + blockquote
+      margin-top: 0.8em
+
+    sup
+      line-height: 0
+      font-size: 0.83em
+      vertical-align: super
+
+    li
+      margin-left: 1em
+
+    figcaption
+      color: gray
+      text-align: center
+      font-size: calc(#{$font-size-text} * 0.8)
+      margin-top: 0.25em
+
+    figure
+      text-align: center
+
+    blockquote
+      border-left: 0.5em solid #ccc
+      padding-left: 1em
+
+    hr
+      border-top: 0.35em ridge
+
+    img
+      border-radius: 5px
+      box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset
+      max-width: 100%
+
+    .youtube
+      position: relative
+      padding-bottom: 56.25%
+      height: 0
+      margin: 1em 0
+
+      iframe
+        background: #000
+        border: 0
+        border-radius: 5px
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%

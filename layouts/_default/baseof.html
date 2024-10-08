@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html">
+
+  <title>{{ .Title }}</title>
+
+  <meta name="apple-mobile-web-app-status-bar-style" content="#242424">
+  <meta name="theme-color" content="#242424">
+
+  <meta name="author" content="danielpancake">
+  {{ with site.Params.description }}
+  <meta name="description" property="og:description" content={{ . }}>
+  {{ end }}
+  <meta name="google-site-verification" content="JHRMulxU0O2n3QKi7Wkgrxsv-c8xfYE8l_dpI12soAs">
+  <meta name="googlebot" content="index, follow">
+  <meta name="image" property="og:image" content="./socialpreview.jpg">
+  {{ with site.Params.keywords }}
+  <meta name="keywords" content={{ delimit . ", " }}>
+  {{ end }}
+  <meta name="robots" content="all">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+  <meta name="yandex" content="index, follow">
+
+  <!-- TODO: redesign icon -->
+  <link rel="icon" type="image/x-icon" href="./favicon.png?v=2">
+
+  <!-- For smoother animation in the banner section -->
+  <link rel="preload" as="image" href="./images/cursor-click.png">
+  <link rel="preload" as="image" href="./images/cursor-normal.png">
+
+  {{ block "head" . }}{{ end }}
+</head>
+
+<body>
+  <div id="content-box">
+    {{ block "body" . }}{{ end }}
+  </div>
+</body>
+
+</html>

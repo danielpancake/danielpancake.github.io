@@ -1,0 +1,34 @@
+<h1 class="section-title">Portfolio</h1>
+<h2 class="section-subtitle"><u>The list of stuff I've made</u>👨‍💻</h2>
+
+<div class="wrapper">
+  <div id="tentacle">
+    <img class="disable-dragging" src="./images/tentacle.png" alt="a friendly-shaped monster emerged from my code base">
+  </div>
+
+  <div id="cd-disc">
+    <img src="./images/cd.png" alt="a spinning CD disc">
+  </div>
+
+  <div id="project-list">
+    <div class="ul">
+      {{ $projects := where .Site.RegularPages "Section" "projects" }}
+      {{/* By relevance, otherwise by reverse alphabetical */}}
+      {{ $sortedProjects := sort $projects "Params.relevance" }}
+      {{ range $sortedProjects.Reverse }}
+      {{ partial "project.html" . }}
+      {{ end }}
+    </div>
+  </div>
+
+  <div id="additional-blocks" class="with-border"></div>
+
+  <div class="breakflex"></div>
+
+  {{/* Not functional yet. Will be once project splitter is implemented */}}
+  {{/*  <div class="pagination">
+    <div class="button"><button class="button-white">&laquo;</button></div>
+    <div class="button"><button class="button-white">1</button></div>
+    <div class="button"><button class="button-white">&raquo;</button></div>
+  </div>  */}}
+</div>

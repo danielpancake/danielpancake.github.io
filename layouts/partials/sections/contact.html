@@ -1,0 +1,57 @@
+<div id="crt-monitor">
+  <img id="crt-bottom" src="./images/crt-bottom.png" alt="">
+  <img id="crt" class="disable-dragging" src="./images/crt.png" alt="crt monitor">
+</div>
+
+<div class="wrapper">
+  <h1 class="section-title">Cont@ct</h1>
+  <h2 class="section-subtitle">message me from here <img src="./images/why-is-it-thinking.png" alt="screaming cat"></h2>
+
+  <div class="flex">
+    <div class="flex-container">
+      <div id="outbox-window">
+        <img class="disable-dragging" src="./images/outbox-window.png">
+      </div>
+
+      <div class="social-media-tag">
+        <p class="highlight">...or find me elsewhere!!1</p>
+      </div>
+
+      <form id="feedback-form" action="https://api.web3forms.com/submit" method="POST">
+        <!-- It's only 250 per month. Please, be nice... -->
+        <input type="hidden" name="access_key" value="04be0efa-8448-46d2-91b8-48ca2f8fb4b4" />
+
+        <div>
+          <label>Who's writing?</label>
+          <input name="name" class="with-border" id="feedback-name" placeholder="* Your name or nickname"
+            required="required" type="text">
+
+          <label>Subject line:</label>
+          <input name="subject" class="with-border" id="feedback-subject" placeholder="* Brief description"
+            required="required" type="text">
+
+          <label>Reply e-mail:</label>
+          <input name="email" class="with-border" id="feedback-reply-email"
+            placeholder="* Email for a response (optional)" type="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+">
+
+          <label>E-mail body:</label>
+          <textarea name="message" class="with-border" id="feedback-body" placeholder="* Type your message here..."
+            required="required" rows="5"></textarea>
+        </div>
+
+        <input class="with-border" id="feedback-submit" type="submit" value="Send">
+
+        <p class="center" id="feedback-form-status"></p>
+
+        <p class="justify">
+          Alternatively, if you're not afraid to (•̀ᴗ•́ ), you can <a href="mailto:inboxpancake@gmail.com">e-mail</a>
+          me directly at
+        </p>
+        <br>
+        <p class="center"><a href="mailto:inboxpancake@gmail.com">inboxpancake@gmail.com</a></p>
+        <br>
+        <p class="center"> = Powered by <a href="https://web3forms.com" target="_blank">Web3Forms</a> = </p>
+      </form>
+    </div>
+  </div>
+</div>

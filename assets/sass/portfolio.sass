@@ -1,0 +1,117 @@
+@import "variables"
+@import "mixins"
+
+#portfolio
+  animation: space-parallax $space-parallax-duration linear infinite
+  background: url(../images/backgrounds/space-fg.png), url(../images/backgrounds/space-bg.png), #101010
+
+  .section-title
+    @include section-title-shadow(blue, #aa0080, #1214a1, #5000cc)
+    text-align: center
+    position: relative
+    z-index: 1
+
+  .wrapper
+    display: flex
+    position: relative
+    flex-wrap: wrap
+    padding: 16px 12px
+    margin: 0 auto
+    max-width: 1120px
+
+#additional-blocks
+  background: url(../images/backgrounds/redskulls.jpg), #101010
+  box-sizing: content-box
+  box-shadow: inset 0 0 32px black, 0 0 8px 2px black
+  min-height: 92px
+  overflow: hidden
+  position: relative
+
+@media screen
+  @media (max-width: $mobile-version-critical-width)
+    #portfolio .wrapper
+      flex-direction: column
+
+    #additional-blocks
+      margin-top: $blocks-separation
+
+      & p
+        transform: translateY(-50%) translateX(-50%)
+        width: calc(100% - 16px)
+
+  @media (min-width: $mobile-version-critical-width)
+    #portfolio .wrapper
+      flex-direction: row
+
+    #project-list
+      flex: 1 0 70%
+      position: relative
+
+    #additional-blocks
+      flex: 1 0
+      margin-left: $blocks-separation
+
+@keyframes space-parallax
+  0%
+    background-position: 0px 0px, 0px 0px
+  100%
+    background-position: 512px 512px, 256px 256px
+
+#tentacle
+  position: absolute
+  top: 186px
+  left: -240px
+  transform: translateY(-50%)
+
+  & img
+    animation: tentacle-dance 60s infinite
+    filter: drop-shadow(0 15px 15px black)
+    image-rendering: crisp-edges
+    transform-origin: 50% 60%
+
+#cd-disc
+  filter: drop-shadow(0 16px 16px black)
+  position: absolute
+
+  & img
+    animation: cd-disc-spin 60s linear infinite
+    width: 100%
+
+@keyframes cd-disc-spin
+  from
+    transform: rotate(0deg)
+  to
+    transform: rotate(360deg)
+
+@media screen
+  @media (min-width: $mobile-version-critical-width)
+    #portfolio .wrapper
+      margin-bottom: 128px
+
+    #cd-disc
+      top: 100%
+      left: 100%
+      width: 80%
+      transform: translateX(-55%) translateY(-100%)
+
+  @media (max-width: $mobile-version-critical-width)
+    #portfolio .wrapper
+      margin-bottom: 20vh
+
+    #cd-disc
+      top: 100%
+      left: 50%
+      width: 90vw
+      transform: translateX(-50%) translateY(-60%)
+
+  @media (max-width: $mobile-version-critical-width-secondary)
+    #tentacle
+      transform: translateY(-52.5%) scale(0.65) translateX(-15%)
+
+@keyframes tentacle-dance
+  0%
+    transform: rotate(0deg)
+  50%
+    transform: rotate(-10deg)
+  100%
+    transform: rotate(0deg)

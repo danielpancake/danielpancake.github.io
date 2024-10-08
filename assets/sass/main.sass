@@ -1,0 +1,80 @@
+@import "variables"
+
+html
+  background-image: url(../images/backgrounds/transparent.png)
+  cursor: url(../cur-normal.png), auto
+  scroll-behavior: smooth
+
+body
+  margin: 0 auto
+  max-width: 2160px
+
+  // Adding custom scrollbar
+  &::-webkit-scrollbar-track
+    background: black
+
+  &::-webkit-scrollbar-thumb
+    background: $colour-whitesmoke
+
+::-moz-selection
+  background-color: $colour-bold-blue
+  color: $colour-whitesmoke
+
+::selection
+  background-color: $colour-bold-blue
+  color: $colour-whitesmoke
+
+/* Assigning custom cursors */
+label
+  cursor: url(../cur-normal.png), auto
+
+input, textarea
+  cursor: url(../cur-selection.png), auto
+
+a, input[type=submit]
+  cursor: url(../cur-pointer.png), auto
+
+section
+  border-bottom: ridge 8px $colour-whitesmoke
+  position: relative
+
+section .section-title,
+section .section-subtitle
+  color: $colour-whitesmoke
+  text-align: center
+  white-space: nowrap
+
+section .section-title
+  padding-top: 0.1em
+
+section .section-subtitle
+  font-weight: normal
+  padding-top: 0.1em
+
+#content-box
+  overflow: hidden
+
+@media screen
+  @media (min-width: $mobile-version-critical-width-secondary)
+    body
+      padding: 1vw
+
+    #content-box
+      border-radius: 16px
+      box-shadow: 0 0 10px black
+
+  @media (min-width: $mobile-version-critical-width)
+    body::-webkit-scrollbar
+      width: 16px
+
+    .drop-shadow
+      -webkit-filter: drop-shadow(15px 5px 20px #000000cc)
+      filter: drop-shadow(15px 5px 20px #000000cc)
+
+  @media (max-width: $mobile-version-critical-width)
+    body::-webkit-scrollbar
+      width: 2vw
+
+    .drop-shadow
+      -webkit-filter: drop-shadow(1.25vw 1vw 1.75vw #000000cc)
+      filter: drop-shadow(1.25vw 1vw 1.75vw #000000cc)
