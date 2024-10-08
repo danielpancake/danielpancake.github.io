@@ -1,0 +1,92 @@
+* {
+  border: 0;
+  margin: 0;
+  padding: 0; }
+
+h1, h2, h3, h4, h5, h6, p, li, img, label, input, textarea, figcaption, .marquee {
+  font-family: "Mozart", "PixelUnicode"; }
+
+p, li, img, label, input, textarea, figcaption, .marquee {
+  font-size: calc(min(6.25vw, 24pt)); }
+
+section .section-title,
+section .section-subtitle {
+  font-family: OksFree; }
+
+h1, section .section-title {
+  font-size: calc(min(16vw, 92pt)); }
+
+h2, section .section-subtitle {
+  font-size: calc(min(6vw, 32pt)); }
+
+mark {
+  background: none; }
+
+.breakflex {
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  height: 0; }
+
+.center {
+  text-align: center; }
+
+.justify {
+  text-align: justify; }
+
+.marquee {
+  --gap: 2rem;
+  display: flex;
+  gap: var(--gap);
+  line-height: 1em;
+  overflow: hidden;
+  padding: 4px 0;
+  user-select: none; }
+
+.marquee-content {
+  animation: scroll 15s linear infinite;
+  display: flex;
+  flex-shrink: 0;
+  gap: var(--gap);
+  justify-content: space-around;
+  min-width: 100%; }
+
+@keyframes scroll {
+  from {
+    transform: translateX(0); }
+  to {
+    transform: translateX(calc(-100% - var(--gap))); } }
+
+.disable-dragging {
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  -webkit-user-drag: none;
+  pointer-events: none; }
+
+.latex sup {
+  font-size: 0.9em;
+  vertical-align: 0.16em;
+  margin-left: -0.18em; }
+
+.latex sub {
+  font-size: 1em;
+  vertical-align: -0.4ex;
+  margin-left: -0.07em; }
+
+.with-border {
+  border: ridge 5px #F5F5F5;
+  border-radius: 5px; }
+
+.highlight-lite {
+  animation: 60s highlight-lite infinite;
+  background-color: none;
+  background: linear-gradient(90deg, var(--highlight-colour) 50%, #0000 50%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  color: #F5F5F5; }
+
+@keyframes highlight-lite {
+  5%, 85% {
+    background-position: 0 0; }
+  90%, 100% {
+    background-position: -100% 0; } }

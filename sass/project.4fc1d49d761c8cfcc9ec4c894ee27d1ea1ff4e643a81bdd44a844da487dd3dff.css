@@ -1,0 +1,106 @@
+#project-list .ul {
+  position: relative;
+  z-index: 2; }
+  #project-list .ul .project {
+    border-radius: 5px;
+    box-shadow: 0 0 8px 2px black; }
+    #project-list .ul .project:not(:first-of-type) {
+      margin-top: 6px; }
+  #project-list .ul .project-banner {
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    border-bottom: none;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: inset 2px 2px 10px #00000080;
+    overflow: hidden;
+    position: relative; }
+    #project-list .ul .project-banner.active > .project-shape div, #project-list .ul .project-banner:hover > .project-shape div {
+      background-color: #2600ff98;
+      padding-right: calc(min(6.25vw, 24pt)); }
+    #project-list .ul .project-banner.active > .project-shape p, #project-list .ul .project-banner:hover > .project-shape p {
+      opacity: 1; }
+    #project-list .ul .project-banner.active .project-title::before {
+      content: "> "; }
+    #project-list .ul .project-banner a {
+      color: #2020E0; }
+    #project-list .ul .project-banner p {
+      --padding: calc(calc(min(6.25vw, 24pt)) * 0.35);
+      color: #F5F5F5;
+      opacity: 0.9;
+      text-shadow: 0 0 calc(min(6.25vw, 24pt)) #000;
+      padding: calc(calc(min(6.25vw, 24pt)) * 0.25) calc(calc(min(6.25vw, 24pt)) * 0.85) var(--padding) var(--padding); }
+  #project-list .ul .project-shape {
+    display: inline-block;
+    height: 100%;
+    position: relative; }
+    #project-list .ul .project-shape div {
+      background-color: #00000070;
+      clip-path: polygon(0 0, 100% 0, 95% 90%, 0 100%);
+      height: 100%;
+      position: absolute;
+      transition: 0.1s;
+      width: 100%; }
+  #project-list .ul .project-title, #project-list .ul .project-brief {
+    position: relative; }
+  #project-list .ul .project-brief {
+    font-style: italic;
+    display: block;
+    line-height: calc(calc(min(6.25vw, 24pt)) * 0.55);
+    min-height: calc(calc(min(6.25vw, 24pt)) * 2 * 0.55); }
+  #project-list .ul .project-title {
+    font-size: calc(calc(min(6.25vw, 24pt)) * 1.6);
+    line-height: calc(calc(min(6.25vw, 24pt)) * 0.85);
+    transition: 0.2s; }
+  #project-list .ul .project-label {
+    color: grey;
+    text-align: right; }
+  #project-list .ul .project-description {
+    background-color: #F5F5F5;
+    border-top: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    padding: 0.5em 1.5em 1em 1.5em;
+    text-align: justify;
+    word-wrap: break-word; }
+    #project-list .ul .project-description h1, #project-list .ul .project-description h2, #project-list .ul .project-description h3 {
+      font-weight: normal; }
+    #project-list .ul .project-description p + p, #project-list .ul .project-description ul + p, #project-list .ul .project-description p + .footnotes, #project-list .ul .project-description blockquote + p, #project-list .ul .project-description p + blockquote {
+      margin-top: 0.8em; }
+    #project-list .ul .project-description sup {
+      line-height: 0;
+      font-size: 0.83em;
+      vertical-align: super; }
+    #project-list .ul .project-description li {
+      margin-left: 1em; }
+    #project-list .ul .project-description figcaption {
+      color: gray;
+      text-align: center;
+      font-size: calc(calc(min(6.25vw, 24pt)) * 0.8);
+      margin-top: 0.25em; }
+    #project-list .ul .project-description figure {
+      text-align: center; }
+    #project-list .ul .project-description blockquote {
+      border-left: 0.5em solid #ccc;
+      padding-left: 1em; }
+    #project-list .ul .project-description hr {
+      border-top: 0.35em ridge; }
+    #project-list .ul .project-description img {
+      border-radius: 5px;
+      box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+      max-width: 100%; }
+    #project-list .ul .project-description .youtube {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      margin: 1em 0; }
+      #project-list .ul .project-description .youtube iframe {
+        background: #000;
+        border: 0;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%; }
