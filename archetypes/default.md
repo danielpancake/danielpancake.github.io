@@ -1,11 +1,9 @@
 ---
-title: '{{ replace .File.ContentBaseName "-" " " | title }}'
+title: {{ replace .File.ContentBaseName "-" " " | title }}
 brief:
-period: 'sometime ago'
+period: sometime ago
 
 flavour: ???
-banner:
+banner: 404.webp
 bannerPosition: center
-
-date: {{ .Date }}
 ---

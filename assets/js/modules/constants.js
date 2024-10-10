@@ -3,7 +3,7 @@
  */
 
 const MOTD_LIST = `
-  This message updates pseudo-randomly once a day
+  This message updates pseudo-randomly everyday
   most whimsical MOTD
   Hello, world!
   Welcome to the Internet!
@@ -34,10 +34,16 @@ const MOTD_LIST = `
   you gouda be kidding me
   Online interactions not rated by the ESRB
   balls
+  monlemonpelemononlemon
   𐐘🤝ඞ
   I made "Burger Kombat". Hate me!
   BITE ME!
   Innopolis graduation ceremony 2025
+  half boiled egg 🐣
+  Everything just works
+  more passion, more passion, more energy, more energy, more footwork, more footwork
+  meow meow meow meow
+  The mother of all omelettes
 `.split("\n");
 
 const warpVertexShader = `
