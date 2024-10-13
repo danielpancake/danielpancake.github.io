@@ -1,7 +1,7 @@
 (() => {
   // ns-hugo:/home/runner/work/danielpancake.github.io/danielpancake.github.io/assets/js/modules/constants.js
   var MOTD_LIST = `
-  This message updates pseudo-randomly once a day
+  This message updates pseudo-randomly everyday
   most whimsical MOTD
   Hello, world!
   Welcome to the Internet!
@@ -32,10 +32,16 @@
   you gouda be kidding me
   Online interactions not rated by the ESRB
   balls
+  monlemonpelemononlemon
   \u{10418}\u{1F91D}\u0D9E
   I made "Burger Kombat". Hate me!
   BITE ME!
   Innopolis graduation ceremony 2025
+  half boiled egg \u{1F423}
+  Everything just works
+  more passion, more passion, more energy, more energy, more footwork, more footwork
+  meow meow meow meow
+  The mother of all omelettes
 `.split("\n");
 
   // ns-hugo:/home/runner/work/danielpancake.github.io/danielpancake.github.io/assets/js/modules/rng.js

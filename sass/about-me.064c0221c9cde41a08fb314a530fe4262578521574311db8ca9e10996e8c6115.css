@@ -30,9 +30,11 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 0 calc(min(2vw, 16px));
+    margin: 0 auto;
+    padding: 0 calc(min(2vw, 16px));
     position: relative;
-    row-gap: 32px; }
+    row-gap: 32px;
+    max-width: 1120px; }
   #about-me .skill-box {
     color: #F5F5F5;
     flex: 1 0 48%;
